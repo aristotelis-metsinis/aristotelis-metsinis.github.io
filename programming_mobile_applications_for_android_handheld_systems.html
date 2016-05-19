@@ -1,0 +1,1343 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">           
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el">   
+	<head>
+	<title>Homepages of Aristotelis Metsinis...</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, miscellaneous web site links" />
+		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets" />
+		<meta name="author"      content="Aristotelis Metsinis" />
+
+		<link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
+		<link rel="stylesheet" type="text/css" href="css/ccs_1.css" />
+		<link rel="stylesheet" type="text/css" href="css/programming_mobile_applications_for_android_handheld_systems.css" />
+		
+		<!-- Themes can be auto-loaded too, but it is best for performance to include the CSS file. -->
+		<link rel="stylesheet" href="jstree/dist/themes/default/style.min.css" />
+	
+		<!-- "jsTree" requires 1.9.0 or greater in web page. -->
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	
+		<!-- For production include the minified version: "dist/jstree.min.js", there is a development version too: "dist/jstree.js". -->
+		<script type="text/javascript" src="jstree/dist/jstree.min.js"></script>		
+		        
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<script type="text/javascript"> 
+			if(top.location == self.location) 
+			{ 
+				top.location.href = 'index.html'+'?redirectedFrom=programming_mobile_applications_for_android_handheld_systems.html'; 
+			} 
+		</script>
+		<script> 
+			$(document).ready(function()
+			{
+				$(".flip").click(function()
+				{
+					var id = $(this).attr('id');
+					$("#panel_" + id ).toggle("slow");
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				/* Once the "DOM" is ready we can start creating "jstree" instances. Populate the tree using "JSON". */			
+				$('#jstree').jstree({ 'core' : {
+					'data' : [				   
+						{ "id" : "app", "parent" : "#", "text" : " app", 'state' : { 'opened' : true }, icon : "img/folder.png" },
+							{ "id" : "manifests", "parent" : "app", "text" : " manifests", 'state' : { 'opened' : true }, icon : "img/folder.png" },
+								{ "id" : "android_manifest", "parent" : "manifests", "text" : " AndroidManifest.xml", icon : "img/xml.png" },
+							{ "id" : "java", "parent" : "app", "text" : " java", 'state' : { 'opened' : true }, icon : "img/folder.png" },
+								{ "id" : "course_labs_modernartui", "parent" : "java", "text" : " course.labs.modernartui", 'state' : { 'opened' : true }, icon : "img/folder.png" },
+									{ "id" : "modern_Art_UI_activity", "parent" : "course_labs_modernartui", "text" : " ModernArtUIActivity.java", icon : "img/java.png" },
+									{ "id" : "modern_information_dialog", "parent" : "course_labs_modernartui", "text" : " ModernInformationDialog.java", icon : "img/java.png" },
+							{ "id" : "res", "parent" : "app", "text" : " res", 'state' : { 'opened' : true }, icon : "img/folder.png" },
+								{ "id" : "anim", "parent" : "res", "text" : " anim", 'state' : { 'opened' : true }, icon : "img/folder.png" },
+									{ "id" : "dialog_fade_in", "parent" : "anim", "text" : " dialog_fade_in.xml", icon : "img/xml.png" },
+									{ "id" : "dialog_fade_out", "parent" : "anim", "text" : " dialog_fade_out.xml", icon : "img/xml.png" },	
+								{ "id" : "drawable", "parent" : "res", "text" : " drawable", 'state' : { 'opened' : true }, icon : "img/folder.png" },
+									{ "id" : "menu_background_styling", "parent" : "drawable", "text" : " menu_background_styling.xml", icon : "img/xml.png" },
+									{ "id" : "menu_background_styling_pressed", "parent" : "drawable", "text" : " menu_background_styling_pressed.xml", icon : "img/xml.png" },										
+									{ "id" : "menu_background_styling_selectable", "parent" : "drawable", "text" : " menu_background_styling_selectable.xml", icon : "img/xml.png" },										
+									{ "id" : "rectangle", "parent" : "drawable", "text" : " rectangle.xml", icon : "img/xml.png" },		
+								{ "id" : "layout", "parent" : "res", "text" : " layout", 'state' : { 'opened' : true }, icon : "img/folder.png" },
+									{ "id" : "activity_modern_art_ui", "parent" : "layout", "text" : " activity_modern_art_ui.xml", icon : "img/xml.png" },
+									{ "id" : "dialog_more_information", "parent" : "layout", "text" : " dialog_more_information.xml", icon : "img/xml.png" },	
+								{ "id" : "menu", "parent" : "res", "text" : " menu", 'state' : { 'opened' : true }, icon : "img/folder.png" },
+									{ "id" : "menu_modern_art_ui", "parent" : "menu", "text" : " menu_modern_art_ui.xml", icon : "img/xml.png" },
+								{ "id" : "values", "parent" : "res", "text" : " values", 'state' : { 'opened' : true }, icon : "img/folder.png" },
+									{ "id" : "colors", "parent" : "values", "text" : " colors.xml", icon : "img/xml.png" },
+									{ "id" : "strings", "parent" : "values", "text" : " strings.xml", icon : "img/xml.png" },									
+									{ "id" : "styles", "parent" : "values", "text" : " styles.xml", icon : "img/xml.png" },																	
+					]
+				}});							
+						
+				/* "jsTree" uses events to notify us when something changes while users interact with the tree. So, binding to "jstree" events is as easy binding to a click. 
+				Once an instance is ready we can invoke methods on it. */
+				$('#jstree').on("changed.jstree", function (event, data) {				
+					var aTag = $("a[name='"+ data.selected +"']");
+					/* console.log(aTag); */
+					if ( typeof( aTag.offset() ) !== "undefined" ) {
+						$('html,body').animate({scrollTop: aTag.offset().top},'slow');		
+					}
+				});
+			});
+		</script>			
+
+		<!-- Include required JS files. -->
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+		<!--
+			At least one brush, here we choose JS. You need to include a brush for every 
+			language you want to highlight.
+		-->
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJava.js"></script>
+		<script type='text/javascript' src='syntaxhighlighter/scripts/shBrushXml.js'></script>		
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushPlain.js"></script>
+		<!-- Include *at least* the core style and "eclipse" theme. -->
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/>
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemeEclipse.css"/>
+		<!-- Finally, to actually run the highlighter, you need to include this JS on your page. -->
+		<script type="text/javascript">SyntaxHighlighter.defaults['toolbar'] = false;SyntaxHighlighter.all();</script>			
+	</head>
+	<body>
+		<br />
+        <table width="100%" border="0" cellpadding="10">
+			<tr>
+				<td>                
+					<p class="documentDescription">Programming Mobile Applications for Android Handheld Systems: Part 1</p>             
+					<div class="plain">			
+						<p> 						
+							This on-line class offered by "<i>Coursera</i>" (<a href="https://www.coursera.org/course/androidpart1" target="_blank">https://www.coursera.org/course/androidpart1</a> | May – June 2015) and introduced the design as well as implementation of Android applications for mobile devices, discussing the Android Platform and the Android Development Environment and understanding the components comprising the Android Platform, i.e the basic components from which all Android applications are created.
+							<br>&nbsp;<br>
+							The four fundamental components of Android applications were described:
+							<ul>
+								<li>the "<i>Activity</i>" class and its life-cycle was presented; one of the main class responsible for displaying an application's user interface.</li>  
+								<li>the "<i>Intent</i>" class and "<i>Permissions</i>" were discussed.</li> 
+								<li>the "<i>Fragment</i>" class was also presented; another key class responsible for displaying an application's user interface.</li>
+							</ul>	
+							<br>							
+							The course accompanied by hands-on labs and exercises, including the development of an app inspired by the "<i>Museum of Modern Art</i>" in New York. Below you can find the description of the "<i>Modern Art</i>" project and the source code along with (extended) line by line comments.  
+							<br>&nbsp;<br>
+							<hr><br>							
+							<u>Mini-project description</u>
+							<br>&nbsp;<br>
+							Modern Art User Interfaces: build a complete app from scratch. Specifically, develop a simple application that creates and displays a user interface, presents a menu and a dialogue, and that opens a link to an external website. A screen-cast video of the app in action can be found at the following "url": <a href="https://youtu.be/bWY8zdC_AvM" target="_blank">https://youtu.be/bWY8zdC_AvM</a>
+							<br>&nbsp;<br><br>
+							<u>Mini-project hierarchy view</u>
+							<br>&nbsp;<br>							
+							Below you can find the Android (Studio) project view, showing the most important source directories at the top level of the module hierarchy, grouping build files for all modules in a common folder as well as all manifest files for each module in a common folder and resource files for different locales, orientations, and screen types in a single group per resource type. Each project module appears as a folder at the top level of the project hierarchy and contains these elements at the top level:
+							<ul>
+								<li><i>java/</i> - source file(s) for the module.</li>
+								<li><i>manifests/</i> - manifest file(s) for the module.</li>
+								<li><i>res/</i> - resource file(s) for the module.</li>
+							</ul>
+							<br>
+							Click on any of the following tree nodes to scroll down towards the source code of the corresponding "xml" or "java" file.
+							<br>&nbsp;<br>							
+							<!-- This is the element where we want the tree to appear, a "<div>" is enough. Data source configured as "JSON". -->
+							<div id="jstree"></div>							
+							<br>
+							<hr>
+						</p>						
+						<ul>
+							<li><a name="android_manifest">AndroidManifest.xml</a></li>
+							<p>								
+								<p class="flip" id="AndroidManifest">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_AndroidManifest" style="display: none;">
+									<p><pre class="brush: xml;">									
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define application's "manifest" file, describing an "activity" component and the class that
+										* implements this "activity" as well as publishing which "intent" this "activity" can handle; in
+										* our case advertises an "activity" that initiates "this" application.
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+											package="course.labs.modernartui" >
+										
+											<application
+												android:label="@string/app_name"
+												android:theme="@style/AppBaseTheme" >
+										
+												<activity
+													android:name=".ModernArtUIActivity"
+													android:label="@string/app_name" >
+										
+													<intent-filter>
+														<action android:name="android.intent.action.MAIN" />
+										
+														<category android:name="android.intent.category.LAUNCHER" />
+													</intent-filter>
+										
+												</activity>
+										
+											</application>
+										
+										</manifest>																		
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="modern_Art_UI_activity">ModernArtUIActivity.java</a></li>
+							<p>								
+								<p class="flip" id="ModernArtUIActivity">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_ModernArtUIActivity" style="display: none;">
+									<p><pre class="brush: java;">										
+										package course.labs.modernartui;
+										
+										import android.app.Activity;
+										import android.app.DialogFragment;
+										import android.content.Intent;
+										import android.graphics.Color;
+										import android.graphics.drawable.GradientDrawable;
+										import android.net.Uri;
+										import android.os.Bundle;
+										import android.view.Menu;
+										import android.view.MenuItem;
+										import android.view.View;
+										import android.widget.SeekBar;
+										
+										import java.util.HashMap;
+										import java.util.Random;
+										
+										/* --------------------------------------------------------------------------------------------- */
+										
+										/**
+										* "Coursera" | "Programming Mobile Applications for Android Handheld Systems" | Lab: "Modern Art UI"</br>
+										*</br>
+										* Lab description:</br>
+										* A simple application that creates and displays a user interface, presents a "menu" and a "dialog", and
+										* that opens a link to an external website.
+										* Specifically, this application's user interface is composed of geometric shapes arranged in a
+										* particular order. It has one area containing multiple colored rectangles and
+										* another one containing a "SeekBar" (sometimes called a "Slider"). When the user drags the "SeekBar",
+										* all non-white / non-gray rectangles gradually change their color. This application also contains
+										* an (overflow) "options" menu. When the user clicks on the "options" menu an option labeled,
+										* "More Information" should appear. When the user clicks on the "More Information" option, a "Dialog"
+										* should appear displaying some text and two buttons. If the user clicks on the "Not Now" button in
+										* the "Dialog", the "Dialog" should be dismissed. If the user clicks on the "Visit MOMA" button,
+										* then the "Web Browser" should be opened to view a web page on the "MoMA.org" web site.</br>
+										*</br>
+										* Lab requirements:</br>
+										* The application must implement all the functions described above, but can vary in the visual layout
+										* as long as:</br>
+										* - 1) user interface displays at least 5 separate colored rectangles, at least one of these
+										*      rectangles is "white" / "gray" in color, and at least one of these rectangles is "non-white" /
+										*      "non-gray" in color [*].</br>
+										* - 2) it includes a "SeekBar".</br>
+										* - 3) dragging this app's "SeekBar", the colored rectangles change color.</br>
+										* - 4) it allows the user to view an "options" menu displaying the text, "More Information".</br>
+										* - 5) when the user clicks on the "More Information" option, the app presents a "Dialog" with two
+										*      buttons labeled "Visit MOMA" and "Not Now".</br>
+										* - 6) when the user clicks on the "Dialog" button labeled, "Not Now", the "Dialog" disappears.</br>
+										* - 7) when the user clicks on the "Dialog" button labeled, "Visit MOMA", a browser opens displaying
+										*      a page at the "www.moma.org" web site.</br>
+										*</br>
+										* [*]: application's user interface is composed of five (5) colored rectangles. In practice, the
+										* rectangle with a "white" background color is randomly selected each time the application starts.
+										* The background color of each of the remaining (four) rectangles is randomly selected each time
+										* the application starts.</br>
+										*</br>
+										* Notes:</br>
+										* - the app has been tested on the emulator using a "Google Galaxy Nexus AVD - 4.3" with "API"
+										* level 18 (screen resolution: 720 x 1280). To limit configuration problems, you should test the app
+										* against a similar AVD.</br>
+										* - keep also in mind that the "Genymotion" Android emulator used. Have a look at:</br>
+										* <a href='https://www.genymotion.com/'>https://www.genymotion.com/</a></br>
+										* - the project has been created, developed and configured on "Android Studio" IDE. Have a look at:</br>
+										* <a href='http://developer.android.com/tools/studio/index.html'>http://developer.android.com/tools/studio/index.html</a></br>
+										* - screencast video of the app in action can be found at:</br>
+										* <a href='https://youtu.be/bWY8zdC_AvM'>https://youtu.be/bWY8zdC_AvM</a></br>
+										*
+										* @author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* @version 1.0
+										* @since 2015-06-04
+										* @see <a href='http://www.thinkageek.com/metsinis/'>http://www.thinkageek.com/metsinis/</a>
+										*
+										*/
+										public class ModernArtUIActivity extends Activity implements MoreInformationDialog.DialogListener
+										{
+											/** Declare string for "LogCat" documentation. */
+											private final static String TAG = "ModernArtUI";
+										
+											/** Declare "HashMap" that will store for each "rectangle" (acting as "HashMap" key) its background
+											color (acting as "HashMap" value). */
+											private HashMap rectangleBackgroundColors = null;
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* This class extends "Activity". The "onCreate()" callback method is called when the "activity"
+											* is starting. This method is overridden to inflate the activity's UI, to programmatically
+											* interact with widgets in the UI, etc.
+											*
+											* @param		savedInstanceState		If the "activity" is being re-initialized after previously
+											*                                      being shut down then this "Bundle" contains the data it
+											*                                      most recently supplied in "onSaveInstanceState(Bundle)".
+											*                                      Otherwise it is null.
+											*
+											*/
+											@Override
+											protected void onCreate(Bundle savedInstanceState)
+											{
+												/* Call the super class's implementation of this method. */
+												super.onCreate(savedInstanceState);
+												/* Set the "activity" content from the given "layout" resource. The resource will be inflated,
+												adding all top-level views to the "activity". */
+												setContentView(R.layout.activity_modern_art_ui);
+										
+												/* In case where previous state has been saved, restore colors from saved state. */
+												if (savedInstanceState != null)
+												{
+													/* Get the "rectangles versus colors" HashMap object (acting as "value")
+													associated with the given "key" (tag). */
+													rectangleBackgroundColors = (HashMap) savedInstanceState.getSerializable("rectangleBackgroundColors");
+												}
+												/* In case where previous state has not been saved, initialise colors. */
+												else
+												{
+													/* Call initialisation method and store the "rectangles versus colors" HashMap object. */
+													rectangleBackgroundColors = initialiseBackgroundColors();
+												}
+										
+												/* Call "setBackgroundColor()" method that "sets" the given (original) background color for a given
+												rectangle (View). The (original) color has been stored in the proper "rectangles versus colors"
+												HashMap object. */
+												setBackgroundColor(findViewById(R.id.rect_up_left), (int) rectangleBackgroundColors.get("rect_up_left"));
+												setBackgroundColor(findViewById(R.id.rect_down_left), (int) rectangleBackgroundColors.get("rect_down_left"));
+												setBackgroundColor(findViewById(R.id.rect_up_right), (int) rectangleBackgroundColors.get("rect_up_right"));
+												setBackgroundColor(findViewById(R.id.rect_center_right), (int) rectangleBackgroundColors.get("rect_center_right"));
+												setBackgroundColor(findViewById(R.id.rect_down_right), (int) rectangleBackgroundColors.get("rect_down_right"));
+										
+												/* Find the "SeekBar" (View) identified by the given "id" attribute from the "XML" that
+												was processed in this method. */
+												final SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
+												/* Set a listener to receive notifications of changes to the SeekBar's progress level. */
+												seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+													/**
+													* Notify when the progress level has changed. This method is overridden to update
+													* properly the background color of the rectangles (Views).
+													*
+													* @param		seekBar		The "SeekBar" whose progress has changed.
+													* @param		progress	The current "SeekBar" progress level. This will be in the
+													*                          range 0...max ("max" as defined in the "layout" XML).
+													* @param		fromUser	"true" if the progress change was initiated by the user.
+													*
+													*/
+													@Override
+													public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+														/* Call "updateBackgroundColor()" method that "updates" the background color of a given
+														rectangle (View). The new color is "computed" based upon the "original" background color
+														of this rectangle and the current "SeekBar" progress level. Recall that the "original"
+														background color has been stored in the proper "rectangles versus colors"
+														HashMap object that has been initialised (created) at application's start-up. */
+														updateBackgroundColor(findViewById(R.id.rect_up_left), (int) rectangleBackgroundColors.get("rect_up_left"), progress);
+														updateBackgroundColor(findViewById(R.id.rect_down_left), (int) rectangleBackgroundColors.get("rect_down_left"), progress);
+														updateBackgroundColor(findViewById(R.id.rect_up_right), (int) rectangleBackgroundColors.get("rect_up_right"), progress);
+														updateBackgroundColor(findViewById(R.id.rect_center_right), (int) rectangleBackgroundColors.get("rect_center_right"), progress);
+														updateBackgroundColor(findViewById(R.id.rect_down_right), (int) rectangleBackgroundColors.get("rect_down_right"), progress);
+													}
+										
+													/**
+													* Notify when the user has started a touch gesture.
+													* Auto-generated method stub; nothing to implement.
+													*
+													* @param		seekBar		The "SeekBar" in which the touch gesture began.
+													*
+													*/
+													@Override
+													public void onStartTrackingTouch(SeekBar seekBar) {
+														/* Auto-generated method stub; nothing to implement. */
+													}
+										
+													/**
+													* Notify when the user has finished a touch gesture.
+													* Auto-generated method stub; nothing to implement.
+													*
+													* @param		seekBar		The "SeekBar" in which the touch gesture began.
+													*
+													*/
+													@Override
+													public void onStopTrackingTouch(SeekBar seekBar) {
+														/* Auto-generated method stub; nothing to implement. */
+													}
+												});
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* Initialize the contents of the Activity's standard "options" menu.
+											*
+											* @param		menu		The "options" menu in which we place our items.
+											* @return 	     	        boolean - "true" for the menu to be displayed.
+											*
+											*/
+											@Override
+											public boolean onCreateOptionsMenu(Menu menu) {
+												/* Inflate the "menu"; the items and sub-menus will be added to this "Menu" (the action bar
+												if it is present). Return a "MenuInflater" with this context and inflate a menu hierarchy
+												from the given "XML" resource. */
+												getMenuInflater().inflate(R.menu.menu_modern_art_ui, menu);
+										
+												/* "true" for the menu to be displayed. */
+												return true;
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* Called whenever an item in "options" menu is selected. This method is overridden to
+											* handle action bar item clicks.
+											*
+											* @param		item		The "menu" item that was selected.
+											* @return 	        	    boolean - "true" to handle "menu" processing in this method or
+											*                          "false" to allow normal "menu" processing to proceed.
+											*
+											*/
+											@Override
+											public boolean onOptionsItemSelected(MenuItem item) {
+												/* Get the identifier for the "selected" menu item. */
+												int id = item.getItemId();
+										
+												/* (overflow) "options" menu has been selected. */
+												if (id == R.id.overflow_menu)
+												{
+													/* Create an instance of the "dialog" fragment. */
+													DialogFragment dialog = new MoreInformationDialog();
+													/* Get the "FragmentManager" for interacting with "fragments" associated with this
+													fragment's activity and then display the "dialog", adding the "fragment" to the given
+													"FragmentManager" with the given (fragment). */
+													dialog.show(getFragmentManager(), "moreInformationDialog");
+										
+													/* "true"; menu processing handled by this method. */
+													return true;
+												}
+										
+												/* (in any other case) call through to the base class for it to perform the default
+												"menu" handling; the default implementation simply returns "false". */
+												return super.onOptionsItemSelected(item);
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* This "activity" hosts a "dialog" by creating an instance of the "dialog" with the "dialog" fragment's
+											* constructor and receives the dialog's events through an implementation of the "DialogListener"
+											* interface. So, the "dialog" fragment receives a reference to this "activity" through the
+											* "Fragment.onAttach()" callback, which it uses to call the following method
+											* defined by the "MoreInformationDialog.DialogListener" interface.
+											*
+											* @param		dialog		"DialogFragment" in case this host "activity" needs to query it.
+											*
+											*/
+											@Override
+											public void onDialogPositiveClick(DialogFragment dialog)
+											{
+												/* User touched the dialog's "positive" button. Start a browser "activity" to view a web page;
+												create a base "intent" for viewing a "url". */
+												Intent baseIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url)));
+										
+												/* Start the "activity", using this "intent". */
+												startActivity(baseIntent);
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* This "activity" hosts a "dialog" by creating an instance of the "dialog" with the "dialog" fragment's
+											* constructor and receives the dialog's events through an implementation of the "DialogListener"
+											* interface. So, the "dialog" fragment receives a reference to this "activity" through the
+											* "Fragment.onAttach()" callback, which it uses to call the following method
+											* defined by the "MoreInformationDialog.DialogListener" interface.
+											*
+											* @param		dialog		"DialogFragment" in case this host "activity" needs to query it.
+											*
+											*/
+											@Override
+											public void onDialogNegativeClick(DialogFragment dialog)
+											{
+												/* User touched the dialog's "negative" button; nothing to implement. */
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* When an "Activity" (fragment) is being killed, but may be restarted later, Android calls
+											* "onSaveInstanceState()". This gives the "Activity" a chance to save any per-instance data
+											* (to a "Bundle"; a collection of key-value pairs) it may need if the "Activity" is later
+											* restored. In this case, it saves the background colors of the rectangles; actually the
+											* "HashMap" object that stores those colors (acting as "values") for each of those rectangles
+											* (acting as "keys").
+											*
+											* @param		savedInstanceState		"Bundle" in which to place the saved state.
+											*
+											*/
+											@Override
+											public void onSaveInstanceState(Bundle savedInstanceState) {
+												/* Define a "key" (tag) and insert a "Serializable" value ("HashMap" object) into the mapping
+												of this "Bundle". */
+												savedInstanceState.putSerializable("rectangleBackgroundColors", rectangleBackgroundColors);
+												/* Call the default implementation taking care of most of the UI per-instance state. */
+												super.onSaveInstanceState(savedInstanceState);
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* Helper method used for the initialisation of the background color of each of the rectangles of
+											* application's user interface. Application's user interface is composed of five (5) colored
+											* rectangles. The rectangle with a "white" background color is randomly selected each time the
+											* application starts. The background color of each of the remaining (four) rectangles is randomly
+											* selected each time the application starts.
+											*
+											* @return		    		"HashMap" object that stores the background colors (acting as "values")
+											*                          of application's UI rectangles (acting as "keys").
+											*
+											*/
+											private HashMap initialiseBackgroundColors()
+											{
+												/* Construct a new empty "HashMap" instance. */
+												HashMap rectangleBackgroundColors = new HashMap();
+										
+												/* Define a "helper" HashMap that maps the rectangles (acting as "values" this time) to (numerical)
+												"ids" (acting as "keys"). Keep in mind that this particular "HashMap" object is being
+												initialised by sub-classing the "HashMap" class to an anonymous class,
+												and then using the non-static initialization block to call the "put()" method as
+												many times as the number of application's UI rectangles. */
+												HashMap rectangleIDs = new HashMap(){{
+													put(0, "rect_up_left");
+													put(1, "rect_down_left");
+													put(2, "rect_up_right");
+													put(3, "rect_center_right");
+													put(4, "rect_down_right");
+												}};
+										
+												/* Construct a random generator. */
+												Random random = new Random();
+										
+												/* Get a pseudo-random uniformly distributed integer in the half-open range [0, 5).
+												In practice, (randomly) "select" the "id" of the rectangle with a "white" background color.
+												Recall that the number of application's UI rectangles is five (5) with "ids" in the range [0, 4]. */
+												int whiteRectangleID = random.nextInt(5);
+												/* Get the rectangle (value) of the mapping with the specified (above computed) "id" (key). */
+												String rectangleName = (String) rectangleIDs.get(whiteRectangleID);
+												/* Map (store) the specified (randomly selected) rectangle (acting as key) to the specified background
+												(white) color (acting as value). */
+												rectangleBackgroundColors.put(rectangleName, getResources().getColor(R.color.white));
+										
+												/* Set a "random" background color for each of the remaining application's UI rectangles;
+												loop for all above defined [0-4] rectangle "ids". */
+												for (int rectangleID = 0; rectangleID <= 4; rectangleID++)
+												{
+													/* Skip the rectangle colored "already" with a "white" background. */
+													if (rectangleID != whiteRectangleID)
+													{
+														/* Get the rectangle (value) of the mapping with the specified "id" (key). */
+														rectangleName = (String) rectangleIDs.get(rectangleID);
+										
+														/* Get pseudo-random uniformly distributed integers in the half-open range [0, 256).
+														Each of those integers correspond to a "randomly" selected "red", "green" and "blue"
+														color component. Use those (component) values to get a color-int by calling "rgb()"
+														method. Recall that these component values must be in [0..255] range. */
+														int color = Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+														/* While this "rectangles versus colors" map contains the above computed color (value),
+														select (compute) a new background color. */
+														while (rectangleBackgroundColors.containsValue(color)) {
+															color = Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+														}
+										
+														/* Map (store) the specified rectangle (acting as key) to the specified (randomly selected)
+														background color (acting as value). */
+														rectangleBackgroundColors.put(rectangleName, color);
+													}
+												}
+										
+												/* Return the "rectangles versus colors" HashMap object. */
+												return rectangleBackgroundColors;
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* Helper method; set the background color of a "View" UI component.
+											*
+											* @param		view		                Applications' UI "View".
+											* @param		backgroundColor		        The background color to be set.
+											*
+											*/
+											private void setBackgroundColor(View view, int backgroundColor)
+											{
+												/* Get the background drawable. */
+												GradientDrawable backgroundDrawable = (GradientDrawable) view.getBackground();
+												/* Set the drawable's color value; change this drawable to use a single (argb) color instead of a
+												gradient. */
+												backgroundDrawable.setColor(backgroundColor);
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* Helper method; update the background color of a "View" component based upon the progress level of a
+											* "SeekBar".
+											*
+											* @param		view		                Applications' UI "View".
+											* @param		backgroundColor		        The (argb) background color to be updated.
+											* @param		progress		            The current "SeekBar" progress level.
+											*
+											*/
+											private void updateBackgroundColor(View view, int backgroundColor, int progress) {
+												/* Three element array, which holds the resulting "HSV" components;
+												hsv[0] is Hue [0...360), hsv[1] is Saturation [0...1] and hsv[2] is Value [0...1]. */
+												float[] hsv = new float[3];
+										
+												/* Convert the "argb" color to its "HSV" components. */
+												Color.colorToHSV(backgroundColor, hsv);
+												/* Update "Hue" based upon the (current) "SeekBar" progress level; result shall always be
+												in the [0..360) range due to the "modulo" operation. */
+												hsv[0] = (hsv[0] + progress) % 360;
+										
+												/* Convert the updated "HSV" components to an "ARGB" color (the alpha component is passed
+												through unchanged) and then set the background color for the given "View". */
+												setBackgroundColor(view, Color.HSVToColor(Color.alpha(backgroundColor), hsv));
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										}									
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="modern_information_dialog">ModernInformationDialog.java</a></li>
+							<p>								
+								<p class="flip" id="ModernInformationDialog">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_ModernInformationDialog" style="display: none;">
+									<p><pre class="brush: java;">
+										package course.labs.modernartui;
+										
+										import android.app.Activity;
+										import android.app.Dialog;
+										import android.app.DialogFragment;
+										import android.os.Bundle;
+										import android.view.View;
+										import android.view.Window;
+										import android.widget.Button;
+										
+										/* --------------------------------------------------------------------------------------------- */
+										
+										/**
+										* This application contains an (overflow) "options" menu. When the user clicks on that "options"
+										* menu an option labeled, "More Information" should appear. When the user clicks on the
+										* "More Information" option, the "dialog" (fragment) implemented by "this" class should appear
+										* displaying some text and two "buttons". If the user clicks on the "Not Now" button in the
+										* "dialog", the "dialog" should be dismissed. If the user clicks on the "Visit MOMA" button, then
+										* the "Web Browser" should be opened to view a web page on the "MoMA.org" web site.</br>
+										*</br>
+										* Notes:</br>
+										* - the app has been tested on the emulator using a "Google Galaxy Nexus AVD - 4.3" with "API"
+										* level 18 (screen resolution: 720 x 1280). To limit configuration problems, you should test the app
+										* against a similar AVD.</br>
+										* - keep also in mind that the "Genymotion" Android emulator used. Have a look at:</br>
+										* <a href='https://www.genymotion.com/'>https://www.genymotion.com/</a></br>
+										* - the project has been created, developed and configured on "Android Studio" IDE. Have a look at:</br>
+										* <a href='http://developer.android.com/tools/studio/index.html'>http://developer.android.com/tools/studio/index.html</a></br>
+										* - screencast video of the app in action can be found at:</br>
+										* <a href='https://youtu.be/bWY8zdC_AvM'>https://youtu.be/bWY8zdC_AvM</a></br>
+										*
+										* @author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* @version 1.0
+										* @since 2015-06-04
+										* @see <a href='http://www.thinkageek.com/metsinis/'>http://www.thinkageek.com/metsinis/</a>
+										*
+										*/
+										public class MoreInformationDialog extends DialogFragment
+										{
+											/** Declare string for "LogCat" documentation. */
+											private final String TAG = "ModernArtUI";
+										
+											/** Use this instance of the "interface" to deliver action events back to the host "activity". */
+											DialogListener mListener;
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* This class extends "DialogFragment", creates and returns a "Dialog" in the "onCreateDialog()"
+											* callback method. This method is overridden to build a custom "Dialog" container.
+											*
+											* @param		savedInstanceState		The last saved instance state of the "Fragment", or null
+											*                                      if this is a freshly created "Fragment".
+											* @return 	     	                    Return a new "Dialog" instance to be displayed by the
+											*                                      "Fragment".
+											*
+											*/
+											@Override
+											public Dialog onCreateDialog(Bundle savedInstanceState)
+											{
+												/* Create a "Dialog" window that uses the "Activity" (context) this "fragment" is currently
+												associated with and the default "dialog" frame style. */
+												Dialog dialog = new Dialog(getActivity());
+												/* Retrieve the current "Window" for the "activity" and enable the "no title" extended screen
+												feature, turning off the title at the top of the screen. */
+												dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+												/* Set the screen content from the given custom "layout" resource. */
+												dialog.setContentView(R.layout.dialog_more_information);
+												/* Start the "dialog" and display it on screen. */
+												dialog.show();
+										
+												/* Find a child (button) "View" with the given identifier. */
+												Button mButton_not_now = (Button) dialog.findViewById(R.id.dialog_not_now_button);
+												/* Register a callback to be invoked when this (button) "View" is clicked. */
+												mButton_not_now.setOnClickListener(new View.OnClickListener() {
+													/**
+													* Called when this (button) "View" has been clicked. This method is overridden to
+													* define the action to take when the user presses this button; the "dialog"
+													* should be just dismissed finally. In practice, the method shall send a "negative"
+													* button event back to the host "activity" that will be "ignored" completely.
+													*
+													* @param		view		The (button) "View" that was clicked.
+													*
+													*/
+													@Override
+													public void onClick(View view) {
+														/* Send a "negative" button event back to the host "activity"
+														passing the "DialogFragment" in case the host needs to query it. */
+														mListener.onDialogNegativeClick(MoreInformationDialog.this);
+														/* Dismiss the "fragment" and its "dialog". */
+														dismiss();
+													}
+												});
+										
+												/* Find a child (button) "View" with the given identifier. */
+												Button mButton_visit = (Button) dialog.findViewById(R.id.dialog_visit_moma_button);
+												/* Register a callback to be invoked when this (button) "View" is clicked. */
+												mButton_visit.setOnClickListener(new View.OnClickListener() {
+													/**
+													* Called when this (button) "View" has been clicked. This method is overridden to
+													* define the action to take when the user presses this button; the "Web Browser" should
+													* be opened to view a web page on the "MoMA.org" web site finally. In practice, the
+													* method shall send a "positive" button event back to the host "activity" that will
+													* proceed with the proper "actions" displaying the web page.
+													*
+													* @param		view		The (button) "View" that was clicked.
+													*
+													*/
+													@Override
+													public void onClick(View view) {
+														/* Send a "positive" button event back to the host "activity"
+														passing the "DialogFragment" in case the host needs to query it. */
+														mListener.onDialogPositiveClick(MoreInformationDialog.this);
+														/* Dismiss the "fragment" and its "dialog". */
+														dismiss();
+													}
+												});
+										
+												/* Return the "Dialog" instance. */
+												return dialog;
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* Called when the "fragment" is first attached to its "activity". The "Fragment.onAttach()" method
+											* is overridden to instantiate the "DialogListener" interface.
+											*
+											* @param		activity		    Attached "activity".
+											* @exception 	ClassCastException  Exception on error.
+											*
+											*/
+											@Override
+											public void onAttach(Activity activity) throws ClassCastException
+											{
+												super.onAttach(activity);
+										
+												/* Verify that the host "activity" implements the callback interface. */
+												try
+												{
+													/* Instantiate the "DialogListener" interface so we can send events back to the host. */
+													mListener = (DialogListener) activity;
+												}
+												catch (ClassCastException exception)
+												{
+													/* The activity doesn't implement the "DialogListener" interface, throw exception. */
+													throw new ClassCastException(activity.toString() + " must implement \"DialogListener\"");
+												}
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* Called when the "fragment" is visible to the user. The "DialogFragment.onStart()" method is
+											* overridden to set the proper "style" as the dialog's "window animations" to use on showing and
+											* hiding the "dialog" (fragment).
+											*
+											*/
+											@Override
+											public void onStart()
+											{
+												super.onStart();
+										
+												/* Retrieve the current "Window" for this "activity" and specify custom animations to use
+												for this "window" based upon the given "style". */
+												getDialog().getWindow().setWindowAnimations(R.style.dialog_animation_fade);
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										
+											/**
+											* The "activity" that creates an instance of this "dialog" fragment must
+											* implement this "interface" in order to receive event callbacks.
+											* Each method passes the "DialogFragment" in case the host needs to query it.
+											*
+											*/
+											public interface DialogListener {
+												public void onDialogPositiveClick(DialogFragment dialog);
+												public void onDialogNegativeClick(DialogFragment dialog);
+											}
+										
+											/* ----------------------------------------------------------------------------------------- */
+										}								
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="dialog_fade_in">dialog_fade_in.xml</a></li>
+							<p>								
+								<p class="flip" id="dialog_fade_in">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_dialog_fade_in" style="display: none;">
+									<p><pre class="brush: xml;">																		
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define the "fade-in" animation of the applications' (pop-up) dialog (fragment).
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<alpha
+											xmlns:android="http://schemas.android.com/apk/res/android"
+											android:interpolator="@android:anim/accelerate_interpolator"
+											android:fromAlpha="0.0"
+											android:toAlpha="1.0"
+											android:duration="500" />
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="dialog_fade_out">dialog_fade_out.xml</a></li>
+							<p>								
+								<p class="flip" id="dialog_fade_out">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_dialog_fade_out" style="display: none;">
+									<p><pre class="brush: xml;">
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define the "fade-out" animation of the applications' (pop-up) dialog (fragment).
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<alpha
+											xmlns:android="http://schemas.android.com/apk/res/android"
+											android:interpolator="@android:anim/decelerate_interpolator"
+											android:fromAlpha="1.0"
+											android:toAlpha="0.0"
+											android:duration="500" />									
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="menu_background_styling">menu_background_styling.xml</a></li>
+							<p>								
+								<p class="flip" id="menu_background_styling">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_menu_background_styling" style="display: none;">
+									<p><pre class="brush: xml;">
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define (rectangle) "drawable" for the "DropDownListView" selector styling | state: pressed = "false".
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<shape xmlns:android="http://schemas.android.com/apk/res/android"
+											android:shape="rectangle">
+										
+											<solid android:color="@color/holo_blue_dark" />
+										
+											<stroke
+												android:width="1dp"
+												android:color="@color/gray" />
+										
+										</shape>
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="menu_background_styling_pressed">menu_background_styling_pressed.xml</a></li>
+							<p>								
+								<p class="flip" id="menu_background_styling_pressed">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_menu_background_styling_pressed" style="display: none;">
+									<p><pre class="brush: xml;">									
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define (rectangle) "drawable" for the "DropDownListView" selector styling | state: pressed = "true".
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<shape xmlns:android="http://schemas.android.com/apk/res/android"
+											android:shape="rectangle">
+										
+											<solid android:color="@color/holo_blue_light" />
+										
+											<stroke
+												android:width="1dp"
+												android:color="@color/gray" />
+										
+										</shape>
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="menu_background_styling_selectable">menu_background_styling_selectable.xml</a></li>
+							<p>								
+								<p class="flip" id="menu_background_styling_selectable">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_menu_background_styling_selectable" style="display: none;">
+									<p><pre class="brush: xml;">										
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define "drawables" for the "DropDownListView" selector styling.
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<selector xmlns:android="http://schemas.android.com/apk/res/android"
+											android:exitFadeDuration="@android:integer/config_mediumAnimTime" >
+										
+											<item android:state_pressed="false"
+												android:state_focused="true"
+												android:drawable="@drawable/menu_background_styling" />
+										
+											<item android:state_pressed="true"
+												android:drawable="@drawable/menu_background_styling_pressed" />
+										
+											<item android:drawable="@android:color/transparent" />
+										
+										</selector>
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="rectangle">rectangle.xml</a></li>
+							<p>								
+								<p class="flip" id="rectangle">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_rectangle" style="display: none;">
+									<p><pre class="brush: xml;">																											
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define (rectangle) "drawable" for the styling of the (colored) "View" layout components.
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<shape xmlns:android="http://schemas.android.com/apk/res/android"
+											android:shape="rectangle">
+										
+											<solid android:color="@color/white" />
+										
+											<stroke
+												android:width="0dp"
+												android:color="@color/black" />
+										
+										</shape>
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="activity_modern_art_ui">activity_modern_art_ui.xml</a></li>
+							<p>								
+								<p class="flip" id="activity_modern_art_ui">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_activity_modern_art_ui" style="display: none;">
+									<p><pre class="brush: xml;">									
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define the layout of application's user interface with one area containing multiple colored
+										* "View" rectangles and another one containing a "SeekBar".
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent"
+											android:paddingLeft="0dp"
+											android:paddingRight="0dp"
+											android:background="@color/black"
+											android:orientation="vertical">
+										
+											<LinearLayout
+												android:orientation="horizontal"
+												android:layout_width="match_parent"
+												android:layout_height="match_parent"
+												android:layout_weight="1"
+												android:layout_gravity="center_horizontal">
+										
+												<LinearLayout
+													android:orientation="horizontal"
+													android:layout_width="match_parent"
+													android:layout_height="match_parent"
+													android:layout_gravity="center_horizontal">
+										
+													<LinearLayout
+														android:orientation="vertical"
+														android:layout_width="match_parent"
+														android:layout_height="match_parent"
+														android:layout_weight="2"
+														android:layout_gravity="center_vertical">
+										
+														<View
+															android:id="@+id/rect_up_left"
+															android:layout_width="match_parent"
+															android:layout_height="match_parent"
+															android:layout_weight="1"
+															android:layout_marginEnd="2dp"
+															android:layout_marginBottom="2dp"
+															android:gravity="center"
+															android:background="@drawable/rectangle" />
+										
+														<View
+															android:id="@+id/rect_down_left"
+															android:layout_width="match_parent"
+															android:layout_height="match_parent"
+															android:layout_weight="1"
+															android:layout_marginEnd="2dp"
+															android:layout_marginTop="2dp"
+															android:gravity="center"
+															android:background="@drawable/rectangle" />
+										
+													</LinearLayout>
+										
+													<LinearLayout
+														android:orientation="vertical"
+														android:layout_width="match_parent"
+														android:layout_height="match_parent"
+														android:layout_weight="1"
+														android:layout_gravity="center_vertical">
+										
+														<View
+															android:id="@+id/rect_up_right"
+															android:layout_width="match_parent"
+															android:layout_height="match_parent"
+															android:layout_weight="1"
+															android:layout_marginStart="2dp"
+															android:layout_marginBottom="2dp"
+															android:gravity="center"
+															android:background="@drawable/rectangle" />
+										
+														<View
+															android:id="@+id/rect_center_right"
+															android:layout_width="match_parent"
+															android:layout_height="match_parent"
+															android:layout_weight="1"
+															android:layout_marginStart="2dp"
+															android:layout_marginTop="2dp"
+															android:layout_marginBottom="2dp"
+															android:gravity="center"
+															android:background="@drawable/rectangle" />
+										
+														<View
+															android:id="@+id/rect_down_right"
+															android:layout_width="match_parent"
+															android:layout_height="match_parent"
+															android:layout_weight="1"
+															android:layout_marginStart="2dp"
+															android:layout_marginTop="2dp"
+															android:gravity="center"
+															android:background="@drawable/rectangle" />
+										
+													</LinearLayout>
+										
+												</LinearLayout>
+										
+											</LinearLayout>
+										
+											<SeekBar
+												android:id="@+id/seekBar"
+												android:layout_width="match_parent"
+												android:layout_height="wrap_content"
+												android:max="255" />
+										
+										</LinearLayout>
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="dialog_more_information">dialog_more_information.xml</a></li>
+							<p>								
+								<p class="flip" id="dialog_more_information">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_dialog_more_information" style="display: none;">
+									<p><pre class="brush: xml;">																												
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define the layout of application's (pop-up) dialog. When user clicks on the "More Information"
+										* (overflow) menu option, a "dialog" (fragment) appears displaying some text and two buttons.
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+											android:orientation="vertical"
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:background="@android:color/holo_blue_dark" >
+										
+											<TextView
+												android:id="@+id/dialog_message"
+												android:layout_width="match_parent"
+												android:layout_height="match_parent"
+												android:layout_marginTop="16dp"
+												android:layout_marginLeft="4dp"
+												android:layout_marginRight="4dp"
+												android:layout_marginBottom="4dp"
+												android:text="@string/dialog_message"
+												android:textColor="@color/white"
+												android:gravity="center" />
+										
+											<TextView
+												android:id="@+id/dialog_action_message"
+												android:layout_width="match_parent"
+												android:layout_height="match_parent"
+												android:layout_marginTop="4dp"
+												android:layout_marginLeft="4dp"
+												android:layout_marginRight="4dp"
+												android:layout_marginBottom="16dp"
+												android:text="@string/dialog_action_message"
+												android:textColor="@color/white"
+												android:gravity="center" />
+										
+											<LinearLayout
+												android:orientation="horizontal"
+												android:layout_width="match_parent"
+												android:layout_height="match_parent"
+												android:layout_gravity="center_horizontal">
+										
+												<Button
+													android:id="@+id/dialog_visit_moma_button"
+													android:layout_width="match_parent"
+													android:layout_height="wrap_content"
+													android:layout_weight="1"
+													android:textColor="@color/white"
+													android:text="@string/dialog_visit_moma_button" />
+										
+												<Button
+													android:id="@+id/dialog_not_now_button"
+													android:layout_width="match_parent"
+													android:layout_height="wrap_content"
+													android:layout_weight="1"
+													android:textColor="@color/white"
+													android:text="@string/dialog_not_now_button" />
+										
+											</LinearLayout>
+										
+										</LinearLayout>										
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="menu_modern_art_ui">menu_modern_art_ui.xml</a></li>
+							<p>								
+								<p class="flip" id="menu_modern_art_ui">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_menu_modern_art_ui" style="display: none;">
+									<p><pre class="brush: xml;">									
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define the available option(s) of the "overflow" (options) menu.
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<menu xmlns:android="http://schemas.android.com/apk/res/android">
+										
+											<item
+												android:id="@+id/overflow_menu"
+												android:title="@string/overflow_menu"
+												android:orderInCategory="100"
+												android:showAsAction="never" />
+										
+										</menu>																										
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="colors">colors.xml</a></li>
+							<p>								
+								<p class="flip" id="colors">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_colors" style="display: none;">
+									<p><pre class="brush: xml;">									
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define "colour" resources.
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<resources>
+										
+											<color name="blue"   type="color">#0000ff</color>
+											<color name="purple" type="color">#800080</color>
+											<color name="green"  type="color">#00ff00</color>
+											<color name="orange" type="color">#ffa500</color>
+											<color name="red"    type="color">#ff0000</color>
+											<color name="yellow" type="color">#ffff00</color>
+											<color name="white"  type="color">#ffffff</color>
+											<color name="black"  type="color">#000000</color>
+											<color name="gray"   type="color">#808080</color>
+										
+											<color name="holo_blue_dark"    type="color">@android:color/holo_blue_dark</color>
+											<color name="holo_blue_light"   type="color">@android:color/holo_blue_light</color>
+										
+										</resources>	
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="strings">strings.xml</a></li>
+							<p>								
+								<p class="flip" id="strings">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_strings" style="display: none;">
+									<p><pre class="brush: xml;">									
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define "string" resources.
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<resources>
+										
+											<string name="app_name">Modern Art UI</string>
+											<string name="overflow_menu">More Information</string>
+											<string name="dialog_visit_moma_button">Visit MOMA</string>
+											<string name="dialog_not_now_button">Not Now</string>
+											<string name="dialog_message">inspired by the works of Modern Art masters such as Piet Mondrian and Ben Nicholson</string>
+											<string name="dialog_action_message">click below to learn more !</string>
+											<string name="url">http://www.moma.org</string>
+										
+										</resources>
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>
+						<ul>
+							<li><a name="styles">styles.xml</a></li>
+							<p>								
+								<p class="flip" id="styles">-- click to show/hide source code</p>
+								<div class="source_code_panel" id= "panel_styles" style="display: none;">
+									<p><pre class="brush: xml;">									
+										<?xml version="1.0" encoding="utf-8"?>
+										<!--
+										* Define "style" resources.
+										*
+										* author Aristotelis Metsinis (aristotelis.metsinis@gmail.com)
+										* version 1.0
+										* since 2015-06-04
+										* see http://www.thinkageek.com/metsinis/
+										-->
+										<resources>
+										
+											<!-- Base application theme. -->
+											<style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+												<item name="android:logo">@android:color/transparent</item>
+												<item name="android:actionBarStyle">@style/ActionBar</item>
+												<item name="android:popupMenuStyle">@style/PopupMenu</item>
+												<item name="android:dropDownListViewStyle">@style/DropDownListView</item>
+												<item name="android:actionBarWidgetTheme">@style/ThemeMenuStyling</item>
+											</style>
+										
+											<!-- "ActionBar" style. -->
+											<style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+												<item name="android:background">@color/holo_blue_dark</item>
+											</style>
+										
+											<!-- "PopupMenu" panel style. -->
+											<style name="PopupMenu" parent="@android:style/Widget.Holo.ListPopupWindow">
+												<item name="android:popupBackground">@drawable/menu_background_styling</item>
+											</style>
+										
+											<!-- "DropDownListView" selector style. -->
+											<style name="DropDownListView" parent="@android:style/Widget.Holo.ListView.DropDown">
+												<item name="android:listSelector">@drawable/menu_background_styling_selectable</item>
+											</style>
+										
+											<!-- Theme, which applies the styles that have been already configured above, at runtime. -->
+											<style name="ThemeMenuStyling" parent="@android:style/Theme.Holo">
+												<item name="android:popupMenuStyle">@style/PopupMenu</item>
+												<item name="android:dropDownListViewStyle">@style/DropDownListView</item>
+											</style>
+										
+											<!-- Add fade-in/out animations to the style of a "dialog" fragment. -->
+											<style name="dialog_animation_fade" >
+												<item name="android:windowEnterAnimation">@anim/dialog_fade_in</item>
+												<item name="android:windowExitAnimation">@anim/dialog_fade_out</item>
+											</style>
+										
+										</resources>									
+									</pre></p>
+								</div>
+							</p>	
+						</ul>									
+						<hr>						
+					</div>                               
+				</td>
+			</tr>
+		</table>    	
+	</body>
+</html>

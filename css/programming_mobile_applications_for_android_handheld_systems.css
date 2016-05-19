@@ -1,0 +1,17 @@
+.flip{
+    background-color: #f1f1f1;
+	color: #39798F;
+	cursor: pointer;
+}
+
+.source_code_panel{
+    background-color: #f1f1f1;
+}
+
+.game_href_paragraph{
+    background-color: #f1f1f1;
+}
+
+.game_href_link{
+    text-decoration: none;
+}

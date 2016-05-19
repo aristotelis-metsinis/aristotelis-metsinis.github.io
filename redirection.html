@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<style>
+			p.courier{ font-family: "Courier New", Courier; }
+		</style>
+		<script language="JavaScript" type="text/javascript">  
+			var count=11  
+			var redirect="http://www.thinkageek.com/metsinis/"  
+  
+			function countDown()
+			{  
+				if ( count <= 0 )
+				{  
+					window.location = redirect;  
+				}
+				else
+				{  
+					count--;  
+					document.getElementById( "timer" ).innerHTML = "You will be redirected in " + count + ( count > 1 ? " seconds." : " second." )  
+					setTimeout( "countDown()", 1000 )  
+				}  
+			}  
+		</script>  
+	</head>
+	<body>	
+		<p class="courier">
+		</br></br>
+		My webpages have moved. Please update your bookmarks for the new site.  
+		<span id="timer">  
+			<script>  
+				countDown();  
+			</script>  
+		</span>
+		</p>
+		<hr>
+		<p class="courier">
+		If not, click on <a href="http://www.thinkageek.com/metsinis/">http://www.thinkageek.com/metsinis/</a>
+		</p>
+	</body>
+</html>	

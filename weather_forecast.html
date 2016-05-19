@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">            
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el">
+	<!--
+	/** ----------------------------------------------------------------------------------------------------------------------*/    
+	/**
+	* It’s easy to use. Just plop this code into HTML:
+	* 
+	* <iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat=42.3583&lon=-71.0603&name=Downtown Boston"> </iframe>
+	* 
+	* The embed takes a few parameters: the longitude and latitude of the point you want the forecast for, the name of the 
+	* location as you want it to appear at the top of the embed, and the width of the embed (which can either be in pixels or 
+	* percentage). The height is fixed at 245px. 
+	*
+	* There are also a few of optional parameters:
+	* 
+	* <iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat=42.3583&lon=-71.0603&name=Downtown Boston&color=#00aaff&font=Georgia&units=uk"> </iframe>
+	*
+	* You can change the font from the default "Helvetica", the color of the temperature bars, and the localization of the units;
+	* "us" for Fahrenheit and mph, "uk" for Celsius and mph, "ca" for Celsius and km/h, and "si" for Celsius and m/s.
+	*/
+	/** ----------------------------------------------------------------------------------------------------------------------*/
+	-->
+	<head>
+		<title>Homepages of Aristotelis Metsinis...</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, miscellaneous web site links" />
+		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets" />
+		<meta name="author"      content="Aristotelis Metsinis" />  
+		
+		<link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
+		<link rel="stylesheet" type="text/css" href="css/ccs_1.css" />
+		
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>	
+		<script src="js/weather_report.js"></script>
+	
+		<link rel="stylesheet" type="text/css" href="css/weather_report.css">
+				
+		<script type="text/javascript"> 
+			if(top.location == self.location) 
+			{ 
+				top.location.href = 'index.html'+'?redirectedFrom=weather_forecast.html'; 
+			} 
+		</script>  
+	</head>
+	<body>
+		<br />
+		<table width="100%" border="0" cellpadding="10">
+			<tr>
+				<td>  
+					<p class="documentDescription">Weather Forecast</p>		
+					<div id="weather_forecast_div" class="plain">
+						<p>A "weather" widget by "<i>forecast.io</i>"; a concise little display of current conditions, the weekly forecast, and weather alerts (if any) for whatever location you specify. Just type the name of the location in the following form. Click also on the upper right "<i>forecast.io</i>" link to view more detailed forecast data and graphs for this location.
+							<br>&nbsp;<br>							
+							<div id="forecast_panel">    
+								<table id="forecast_table">
+									<tr>
+										<td width="20%" id="forecast_table_selection_col">
+											<table id="forecast_selection_table">
+												<tr>
+													<td><input type="text" id="forecast_address" placeholder=" Enter a location..."/></td>
+												</tr>
+												<tr>								
+													<td><input type="button" id="forecast_button" value="refresh weather report" onclick="locate_address()"/></td>
+												</tr>
+											</table>
+										</td>			
+										<td width="80%" id="forecast_col">
+											<div id="forecast_div">											
+												<iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat=38.009257&lon=23.801755&name=Thessalias Str, Halandri - Athens, Greece&text-color=black&color=#e1ddce&font=%27Lucida Grande%27%2CVerdana%2CLucida%2CHelvetica%2CArial%2Csans-serif&units=ca"></iframe>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>																															
+						</p>																
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

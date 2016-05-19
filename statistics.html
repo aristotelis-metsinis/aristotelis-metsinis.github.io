@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el">  
+	<head>
+		<title>Homepages of Aristotelis Metsinis...</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, miscellaneous web site links" />
+		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets" />
+		<meta name="author"      content="Aristotelis Metsinis" />
+
+		<link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
+		<link rel="stylesheet" type="text/css" href="css/ccs_1.css" />
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" /> 
+		<script type="text/javascript"> 
+			if(top.location == self.location) 
+			{ 
+				top.location.href = 'index.html'+'?redirectedFrom=statistics.html'; 
+			} 
+		</script>               
+	</head>    
+	<body>
+    	<applet code="statsapplet.class" name="statistics" width="1" height="1" archive="statistics.jar" id="statistics">Your browser is not Java enabled.</applet>
+		<br />
+        <table width="100%" border="0" cellpadding="10">
+	  		<tr>
+    			<td>                
+                	<p class="documentDescription">Statistical Analysis of Experimental Data</p>             
+    				<div class="plain">			
+        				<p>
+                        	The statistical analysis of experimental data is an important requirement of an engineer. In the context of this project we were required to develop a Java applet program which computes statistical information based on an input data file consisting of (x, y) data observation pairs. The following notes present a briefly introduction (background) on the statistical topics that the applet computes.
+                      	</p>
+                        <br />
+                        <p><u>Process your data sample &amp; obtain your data sample statistics</u></p>
+                        <p>
+                        	If you would like to process your data samples, it is required to store data as (x,y) pairs in a text (.txt) file and process it by opening 
+<i>file</i> menu and chossing <i>open</i>. Particularly, the file must consist of rows of data. Each row must have two columns separated by space(s). Each row  represents a (x,y) sample, where the first and the second column contain the "x" and "y" values of your data respectively.
+						</p>
+                        <br />
+						<p><u>Introduction</u></p>
+						<p>
+                        	The progress of the science and specifically of the engineering science has been closely related to successful experimentation. An experiment can be classified as of <i>deterministic</i> or <i>random-non deterministic</i>.
+                      	</p>
+						<p>
+                        	The former class is composed by experiments where the observable consistently gives the same value each time the experiment takes place under the same conditions. An experiment that consists of calculation of the capacitance, inductance and resistance elements of an analog filter, when we apply a 
+specific voltage waveform at input and we observe a specific voltage waveform at output, can be assumed as deterministic.
+						</p>
+						<p> 
+                        	The later class consists of experiments where each time the experiment is performed, a different outcome may be observed although the conditions are the same. The experiment that consists of sending a particular string of e.g. 1000 bits into a link and observing the bits received at the far end in error can be assumed as non-deterministic experiment. The interpretation of such experiments can be developed by means of statistical methods.
+                        </p>
+                        <p>
+                        	Suppose now, that an engineer wishes to discover the lifetime of specific type devices working under real time conditions. Ideally, the experimenter would like to take every such a device that exists and record its lifetime. This collection of results would then represent the <i>population</i> of lifetimes. However, experimental limitations usually prevent values for the entire population being known. The best that can be hoped for is that a collection of observations (<i>sampling</i>) taken from the population will enable good estimates (e.g. <i>mean</i>, <i>variance</i>, etc.) of the unknown population to be determined. When the observations are collected in such a way that each population value has an equal chance of being included, the <i>sample</i> is said to be <i>random</i> and the estimates deduced from the sample are called <i>sample estimates</i> (e.g. sample mean, sample variance and sample standard deviation, etc.).
+                     	</p>
+						<p>
+                        	Specifically, numbers computed from a data set to help us to estimate its <i>relative frequency</i> histrogram are called <i>numerical descriptive measures</i>. Those measures fall into three categories: 
+                     		<ul>
+                            	<li> a. measures of <i>central tendency</i> which provide an estimation of the location of the centre of the relative 
+frequency distribution.</li>
+								<li> b. measures of <i>variation</i> which provide a measurement of data’s spread.</li>
+                                <li> c. measures of <i>relative standing</i> which describe the relative position of an observation within the data set.</li>
+                         	</ul>
+                     	</p>
+						<p>
+                        	Numerical descriptive measures computed from a sample data are called <i>statistics</i> whereas those computed from the population are called <i>parameters.</i> However, we might made a somewhat arbitrary distinction between data analysis procedures that are <i>model independent</i> (descriptive statistics, e.g. mean, variance, correlation, etc.) and those that are <i>model dependent</i> (e.g. Least squares fits, etc.).
+                     	</p>
+						<br /> 
+						<p><u>Sample mean</u></p>
+						<p>
+                        	Perhaps, the most common measure of central tendency is the <i>sample (arithmetic) mean</i>, defined as follows: The sample mean of a set of "n" observations <img src="img/image97K.JPG" alt="SampleIcon" border=0 height=28 width=77 align="ABSCENTER"> is the average of the observations: <img src="img/imageR3L.JPG" alt="SampleMeanEquationIcon" border=0 height=49 width=80 align="ABSCENTER"> (1).                      	
+	                        <ul>
+                            	<li> a. The sample mean estimates the value around which central clustering occurs.</li>
+                                <li> b. For values drawn from a probability distribution with very broad "tails", the mean may converge poorly, or not at all, as the number of sampled points is increased. That is the mean is often sensitive to vary large or very small observations. </li>
+                         	</ul>
+                    	</p>
+						<br /> 
+						<p><u>Sample standard deviation</u></p>
+						<p>
+                        	The most commonly used measures of data variation are the <i>sample variance</i> and the <i>sample standard deviation</i>, defined as follows: The sample variance of a set of "n" observations <img src="img/imageR03.JPG" alt="SampleIcon" border=0 height=28 width=77 align="ABSCENTER"> is defined to be
+<img src="img/imageUN5.JPG" alt="SampleVarianceIcon" border=1 height=52 width=293 align="ABSCENTER"> (2).
+							<ul>
+                            	<li> The latter expression in (2) is more convenient for calculation as rounding errors tend to be less a problem.</li>
+                            </ul>
+                      	</p>
+                        <p>
+                        	The sample standard deviation of "n" observations is equal to the square root of the sample variance: <img src="img/image52T.JPG" alt="SampleStandardDeviationIcon" border=0 height=55 width=197 align="ABSCENTER"> (3).
+                        </p>
+						<p>
+                        	If data set has an approximately mound-shaped (e.g. <i>Gaussian</i>) relative frequency distribution, then the following rules of thumb may
+ be used to describe the data set: 
+ 							<ul>
+                        		<li> i. Approximately 68% of the observations will lie within 1 standard deviation of their mean (i.e. within the interval <img src="img/imageJA6.JPG" alt="DeviationIcon" border=0 height=21 width=36 align="ABSCENTER">).</li>
+                            	<li> ii. Approximately 95% of the observations will lie within 2 standard deviations of their mean (i.e. within the interval <img src="img/imageFAH.JPG" alt="Deviation2Icon" border=0 height=21 width=43 align="ABSCENTER">).</li>
+                            	<li> iii. Almost all the observations will lie within 3 standards deviation of their mean (i.e. within the interval <img src="img/imageKUD.JPG" alt="Deviation3Icon" border=0 height=21 width=43 align="ABSCENTER">).</li>
+                      		</ul>
+                    	</p>
+						<p>
+                        	There is a long discussion about why the denominator in (2) is "(n-1)" instead of "n". However, it is beyond the scope of this tutorial to present such a discussion. On the other hand it might be worth mentioning that  it can be shown that gives a better estimate of the population variance being an <i>unbiased estimator</i>.
+                      	</p>
+                        <p>
+                        	As the mean depends on the first moment of data, so the variance and the standard deviation depend on the second moment. It is not uncommon
+ to be dealing with a distribution whose second moment does not exist (i.e. infinite). In that case the variance as well as the standard deviation are useless as measures of the data’s width around its central value. The values obtained by (2) &amp; (3) will not converge with increased number of points nor show any consistency from data set to data set drawn from the same distribution. Higher moments involving higher power of the input data are almost always less robust that lower moments. 
+ 						</p>
+						<br /> 
+						<p><u>Skewness &amp; Kurtosis</u></p>
+						<p>
+                        	The third moment of data is referred as <i>skewness</i> and the fourth moment of data is referred as <i>kurtosis</i>. Particularly, are defined as follows: </p>
+                       	<p>
+                            The skewness of a set of "n" observations <img src="img/image4VC.JPG" alt="SampleIcon" border=0 height=28 width=77 align="ABSCENTER"> is defined to be <img src="img/image6SF.JPG" alt="SkewnessIcon" border=0 height=60 width=151 align="ABSCENTER"> (4).
+                      	</p>
+                        <p>
+                        	The kurtosis of a set of "n" observations <img src="img/image4VC.JPG" alt="SampleIcon" border=0 height=28 width=77 align="ABSCENTER"> is defined to be <img src="img/image8EA.JPG" alt="KurtosisIcon" border=0 height=65 width=183 align="ABSCENTER"> (5).
+                       	</p>
+                        <p>
+                        	<ul>
+                            	<li> a. The skewness characterises the degree of asymmetry of a distribution around its mean - the shape of distribution. Of course any set of "n" observations is likely to give a non-zero value for (4), even if the underlying distribution is in fact symmetrical (zero skewness). For (4) to be meaningful we need to have some idea of the standard deviation of the underlying distribution as an estimator of the skewness which depends on the shape and rather on the tail of the underlying distribution.</li>
+                          		<li> b. A positive skewness signifies a distribution with an asymmetry tail extending out towards more positive "x", whereas a negative skewness signifies a distribution with an asymmetry tail extending out towards more negative "x".</li>
+                                <li> c. As mentioned, the mean is often sensitive to "extreme" - outlier observations. Consequently, it will shift towards the direction of skewness (i.e. the tail of the distribution).</li>
+                                <li> d. As being with skewness, kurtosis is also a non-dimensional quantity. It measures the relative <i>peakendness</i> or <i>flatness</i> of a distribution relative to a normal distribution. Actually, the "-3" term in (5) makes the kurtosis zero for a normal distribution. A distribution with positive kurtosis is termed <i>leptokurtic</i> whereas a distribution with negative kurtosis is termed as <i>platykurtic</i>. An in-between distribution is referred as <i>mesokurtic</i>.</li>
+                        	</ul>
+                   		</p>
+						<br /> 
+						<p><u>Least squares method</u></p>
+						<p>
+                        	One of the most important applications of statistics involves estimating the mean value of a dependent-response variable "y" or predicting some future value of "y" based on the knowledge of a set of related independent (in algebraic rather than probabilistic terms) variables <img src="img/imageNOV.JPG" alt="RandomVariablesIcon" border=0 height=21 width=71 align="ABSCENTER">. The object is to develop a prediction equation (or model) that expresses "y" as a function of the independent variables <img src="img/imageNOV.JPG" alt="RandomVariablesIcon" border=0 height=21 width=71 align="ABSCENTER">, enabling the prediction of "y" for specific values of the independent variables.
+                      	</p>
+                        <p>
+                        	The models used to relate a dependent variable "y" to the independent variables <img src="img/imageNOV.JPG" alt="RandomVariablesIcon" border=0 height=21 width=71 align="ABSCENTER"> are called <i>regression models</i> expressing the mean value of "y" for given values of <img src="img/imageNOV.JPG" alt="RandomVariablesIcon" border=0 height=21 width=71 align="ABSCENTER"> as a linear function of a set of known parameters.
+                      	</p>
+                        <p>	
+                        	In the context of this project, we introduce the <i>simple linear regression model</i> that relates "y" to a single independent variable "x" and particularly we fit this model to a set of data using the <i>method of least squares</i>.
+                       	</p>
+                        <p>
+                        	A simple linear regression model makes the assumption that the mean value of "y" for a given value of "x" graphs as a straight line and that points deviate about this <i>line of means</i> by random amount <img src="img/image1IS.JPG" alt="EpsilonIcon" border=0 height=15 width=13 align="ABSCENTER">: <img src="img/imageG7D.JPG" alt="LinearRegressionIcon" border=0 height=28 width=115 align="ABSCENTER"> (6) where <img src="img/image0VS.JPG" alt="VitaI0con" border=0 height=21 width=19 align="ABSCENTER">: the point where the line intercepts y-axis and <img src="img/image9CJ.JPG" alt="Vita1Icon" border=0 height=21 width=17 align="ABSCENTER">
+: slope of the line.
+						</p>
+						<p>
+                        	In order to fit a simple linear regression model to a set of data, we must find estimators for the unknown parameters <img src="img/image0VS.JPG" alt="VitaI0con" border=0 height=21 width=19 align="ABSCENTER">, <img src="img/image9CJ.JPG" alt="Vita1Icon" border=0 height=21 width=17 align="ABSCENTER"> of the line of means, making the following assumptions about <img src="img/image1IS.JPG" alt="EpsilonIcon" border=0 height=15 width=13 align="ABSCENTER">:
+							<ul>
+                            	<li> a. The average of  errors  over an infinitely long series of experiments is zero for each of the independent variable "x" so 
+that <img src="img/image5PB.JPG" alt="ErrorIcon" border=0 height=21 width=109 align="ABSCENTER"> (7).</li>
+                                <li> b. The variance of the probability distribution of <img src="img/image1IS.JPG" alt="EpsilonIcon" border=0 height=15 width=13 align="ABSCENTER"> is constant for all settings of the independent variable "x".</li>
+								<li> c. The probability distribution of <img src="img/image1IS.JPG" alt="EpsilonIcon" border=0 height=15 width=13 align="ABSCENTER"> is normal.</li>
+                                <li> d. The errors associated with any two different observations are independent.</li>
+                      		</ul>
+                     	</p>
+						<p>
+                        	In actual practice, the assumptions need not hold exactly in order for least squares estimators and test statistics (e.g. chi squared) need to possess the measure of reliability that we would expect from a regression analysis.
+                      	</p>
+                        <p>
+                        	In order to choose the "best fitting" line for a set of data, we shall estimate <img src="img/image0VS.JPG" alt="VitaI0con" border=0 height=21 width=19 align="ABSCENTER"> and <img src="img/image9CJ.JPG" alt="Vita1Icon" border=0 height=21 width=17 align="ABSCENTER"> by using the <i>method of least squares</i>. That particularly, method has the significant property of being the only line having the sum of squares of the deviations minimum although many lines exist for which the sum of deviations (errors) is equal to zero.
+                      	</p>
+                        <p>
+                        	To find the least squares line for a set of data, lets assume that we have a sample of "n" data points <img src="img/imageDL8.JPG" alt="DataIcon" border=0 height=23 width=121 align="ABSCENTER">. The straight-line model for the response "y" in terms of "x" is given by (6). The line of means is given by (7) and the fitted line is represented as: <img src="img/imageT3I.JPG" alt="LeastSquareIcon" border=0 height=31 width=92 align="ABSCENTER"> (8) where <img src="img/imageE2I.JPG" alt="LeastSquareParameterIcon" border=0 height=23 width=15 align="ABSCENTER"> is an estimator of "E(y)" and a predictor of some future value of "y" 
+which would be obtained by substituting <img src="img/image5NI.JPG" alt="LeastSquarexParameterIcon" border=0 height=24 width=16 align="ABSCENTER"> into the (8), whereas <img src="img/imageH0J.JPG" alt="LeastSquareParametersIcon" border=0 height=27 width=43 align="ABSCENTER"> are estimators of <img src="img/image0VS.JPG" alt="VitaI0con" border=0 height=21 width=19 align="ABSCENTER"> and <img src="img/image9CJ.JPG" alt="Vita1Icon" border=0 height=21 width=17 align="ABSCENTER"> respectively.
+						</p>
+						<p>
+                        	The prediction equation (8) is called the <i>least squares line</i> if the <img src="img/imageH0J.JPG" alt="LeastSquareParametersIcon" border=0 height=27 width=43 align="ABSCENTER"> quantities make the sum of squares of the deviations of "y" about the predicted values for all of the "n" data values minimum.
+                     	</p>
+                        <p>
+                        	It is easily proved (by setting the two partial derivatives of the sum of squares of deviations with respect to <img src="img/imageH0J.JPG" alt="LeastSquareParametersIcon" border=0 height=27 width=43 align="ABSCENTER"> equal to zero respectively and solving the resulting linear system) that: 
+                            <ul>
+                            	<li><img src="img/image3T1.JPG" alt="SlopeIcon" border=0 height=52 width=131 align="ABSCENTER"> (9) </li>
+                                <li><img src="img/imageOSM.JPG" alt="YaxisIcon" border=0 height=31 width=233 align="ABSCENTER"> (10) where,</li>
+                                <li><img src="img/imageOTG.JPG" alt="SlopeParameter1Icon" border=0 height=71 width=317 align="ABSCENTER"> (11) and </li>
+                                <li><img src="img/imageKKL.JPG" alt="SlopeParameter2Icon" border=0 height=77 width=259 align="ABSCENTER"> (12)</li>
+                          	</ul>
+                      	</p>
+                        <p>
+                        	The method of least squares line fits a straight line through any set of points even when the relationship between the variables is not linear. 				</p>
+                        <p>
+                        	Concluding this section it might be worth mentioning a number of properties of the least squares method:
+                            <ul>
+                            	<li> i. The mean of the sampling distribution of <img src="img/imageT5R.JPG" alt="Vita1LinearIcon" border=0 height=25 width=19 align="ABSCENTER">is given by: <img src="img/imageTVI.JPG" alt="Vita1LinearMeanIcon" border=0 height=51 width=292 align="ABSCENTER"> (13) whereas the variance by: <img src="img/imageD6S.JPG" alt="Vita1LinearVarianceIcon" border=0 height=52 width=92 align="ABSCENTER"> (14).</li> 
+                                <li> ii. An estimator of the variance of the random error <img src="img/image1IS.JPG" alt="EpsilonIcon" border=0 height=15 width=13 align="ABSCENTER"> can be computed by the sample data and is given by <img src="img/imageC68.JPG" alt="ErrorVarianceIcon" border=0 height=68 width=233 align="ABSCENTER"> (15) where <img src="img/imageCUC.JPG" alt="ErrorParameterIcon" border=0 height=77 width=263 align="ABSCENTER"> (16) and "(n-2)" the degrees of freedom for error. It is likely to be found that the most of the observations lie within "2s" or "1.22" of the least squares line.</li>
+                                <li> iii. A way to measure the association between two variables "y" and "x" is to compute the <i>Pearson product – moment correlation coefficient</i> which provides a quantitative measure of the strength of the linear relationship between "x" and "y" in the sample. It is computed as follows: <img src="img/imageKLN.JPG" alt="PearsonIcon" border=0 height=57 width=105 align="ABSCENTER"> (17) and it is always between  no matter the units of "x", "y" are. A value near or equal to zero implies little or no linear relationship between "x" and "y". The closer to <img src="img/image90A.JPG" alt="PlusMinusOneIcon" border=0 height=17 width=23 align="ABSCENTER">, the stronger the linear relationship. If exactly <img src="img/image90A.JPG" alt="PlusMinusOneIcon" border=0 height=17 width=23 align="ABSCENTER">, all points fall exactly on the least squares line. Positive values imply that "y" increases as "x" increases. Negative values imply that "y" decreases 
+as "x" increases. In practice, fitting a straight line through "n" points should only be considered when the correlation coefficient satisfies <img src="img/imageE65.JPG" alt="PearsonConditionIcon" border=0 height=44 width=99 align="ABSCENTER">. Note that high correlation does not imply that a change in "x" causes a change in "y" but that a linear trend may exist between "x" and "y". It is easy to show that: <img src="img/imageOMO.JPG" alt="Pearson2Icon" border=0 height=56 width=93 align="ABSCENTER"> (18)</li>
+								<li> iv. A convenient way to measure how well the least squares equation <img src="img/imageT3I.JPG" alt="LeastSquareIcon" border=0 height=31 width=92 align="ABSCENTER"> performs as a predictor of "y" is to compute the following quantity: <img src="img/image0N4.JPG" alt="DeterminationIcon" border=0 height=73 width=168 align="ABSCENTER"> (19) called <i>coefficient of determination</i>. It can be shown that it is equal to the square of the simple linear correlation coefficient. If "x" contributes little or no information for the prediction of "y" then the determination coefficient will be nearly or equal to zero. If "x" does 
+contribute information, determination coefficient will be positive or "1" in the case that all the points fall on the least squares line.
+								</li>
+                       		</ul>
+                    	</p>
+						<br /> 
+						<p><u>Chi-Squared statistics</u></p>
+						<p>
+                        	As mentioned, the assumptions made in the previous section for the least squares estimators need not hold in order and test statistics like <i>chi-squared statistics</i> may be used to estimate the <i>goodness of fit</i> of the data to the e.g. least squares method model.
+                       	</p> 
+                        <p>
+                        	We may assume that the chi-squared statistics between the least squares line and the data points is computed by the following relation: <img src="img/image4U0.JPG" alt="ChiSquareIcon" border=0 height=52 width=136 align="ABSCENTER"> (20).
+                        </p>
+                        <p>
+                        	In order to estimate the significance of the chi-squared statistics, we shall apply the <i> incomplete gamma </i> function <img src="img/image4Q5.JPG" alt="GammaIcon" border=0 height=33 width=83 align="ABSCENTER">, where "a" the degrees of freedom which is equal to [n-number of constraints] (the usual case is number of constants=1) and  "x<sup>2</sup>" the chi-squared statistics. The incomplete gamma function is defined by: <img src="img/imageMA1.JPG" alt="GammaEquationIcon" border=0 height=55 width=301 align="ABSCENTER">, where <img src="img/imageEDJ.JPG" alt="GammaParameterIcon" border=0 height=55 width=121 align="ABSCENTER">, having the following properties:
+                            <ul>
+                            	<li> i. <img src="img/imageS3M.JPG" alt="Gamma1Icon" border=0 height=21 width=109 align="ABSCENTER"></li>
+                                <li> ii. <img src="img/imageR0J.JPG" alt="Gamma2Icon" border=0 height=21 width=53 align="ABSCENTER"></li>
+                                <li> iii. <img src="img/imageI37.JPG" alt="Gamma3Icon" border=0 height=32 width=84 align="ABSCENTER"></li>
+                                <li> iv. <img src="img/image5PN.JPG" alt="Gamma4" border=0 height=21 width=252 align="ABSCENTER"></li>
+                          	</ul>
+                      	</p>
+						<p>
+                        	Except for the special case where "a" is an integer, we can not obtain a close form for the integral of the gamma density function. Consequently, the cumulative distribution function must be obtained using approximation procedures.
+                      	</p>
+              		</div>
+              	</td>
+          	</tr>
+     	</table>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el"> 
+	<head>
+		<title>Homepages of Aristotelis Metsinis...</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, miscellaneous web site links" />
+		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets" />
+		<meta name="author"      content="Aristotelis Metsinis" />
+
+		<link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
+		<link rel="stylesheet" type="text/css" href="css/ccs_1.css" />
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />  
+		<script type="text/javascript"> 
+			if(top.location == self.location) 
+			{ 
+				top.location.href = 'index.html'+'?redirectedFrom=erlang.html'; 
+			} 
+		</script>              
+	</head>    
+	<body>
+    	<applet code="erlang.class" name="erlang" width="1" height="1" archive="erlang.jar" id="erlang">Your browser is not Java enabled.</applet>
+		<br />
+        <table width="100%" border="0" cellpadding="10">
+	  		<tr>
+    			<td>                
+                	<p class="documentDescription">Erlang's Loss Formula</p>             
+    				<div class="plain">			
+        				<p>
+                        	Important feature in the theory of the Telecommunication networks is the Erlang's Loss formula which computes the probability that a "call offered to a group of circuits finds that all circuits are busy". In the context of this project we were required to develop a Java either applet or application program which calculates those probabilities for a given set of circuit groups in a given range of offered traffic load.
+                      	</p>
+                        <br />
+                        <p><u>Introduction</u></p>
+                        <p>
+                        	Lets assume a <i>M/M/r/r queuing system</i>. Namely a system of <i>r servers</i> circuits where the arrival process and the <i>service time</i> follow a <i>Poisson distribution</i> with <i>mean arrival rate <font face="Symbol">l</font></i> and <i>mean service time 1/<font face="Symbol">m</font></i>  respectively. The system does not provide waiting room. Thereby all blocked calls are cleared.
+                       	</p>
+                        <p>
+                        	It can be proved that the <i>probability that all servers are busy</i> is given by the <i>Erlang B</i> formula which is defined as follows: <img src="img/imageNJE.JPG" alt="ErlangEquationIcon" border=0 height=92 width=109 align="middle">, where <i>a=<font face="Symbol">l</font>/<font face="Symbol">m</font></i> denotes the traffic load, whose units are Erlangs. It might be worth mentioning that the <i>Erlang's Loss Formula</i> (Erlang B) also <i>computes</i> the probabilities of blocking for <i>M/G/r/r queuing systems</i>, where the service times are independent identically distributed according to some general distribution G.
+                     	</p>
+						<p>
+                        	It is useful to note the recursive form for the Erlang B formula, which simplifies the numerical evaluation: <img src="img/imageSRH.JPG" alt="Erlang2Icon" border=0 height=48 width=167 align="middle">, where E(r,a) is the probability of blocking, "a" the traffic offered in Erlangs, "r" the number of circuits and E(0,a)=1.
+                     	</p>
+                        <p>
+                        	Some useful characteristics can be observed by examing the Erlang B formula:
+                            <ul>
+                            	<li>1. For a given blocking probability, the traffic carried by the system increases as the number of circuits increases.</li>
+                                <li>2. For a given number of circuits, blocking probability increases as traffic load increases.</li>
+                          	</ul>                        
+                     	</p>                                                                                                						    
+					</div>                                                   
+                </td>
+  			</tr>
+     	</table>
+	</body>            
+</html>

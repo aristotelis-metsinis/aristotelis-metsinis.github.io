@@ -1,0 +1,615 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">      
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el">   
+	<head>
+		<title>Homepages of Aristotelis Metsinis...</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, miscellaneous web site links" />
+		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets" />
+		<meta name="author"      content="Aristotelis Metsinis" /> 
+
+		<link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
+		<link rel="stylesheet" type="text/css" href="css/ccs_1.css" />
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<script type="text/javascript"> 
+			if(top.location == self.location) 
+			{ 
+				top.location.href = 'index.html'+'?redirectedFrom=sql.html';
+			}
+		</script>
+		
+		<style type="text/css">
+			.sc0 {
+			}
+		</style>  
+		
+		<!-- Include required JS files -->
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+		<!--
+			At least one brush, here we choose JS. You need to include a brush for every 
+			language you want to highlight
+		-->
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushSql.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushPlain.js"></script>
+		<!-- Include *at least* the core style and "eclipse" theme -->
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/>
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemeEclipse.css"/>
+		<!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+		<script type="text/javascript">SyntaxHighlighter.defaults['toolbar'] = false;SyntaxHighlighter.all();</script>						
+	</head>
+	<body>
+		<br />
+        <table width="100%" border="0" cellpadding="10">
+	  		<tr>
+    			<td>                
+                	<p class="documentDescription">SQL Cheat Sheet</p>             
+    				<div class="plain">			
+       				 	<p>
+                        	This page contains a sample of "general purpose" SQL script templates.
+                      	</p>
+		<br/>
+		<p><u>Quick Index</u></p>
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr>
+					<td style="width:255px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#create_table">create table</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#create_table_index">create table index</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#create_unique_table_index">create unique table index</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:255px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#create_table_sequence">create table sequence</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#select_values_from_table">select values from table</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#update_table_values">update table values</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:255px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#insert_table_values">insert table values</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#add_table_column">add table column</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#alter_column_size">alter column size</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:255px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#alter_table_sequence_cache_size">alter table sequence cache size</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#delete_table_values">delete table values</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#drop_table">drop table</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:255px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#drop_table_column">drop table column</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#drop_index">drop index</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#drop_sequence">drop sequence</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:255px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#truncate_table">truncate table</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#show_db_jobs">show db jobs</a></li>
+						</ul>
+					</td>
+					<td style="width:255px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#execute_PL_SQL_block">pl/sql block execution</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:255px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#show_long_running_queries">show long-running queries</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#SID_of_established_db_session">sid of established db session</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#show_db_sequences">show db sequences</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#TNSNAMES_ORA">tnsnames.ora</a></li>
+						</ul>
+					</td>
+					<td style="width:225px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#connection_without_TNSNAMES_ORA">connection-string configuration</a></li>
+						</ul>
+					</td>
+					<td colspan="3" style="width:513px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#load_data_onto_an_Oracle_Database">load data onto an Oracle Database</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br /><hr />							
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc0">
+<u><a name="create_table">create table</a></u>
+<pre class="brush: sql;">
+CREATE TABLE &lt;table_name&gt; 
+(    
+    &lt;column_name_1&gt;     NUMBER              NOT NULL,  
+    &lt;column_name_2&gt;     VARCHAR2( 15 )      NOT NULL,   
+    &lt;column_name_3&gt;     VARCHAR2( 320 )     NOT NULL,           
+    &lt;column_name_4&gt;     VARCHAR2( 20 ),
+    &lt;column_name_5&gt;     DATE                DEFAULT SYSDATE     NOT NULL,     
+    &lt;column_name_6&gt;     DATE,
+    CONSTRAINT &lt;primary_key_name&gt;           PRIMARY KEY ( &lt;column_name_1&gt; )                   
+)
+</pre>
+<u><a name="create_table_index">create table index</a></u>
+<pre class="brush: sql;">
+CREATE INDEX &lt;index_name&gt;
+    ON &lt;table_name&gt; ( &lt;column_name&gt; )
+</pre>
+<u><a name="create_unique_table_index">create unique table index</a></u>
+<pre class="brush: sql;">
+CREATE UNIQUE INDEX &lt;index_name&gt; 
+    ON &lt;table_name&gt; ( &lt;column_name&gt; )
+</pre>
+<u><a name="create_table_sequence">create table sequence</a></u>
+<pre class="brush: sql;">
+CREATE SEQUENCE &lt;sequence_name&gt; 
+    MINVALUE 1
+    START WITH 1
+    INCREMENT BY 1
+    CACHE 10;
+</pre>
+<pre class="brush: sql;">
+CREATE SEQUENCE &lt;table_schema&gt;.&lt;sequence_name&gt;
+    START WITH 1000
+    MAXVALUE 999999999999999999999999999
+    MINVALUE 1
+    CYCLE
+    NOCACHE
+    NOORDER;
+</pre>
+<pre class="brush: sql;">    
+CREATE SEQUENCE &lt;table_schema&gt;.&lt;sequence_name&gt;
+    START WITH 1
+    MAXVALUE 999999999999999999999999999
+    MINVALUE 1
+    CYCLE
+    CACHE 100
+    NOORDER;
+</pre>    
+<u><a name="select_values_from_table">select values from table</a></u>
+<pre class="brush: sql;">   
+SELECT * 
+    FROM &lt;table_name&gt; 
+    where &lt;column_#1_name&gt; = '&lt;value_#1&gt;' AND &lt;column_#2_name&gt; = '&lt;value_#2&gt;'
+</pre> 
+<pre class="brush: sql;"> 
+SELECT &lt;column_#1_name&gt;, &lt;column_#3_name&gt; 
+    FROM &lt;table_schema&gt;.&lt;table_name&gt; 
+    WHERE &lt;column_#2_name&gt; = '&lt;value_#2&gt;' AND &lt;column_#1_name&gt; LIKE '%&lt;value_#1&gt;'
+</pre> 
+<pre class="brush: sql;"> 
+SELECT &lt;column_#1_name&gt; 
+    FROM &lt;table_name&gt; 
+    WHERE &lt;column_#1_name&gt; not LIKE '&lt;value_#1&gt;%'
+</pre> 
+<pre class="brush: sql;"> 
+SELECT ( floor( &lt;column_#1_name&gt; / 1024 ) || ',' || mod( &lt;column_#1_name&gt;, 1024 ) ) as &lt;alias_#1_name&gt;,  
+        to_char( &lt;column_#2_name&gt;, 'DD/MM' ) as &lt;alias_#2_name&gt;, 
+        to_char( LAST_DAY( SYSDATE ), 'DD/MM' ) as &lt;alias_#3_name&gt;
+    FROM &lt;table_schema&gt;.&lt;table_name&gt; 
+    WHERE &lt;column_#4_name&gt; = '&lt;value_#4&gt;' 
+</pre> 
+<pre class="brush: sql;"> 
+SELECT &lt;column_#1_name&gt;, &lt;column_#2_name&gt; 
+    FROM &lt;table_schema&gt;.&lt;table_name&gt; 
+    WHERE &lt;column_#1_name&gt; = '&lt;value_#1&gt;' 
+        AND &lt;column_#2_name&gt; IN ( '&lt;value_#2a&gt;', '&lt;value_#2b&gt;' ) 
+        AND &lt;column_#3_name&gt; != '&lt;value_#3&gt;' 
+        AND &lt;column_#4_name&gt; NOT IN ( '&lt;value_#4a&gt;', '&lt;value_#4b&gt;' )
+</pre> 
+<pre class="brush: sql;"> 
+select &lt;table_schema&gt;.&lt;table_#1_name&gt;.&lt;column_#1.1_name&gt;, 
+        to_char( &lt;table_schema&gt;.&lt;table_#1_name&gt;.&lt;column_#1.2_name&gt;, 'dd/mm, HH24:mi' ), 
+        to_char( ( &lt;table_schema&gt;.&lt;table_#1_name&gt;.&lt;column_#1.3_name&gt; - 1 ), 'dd/mm' )
+    from &lt;table_schema&gt;.&lt;table_#1_name&gt;, &lt;table_schema&gt;.&lt;table_#2_name&gt; 
+    where &lt;table_schema&gt;.&lt;table_#1_name&gt;.&lt;column_name&gt; = &lt;table_schema&gt;.&lt;table_#2_name&gt;.&lt;column_name&gt; 
+        and &lt;table_schema&gt;.&lt;table_#2_name&gt;.&lt;column_name&gt; = '&lt;value&gt;' 
+        and &lt;table_schema&gt;.&lt;table_#2_name&gt;.&lt;column_#2.1_name&gt; in ( '&lt;value_#2.1a&gt;', '&lt;value_#2.1b&gt;' )
+</pre> 
+<pre class="brush: sql;"> 
+SELECT &lt;column_#1_name&gt;,
+        to_char( &lt;column_#2_name&gt;, 'dd/mm, HH24:mi' ),
+        to_char( &lt;column_#2_name&gt;, 'MONTH', 'NLS_DATE_LANGUAGE = GREEK' ),
+        to_char( &lt;column_#3_name&gt;, 'dd/mm/yy HH24:mi' ),
+        to_char( ( &lt;column_#4_name&gt; - 1 ), 'dd/mm' ) 
+    FROM &lt;table_schema&gt;.&lt;table_name&gt; 
+    WHERE &lt;column_#1_name&gt; = '&lt;value_#1&gt;'
+</pre> 
+<pre class="brush: sql;"> 
+SELECT &lt;column_#1_name&gt;,
+        CEIL( ( &lt;column_#2_name&gt; - mod( &lt;column_#2_name&gt;, 60 ) ) / 60 ) || ':' || ( mod( &lt;column_#2_name&gt;, 60 ) ) as &lt;alias_#2_name&gt;,          
+        to_char( &lt;column_#3_name&gt;, 'dd/mm, HH24:mi' ) as &lt;alias_#3_name&gt;,
+        to_char( &lt;column_#4_name&gt;, 'MONTH', 'NLS_DATE_LANGUAGE = GREEK' ) as &lt;alias_#4_name&gt;,                  
+        to_char( last_day( sysdate ),'dd/MM' ) as &lt;alias_#5_name&gt;,         
+    FROM &lt;table_schema&gt;.&lt;table_name&gt; a
+    WHERE &lt;column_#1_name&gt; in ( '&lt;value_#1&gt;', '&lt;value_#2&gt;' ) 
+</pre> 
+<pre class="brush: sql;"> 
+SELECT substr( &lt;column_#1_name&gt;, instr( &lt;column_#1_name&gt;, '(') + 1, instr( &lt;column_#1_name&gt;, ')' ) - instr( &lt;column_#1_name&gt;, '(' ) - 1 ) as &lt;alias_#1_name&gt;
+    FROM &lt;table_name&gt;
+    where ( ( &lt;column_#1_name&gt; in ( '&lt;value_#1&gt;', '&lt;value_#2&gt;' ) ) 
+            or ( &lt;column_#1_name&gt; is null 
+                and &lt;column_#2_name&gt; in ( '&lt;value_#3&gt;', '&lt;value_#4&gt;' ) )
+            or ( &lt;column_#1_name&gt; like '%&lt;value_#5&gt;%' ) 
+            or ( &lt;column_#1_name&gt; like '%&lt;value_#6&gt;%' ) )
+        and ( &lt;column_#3_name&gt; &gt;= to_date( '&lt;value_#5&gt;', 'ddmmyyyy' ) 
+        and &lt;column_#3_name&gt; &lt;= to_date( '&lt;value_#6&gt; 23:59:59', 'ddmmyyyy hh24:mi:ss' ) ) 
+    group by &lt;column_#1_name&gt;, &lt;column_#4_name&gt;
+    order by &lt;column_#1_name&gt;, &lt;column_#4_name&gt; asc
+</pre> 
+<pre class="brush: sql;"> 
+SELECT a.&lt;column_#1_name&gt; as &lt;alias_#1_name&gt;, 
+        to_char( trunc( a.&lt;column_#2_name&gt; ), 'dd-mm-yyyy' ) as &lt;alias_#2_name&gt;, 
+        count(*) as &lt;alias_3_name&gt;
+    FROM &lt;table_name&gt; a
+    where a.&lt;column_#4_name&gt; = '&lt;value_#1&gt;' and a.&lt;column_#5_name&gt; = '&lt;value_#2&gt;'
+    group by a.&lt;column_#1_name&gt;, trunc( a.&lt;column_#2_name&gt; )  
+    order by trunc( a.&lt;column_#2_name&gt; ) desc 
+</pre> 
+<pre class="brush: sql;"> 
+SELECT &lt;column_#1_name&gt; 
+    FROM &lt;table_schema&gt;.&lt;table_name&gt; 
+    WHERE ( ( UPPER( &lt;column_#1_name&gt; ) LIKE '%&lt;value_#1.1&gt;%&lt;value_#1.2&gt;%') OR ( UPPER( &lt;column_#1_name&gt; ) LIKE '%&lt;value_#1.3&gt;%&lt;value_#1.4&gt;%' ) ) 
+            AND &lt;column_#2_name&gt; = '&lt;value_#2&gt;'
+</pre> 
+<pre class="brush: sql;"> 
+SELECT a.&lt;column_#1_name&gt;, count( * )
+    FROM &lt;table_name&gt; a
+    where a.&lt;column_#2_name&gt; &gt;= trunc( sysdate ) - 7 
+        and a.&lt;column_#2_name&gt; &lt; trunc( sysdate ) 
+        and a.&lt;column_#3_name&gt; = '&lt;value_#1&gt;' 
+        and a.&lt;column_#4_name&gt; = '&lt;value_#2&gt;'
+    group by a.&lt;column_#1_name&gt;
+</pre> 
+<pre class="brush: sql;"> 
+SELECT distinct( a.&lt;column_#1_name&gt; )
+    FROM &lt;table_name&gt; a
+    where a.&lt;column_#2_name&gt; like '&lt;value_#2&gt;%' and a.&lt;column_#3_name&gt; = '&lt;value_#3&gt;'
+</pre> 
+<pre class="brush: sql;"> 
+SELECT DISTINCT( &lt;column_#1_name&gt; ), &lt;column_#2_name&gt; 
+    FROM &lt;table_schema&gt;.&lt;table_name&gt; 
+    WHERE &lt;column_#3_name&gt; = to_char( sysdate, 'DD' ) 
+        AND &lt;column_#4_name&gt; &gt;= TRUNC( SYSDATE ) - 1
+        AND &lt;column_#2_name&gt; IN ( '&lt;value_#1&gt;', '&lt;value_#2&gt;' )     
+</pre> 
+<pre class="brush: sql;"> 
+select &lt;table_#2_alias&gt;.&lt;column_#1_name&gt; 
+    from &lt;table_schema&gt;.&lt;table_#1_name&gt; &lt;table_#1_alias&gt;, &lt;table_schema&gt;.&lt;table_#2_name&gt; &lt;table_#2_alias&gt;
+    Where &lt;table_#1_alias&gt;.&lt;column_#2_name&gt; = '&lt;value_#1&gt;' 
+        and &lt;table_#1_alias&gt;.&lt;column_#3_name&gt; in ( '&lt;value_#2&gt;, '&lt;value_#3&gt;' ) 
+        and &lt;table_#1_alias&gt;.&lt;column_#4_name&gt; = &lt;table_#2_alias&gt;.&lt;column_#5_name&gt; 
+        and &lt;table_#1_alias&gt;.&lt;column_#6_name&gt; = '&lt;value_#4&gt;'
+</pre> 
+<pre class="brush: sql;"> 
+select * 
+    from (
+        select &lt;column_#1_name&gt;, &lt;column_#2_name&gt; 
+            from &lt;table_#1_name&gt; 
+            where &lt;column_#3_name&gt; = '&lt;value_#1&gt;'
+        union all
+        select &lt;column_#1_name&gt;, &lt;column_#2_name&gt; 
+            from &lt;table_#2_name&gt; )
+    order by &lt;column_#1_name&gt; asc
+</pre> 
+<pre class="brush: sql;"> 
+select &lt;column_#1_name&gt;, 
+        decode( &lt;column_#2_name&gt;, '0', '', '1', 'YES' ) as &lt;alias_#2_name&gt;, 
+        '' as &lt;alias_#3_name&gt;, 
+        count( * ) as &lt;alias_4_name&gt; 
+    from &lt;table_name&gt;
+    where &lt;column_#3_name&gt; is null
+    group by &lt;column_#1_name&gt;, &lt;column_#2_name&gt; 
+union
+select &lt;column_#1_name&gt;, 
+        decode( &lt;column_#2_name&gt;, '0', '', '1', 'YES' ) as &lt;alias_#2_name&gt;, 
+        'YES' as &lt;alias_#3_name&gt;, 
+        count( * ) as &lt;alias_4_name&gt; 
+    from &lt;table_name&gt;
+    where &lt;column_#3_name&gt; is not null
+    group by &lt;column_#1_name&gt;, &lt;column_#2_name&gt;
+</pre> 
+<u><a name="update_table_values">update table values</a></u>
+<pre class="brush: sql;"> 
+UPDATE &lt;table_name&gt;
+    SET &lt;column_#1_name&gt; = '&lt;value_#1_new&gt;'
+    WHERE &lt;column_#1_name&gt; = '&lt;value_#1_old&gt;' 
+        and &lt;column_#2_name&gt; = '&lt;value_#2&gt;' 
+        and &lt;column_#3_name&gt; = '&lt;value_#3&gt;' 
+</pre> 
+<pre class="brush: sql;"> 
+UPDATE &lt;table_name&gt; 
+    SET &lt;column_#1_name&gt; = null 
+    WHERE &lt;column_#1_name&gt; is not null
+</pre> 
+<pre class="brush: sql;"> 
+UPDATE &lt;table_name&gt; 
+    SET &lt;column_#1_name&gt; = '&lt;value_#1&gt;', &lt;column_#2_name&gt; = sysdate 
+    WHERE &lt;column_#3_name&gt; = '&lt;value_#3&gt;'
+</pre> 
+<u><a name="insert_table_values">insert table values</a></u>
+<pre class="brush: sql;"> 
+INSERT INTO &lt;table_schema&gt;.&lt;table_name&gt; ( &lt;column_#1_name&gt;, &lt;column_#2_name&gt;, &lt;column_#3_name&gt;  ) 
+    VALUES ( &lt;sequence_name&gt;.nextval, '&lt;value_#2&gt;', to_date( '19052013 00:00:00', 'DDMMYYYY HH24:MI:SS' ) )
+</pre> 
+<pre class="brush: sql;"> 
+INSERT INTO &lt;table_name&gt; 
+    VALUES ( '&lt;value_#1&gt;', '&lt;value_#2&gt;' )
+</pre> 
+<pre class="brush: sql;"> 
+INSERT INTO &lt;table_name&gt; 
+    VALUES ( '&lt;value_#1&gt;', 'dummy', ' ', TRUNC( SYSDATE ), NULL, '&lt;value_#2&gt;', ' ' )
+</pre> 
+<pre class="brush: sql;"> 
+INSERT INTO &lt;table_name&gt; 
+    VALUES ( TRUNC( SYSDATE ), &lt;sequence_name&gt;.NEXTVAL, '&lt;value_#1&gt;', NULL, '1', NULL, SYSDATE, NULL, 538, SYSDATE )
+</pre> 
+<u><a name="add_table_column">add table column</a></u>
+<pre class="brush: sql;"> 
+ALTER TABLE &lt;table_name&gt;
+    ADD &lt;column_name&gt; varchar2( 60 )
+</pre> 
+<pre class="brush: sql;"> 
+ALTER TABLE &lt;table_name&gt;
+    ADD &lt;column_name&gt; DATE  DEFAULT SYSDATE
+</pre> 
+<u><a name="alter_column_size">alter column size</a></u>
+<pre class="brush: sql;"> 
+ALTER TABLE &lt;table_name&gt; 
+    MODIFY &lt;column_name&gt; VARCHAR2( 320 ) 
+</pre> 
+<u><a name="alter_table_sequence_cache_size">alter table sequence cache size</a></u>
+<pre class="brush: sql;"> 
+alter sequence &lt;sequence_name&gt; cache 20
+</pre>
+<u><a name="delete_table_values">delete table values</a></u>
+<pre class="brush: sql;"> 
+DELETE FROM &lt;table_name&gt; 
+    WHERE &lt;column_name&gt; is not null
+</pre> 
+<pre class="brush: sql;"> 
+DELETE FROM &lt;table_name&gt; 
+    WHERE &lt;column_#1_name&gt; = '&lt;value_#1&gt;' 
+        AND ( trim( &lt;column_#2_name&gt; ) IS NULL OR length( trim( &lt;column_#2_name&gt; ) ) = 0 )
+</pre> 
+<u><a name="drop_table">drop table</a></u>
+<pre class="brush: sql;"> 
+DROP TABLE &lt;table_name&gt;
+</pre>
+<u><a name="drop_table_column">drop table column</a></u>
+<pre class="brush: sql;"> 
+ALTER TABLE &lt;table_name&gt;
+    DROP COLUMN &lt;column_name&gt;
+</pre>
+<u><a name="drop_index">drop index</a></u>
+<pre class="brush: sql;"> 
+DROP INDEX &lt;index_name&gt;
+</pre>
+<u><a name="drop_sequence">drop sequence</a></u>
+<pre class="brush: sql;"> 
+DROP SEQUENCE &lt;table_schema&gt;.&lt;sequence_name&gt;
+</pre>
+<u><a name="truncate_table">truncate table</a></u>
+<pre class="brush: sql;"> 
+TRUNCATE TABLE &lt;table_name&gt;
+</pre>
+<u><a name="show_db_jobs">show db jobs</a></u>
+<pre class="brush: sql;"> 
+select * from user_jobs
+</pre>
+<u><a name="execute_PL_SQL_block">pl/sql block execution</a></u>
+
+Execute the following PL/SQL block - stored procedure via the &quot;sqlplus&quot; utility:
+<pre class="brush: sql;"> 
+set serveroutput on
+DECLARE 
+    &lt;input_parameter_#1_name&gt; varchar2(30) := '&lt;value_#1&gt;';
+    &lt;input_parameter_#2_name&gt; varchar2(30) := '&lt;value_#2&gt;';
+    &lt;output_parameter_#3_name&gt; number;
+    &lt;output_parameter_#4_name&gt; varchar2(30);            
+begin
+    &lt;table_schema&gt;.&lt;stored_procedure_name&gt;(&lt;input_parameter_#1_name&gt;, &lt;input_parameter_#2_name&gt;,
+                                           &lt;output_parameter_#3_name&gt;, &lt;output_parameter_#4_name&gt; );
+    DBMS_OUTPUT.PUT_LINE( 'output: ' || &lt;output_parameter_#3_name&gt; );
+    DBMS_OUTPUT.PUT_LINE( 'output: ' || &lt;output_parameter_#4_name&gt; );
+end;
+</pre>
+<u><a name="show_long_running_queries">show long-running queries</a></u>
+<pre class="brush: sql;"> 
+SELECT * FROM 
+    ( select username, opname, sid, serial#, context, sofar, totalwork, round( sofar / totalwork * 100, 2 ) "% Complete" 
+        from v$session_longops ) 
+    WHERE "% Complete" != 100
+</pre>
+<u><a name="SID_of_established_db_session">sid of established db session</a></u>
+<pre class="brush: sql;"> 
+Select distinct( SID ) 
+    from V$MyStat
+</pre>
+<u><a name="show_db_sequences">show db sequences</a></u>
+<pre class="brush: sql;"> 
+SELECT * 
+    FROM user_sequences
+</pre>
+<pre class="brush: sql;"> 
+SELECT last_number - increment_by currval 
+    FROM user_sequences 
+    WHERE SEQUENCE_NAME = '&lt;sequence_name&gt;'
+</pre>
+<u><a name="TNSNAMES_ORA">tnsnames.ora</a></u>
+
+Network configuration file @ &quot;c:\Oracle\Ora9i\NETWORK\ADMIN\&quot;:
+<pre class="brush: text;"> 
+&lt;table_#1_schema&gt;.&lt;domain&gt; =
+    ( DESCRIPTION =
+        ( ADDRESS_LIST =
+            ( ADDRESS = ( PROTOCOL = TCP )( HOST = &lt;IP&gt; )( PORT = &lt;port&gt; ) )
+        )
+        ( CONNECT_DATA =
+            ( SERVICE_NAME = &lt;service_name&gt; )
+        )
+    )
+&lt;table_#2_schema&gt;.&lt;domain&gt; =
+    ( DESCRIPTION =
+        ( ADDRESS_LIST =
+            ( ADDRESS = ( PROTOCOL = TCP )( HOST = &lt;IP&gt; )( PORT = &lt;port&gt; ) )
+        )
+        ( CONNECT_DATA =
+            ( SID = &lt;sid&gt; )
+        )
+    )   
+</pre>
+<u><a name="connection_without_TNSNAMES_ORA">connection-string configuration</a></u>
+
+Connection without &quot;tnsnames.ora&quot;: 
+<pre class="brush: sql;"> 
+sqlplus &lt;username&gt;/&lt;password&gt;@"(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=&lt;hostname&gt;)(PORT=&lt;port&gt;))(CONNECT_DATA=(SERVICE_NAME=&lt;service_name&gt;)))"
+</pre>
+<u><a name="load_data_onto_an_Oracle_Database">load data onto an Oracle Database</a></u>
+
+Making use of &quot;sqlldr&quot; (SQL loader) utility:
+
+•   Assuming that you have saved the data to be uploaded in a file with file name "import.dat" as follows (comma delimited):
+<pre class="brush: text;">
+    &lt;column_#1.1_value&gt;,&lt;column_#2.1_value&gt;,&lt;column_#3.1_value&gt;
+    &lt;column_#1.2_value&gt;,&lt;column_#2.2_value&gt;,&lt;column_#3.2_value&gt;
+    &lt;column_#1.3_value&gt;,&lt;column_#2.3_value&gt;,&lt;column_#3.3_value&gt;
+    &lt;column_#1.4_value&gt;,&lt;column_#2.4_value&gt;,&lt;column_#3.4_value&gt;
+</pre>
+•   Prepare a control file "import.ctl" like the following one:
+<pre class="brush: sql;">
+    LOAD DATA
+    INFILE 'import.dat'
+    APPEND
+    INTO TABLE "&lt;table_name&gt;"
+    FIELDS TERMINATED BY ','
+    (
+        "&lt;column_#1_name&gt;" CHAR,  
+        "&lt;column_#2_name&gt;" CHAR,
+        "&lt;column_#3_name&gt;" DATE "DD/MM/YYYY"
+    )
+</pre>
+    where 
+
+    - INTO TABLE "&lt;table_name&gt;" defines the target table.
+    - FIELDS TERMINATED BY ',' the comma delimited file format.
+    - and the following block defines the table column names and format.
+    - In practice the rows of the imported data file will be APPENDED at the end of the mentioned db table.
+
+•   Login to the proper server as &lt;user&gt; user and ftp the above import.dat and import.ctl files and save them under the same directory. 
+
+•   execute the following command:
+<pre class="brush: text;">
+    sqlldr &lt;username&gt;/&lt;password&gt;@&lt;table_schema&gt;.&lt;domain&gt; control = import.ctl log=import.log data=import.dat rows=5000
+</pre>
+    generally:
+<pre class="brush: text;">
+    sqlldr &lt;username&gt;/&lt;password&gt;@&lt;table_schema&gt;.&lt;domain&gt; control=&lt;control filename&gt; log=&lt;export log filename&gt; data=&lt;import data filename&gt; rows=&lt;rows before commit&gt;
+</pre>
+    The script commits automatically and in case where something goes wrong created files consisting of the error happened.
+    In any case, it creates a log file consisting of information about the status of the execution, the number of rows inserted, etc.
+</span></div>			
+					</div>                               
+                </td>
+  			</tr>	  		
+		</table>    	
+	</body>
+</html>

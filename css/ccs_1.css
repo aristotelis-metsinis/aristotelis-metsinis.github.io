@@ -1,0 +1,304 @@
+ 
+/* XXX ERROR -- could not find 'classicploneskins_core.css'*/
+
+/* XXX ERROR -- could not find 'classicploneskins_core_inverted.css'*/
+
+/* XXX ERROR -- could not find 'classicploneskins_corporate.css'*/
+
+/* XXX ERROR -- could not find 'classicploneskins_kitty.css'*/
+
+/* XXX ERROR -- could not find 'classicploneskins_prime.css'*/
+
+/* XXX ERROR -- could not find 'classicploneskins_zed.css'*/
+
+/* - structured_document.css - */
+@media screen {
+/* http://noether.math.uoa.gr/portal_css/structured_document.css?original=1 */
+/* */
+/* */
+.field {
+clear: both;
+}
+#structured-document .documentDescription {
+clear: both;
+}
+.discussion {
+margin: 0;
+}
+a#edit-mode {
+background: transparent url(edit_mode.gif) 0 50% no-repeat;
+font-size: 90%;
+color: #dc0000;
+display: block;
+margin: 0.5em 0;
+padding: 0.5em 20px;
+}
+.chapter-title {
+border-bottom: 1px solid #a3a3a3;
+padding: 0;
+margin: 2em 0 0.5em 0;
+font-size: 120%;
+}
+.chapter-body {
+padding: 0 0 0 1.5em;
+}
+.chapter-title a:hover,
+.chapter-title a {
+font-weight: bold;
+text-decoration: none;
+}
+.structured-paragraph {
+margin: 0;
+padding: 0;
+font-size: 100%;
+}
+.paragraph-body {
+margin: 1em 0 0 0;
+padding: 0;
+}
+.structured-paragraph-footer {
+padding: 0.5em 0 0 0;
+margin: 0 0 0.5em 0;
+clear: both;
+}
+.paragraph-image-right {
+float: right;
+padding: 0 0 0 0.5em;
+}
+.paragraph-image-left {
+float: left;
+padding: 0 0.5em 0 0;
+}
+.structured-paragraph a {
+text-decoration: none !important;
+}
+.paragraph-image {
+text-align: center;
+}
+.paragraph-title {
+font-size: 110%;
+padding: 0.2em 0;
+border-width: 0 0 1px 0;
+border-style: solid;
+border-color: #ddd;
+}
+.paragraph-image-comment {
+padding: 0.3em 0 0 0;
+}
+#document-whole-index {
+margin: 1em 0 2em 0;
+width: 20em;
+}
+#document-whole-index dd {
+margin: 0;
+padding: 0.5em 0;
+}
+#document-whole-index dd li a {
+border-bottom: 1px solid #ddd;
+}
+#document-whole-index dd li a:hover {
+background-color: #eee;
+}
+#document-whole-index,
+.object-actions {
+padding: 0.4em;
+border: 1px solid #ddd;
+background-color: #f4f4f4;
+}
+#document-whole-index dl {
+margin: 1em 2em 0.5em 2em;
+}
+.object-actions {
+margin: 0 0 0.5em 0;
+}
+.object-actions ul {
+margin: 0;
+padding: 0;
+display: inline;
+}
+.object-actions ul li {
+margin: 0;
+padding: 0;
+display: inline;
+list-style-type: none;
+list-style-position: outside;
+list-style-image: none;
+}
+.object-actions ul li a {
+color: #666;
+}
+.object-actions .action a,
+#subjects-list dd a {
+padding: 0 0.4em 0 0.1em;
+border-right: 1px solid #aaa;
+border-bottom: 0;
+}
+.object-actions .last-action a,
+#subjects-list dd a.last-keyword {
+border-right: 0;
+border-bottom: 0;
+}
+.next-previous-bottom {
+margin-top: 2em;
+}
+dd#add-chapter {
+margin: 0;
+}
+dd#add-chapter a {
+background: transparent url(structuredchapter_icon.gif) 0 0 no-repeat;
+padding-left: 18px;
+}
+ul.chapter-translations {
+float: right;
+margin: 0 1em 0 0 !important;
+}
+.chapter-ordering {
+float: right;
+}
+#information-blocks {
+float: right;
+background-color: white;
+margin: 0 0 1em 1em;
+width: 17em;
+}
+#structured-document-index,
+.information-block {
+margin: 0.5em;
+background-color: white;
+border: 1px solid #a3a3a3;
+}
+#structured-document-index legend {
+background-color: transparent;
+font-weight: bold;
+}
+.information-block {
+width: 100%;
+}
+.information-block .block-title {
+font-size: 110%;
+font-weight: bold;
+}
+.information-block td.picture {
+text-align: center;
+}
+.information-block td.picture .picture-caption {
+color: #666;
+}
+#subjects-list {
+line-height: 2em;
+font-size: 90%;
+padding: 0.4em;
+margin: 2em 0 0 0;
+border: 1px solid #a3a3a3;
+background-color: #e1ddce;
+}
+#subjects-list dt,
+#subjects-list dd {
+margin: 0;
+padding: 0;
+display: inline;
+}
+.floating-action {
+float: right;
+margin-top: -2.2em;
+text-decoration: none;
+}
+.addable_items dt {
+margin: 0.5em 0;
+}
+.addable_items dd {
+margin: 0.2em 0.6em;
+}
+/* */
+}
+
+
+/* - thickbox.css - */
+@media screen {
+/* http://noether.math.uoa.gr/portal_css/thickbox.css?original=1 */
+/* */
+#TB_overlay {
+position: absolute;
+top: 0;
+left: 0;
+z-index:2000;
+width: 100%;
+height: 100%;
+background-color: #000;
+filter:alpha(opacity=60);
+-moz-opacity: 0.6;
+opacity: 0.6;
+}
+#TB_window {
+top: 0px;
+left: 0px;
+position: absolute;
+background: #fff;
+z-index: 2002;
+color:#000000;
+display:none;
+border: 4px solid #525252;
+}
+#TB_window #TB_Image {
+display:block;
+margin: 15px 0 0 15px;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+border-top: 1px solid #666;
+border-left: 1px solid #666;
+}
+#TB_caption{
+height:25px;
+padding:10px 30px 10px 25px;
+float:left;
+}
+#TB_closeWindow{
+height:25px;
+padding:10px 25px 10px 0;
+float:right;
+}
+#TB_closeAjaxWindow{
+padding:5px 10px 7px 0;
+margin-bottom:1px;
+text-align:right;
+background-color:#e8e8e8;
+}
+#TB_ajaxContent{
+padding:2px 15px 15px 15px;
+overflow:auto;
+width:auto;
+}
+#TB_load{
+text-align: center;
+position: absolute;
+top: 50%;
+left: 0px;
+width: 100%;
+overflow: visible;
+visibility: visible;
+display: block;
+z-index:2001;
+}
+#TB_loadContent  {
+margin-left: -125px;
+position: absolute;
+top: -50px;
+left: 50%;
+width: 250px;
+visibility: visible;
+}
+
+}
+
+
+/* - ploneCustom.css - */
+@media all {
+/* http://noether.math.uoa.gr/portal_css/ploneCustom.css?original=1 */
+/* */
+/* */
+/* */
+/* */
+/* */
+
+}
+

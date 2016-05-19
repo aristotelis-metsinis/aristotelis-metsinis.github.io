@@ -1,0 +1,773 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">                
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el">   
+	<head>
+		<title>Homepages of Aristotelis Metsinis...</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+		<meta http-equiv="PRAGMA" content="NO-CACHE">
+		<meta http-equiv="Expires" content="0">						
+		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, cheat sheets for Perl and SQL, miscellaneous web site links" />
+		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets,Cheat Sheets,Perl,SQL,data analysis,statistical inference" />
+		<meta name="author"      content="Aristotelis Metsinis" /> 
+				
+        <link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
+		<link rel="stylesheet" type="text/css" href="css/ccs_1.css" />
+        <link rel="stylesheet" type="text/css" href="css/IEFixes.css" />
+        
+        <script type="application/javascript">
+			function manageStylesheets()
+			{
+				var browser = navigator.appName;
+
+				var lnks = document.getElementsByTagName('link');
+				if (browser == "")			
+					lnks[2].disabled = false;				
+				else			
+					lnks[2].disabled = true;
+			}
+		</script>
+                               
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+
+		<script type="text/javascript" src="js/js_scripts_2.js"></script>
+		<script type="text/javascript" src="js/js_scripts_1.js"></script>
+		<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+
+		<!-- calendar stylesheet -->
+		<link rel="stylesheet" type="text/css" media="all" href="js/jscalendar-1.0/calendar-win2k-cold-1.css" title="calendar" />
+		<!-- main calendar program -->
+		<script type="text/javascript" src="js/jscalendar-1.0/calendar.js"></script>
+		<!-- language for the calendar -->
+		<script type="text/javascript" src="js/jscalendar-1.0/lang/calendar-en.js"></script>
+		<!-- the following script defines the Calendar.setup helper function, which makes adding a calendar a matter of 1 or 2 lines of code. -->
+		<script type="text/javascript" src="js/jscalendar-1.0/calendar-setup.js"></script>
+        
+		<script type="text/javascript" src="js/datemodified.js"></script>
+
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>	
+		<script src="js/weather_report.js"></script>
+	
+		<link rel="stylesheet" type="text/css" href="css/weather_report.css">
+        
+		<script type="text/javascript">
+			function interactive(value, ref,
+								 id, id_class,
+								 id_nav_li, id_nav_li_class,
+								 id_nav_div, id_nav_div_class,
+								 id_nav_ref, id_nav_ref_class)
+			{
+				document.getElementById('title').innerHTML = value;
+												
+/*				document.getElementById('sitemap').innerHTML = "<a href=\"" + ref + "\" target=\"page_iframe\">"
+																+ document.getElementById(id_nav_ref).innerHTML + "</a>";				*/
+				document.getElementById('sitemap').innerHTML = document.getElementById(id_nav_ref).innerHTML;				
+																
+				if ((id == "gsm") || (id == "erlang") || (id == "statistics") || (id == "data_analysis") || (id == "interactive_python") || (id == "sms_analysis") || (id == "programming_android") || (id == "ruby_on_rails"))
+				{					
+/*					var parent = "<a href=\"" + document.getElementById('projects_nav_ref').href + "\" target=\"page_iframe\">"
+								  + document.getElementById('projects_nav_ref').innerHTML + "</a>";	*/
+					var parent = document.getElementById('projects_nav_ref').innerHTML;	
+
+					document.getElementById('sitemap').innerHTML = parent + " / " + document.getElementById('sitemap').innerHTML;
+				}
+				
+				if ((id == "sql") || (id == "perl"))
+				{					
+/*					var parent = "<a href=\"" + document.getElementById('cheat_sheets_nav_ref').href + "\" target=\"page_iframe\">"
+								  + document.getElementById('cheat_sheets_nav_ref').innerHTML + "</a>";	*/
+					var parent = document.getElementById('cheat_sheets_nav_ref').innerHTML;	
+
+					document.getElementById('sitemap').innerHTML = parent + " / " + document.getElementById('sitemap').innerHTML;
+				}
+				
+				
+				document.getElementById('main').className = "plain"; 
+				document.getElementById('resume').className = "plain"; 
+				document.getElementById('projects').className = "plain"; 
+				document.getElementById('cheat_sheets').className = "plain";
+				document.getElementById('links').className = "plain"; 				
+				document.getElementById('blog').className = "plain"; 
+				document.getElementById('weather_forecast').className = "plain";
+				// document.getElementById('sign_guestbook').className = "plain"; 
+				
+				if (id_class != "")
+				{				
+					document.getElementById(id).className = id_class; 
+				}
+								
+				document.getElementById('main_nav_li').className = "navTreeItem visualNoMarker";								
+				document.getElementById('resume_nav_li').className = "navTreeItem visualNoMarker";								
+				document.getElementById('projects_nav_li').className = "navTreeItem visualNoMarker";												
+				document.getElementById('gsm_nav_li').className = "navTreeItem visualNoMarker";												
+				document.getElementById('erlang_nav_li').className = "navTreeItem visualNoMarker";												
+				document.getElementById('statistics_nav_li').className = "navTreeItem visualNoMarker";
+				document.getElementById('data_analysis_nav_li').className = "navTreeItem visualNoMarker";
+				document.getElementById('interactive_python_nav_li').className = "navTreeItem visualNoMarker";				
+				document.getElementById('programming_android_nav_li').className = "navTreeItem visualNoMarker";								
+				document.getElementById('ruby_on_rails_nav_li').className = "navTreeItem visualNoMarker";								
+				document.getElementById('sms_analysis_nav_li').className = "navTreeItem visualNoMarker";				
+				document.getElementById('cheat_sheets_nav_li').className = "navTreeItem visualNoMarker";												
+				document.getElementById('perl_nav_li').className = "navTreeItem visualNoMarker";				
+				document.getElementById('sql_nav_li').className = "navTreeItem visualNoMarker";				
+				document.getElementById('links_nav_li').className = "navTreeItem visualNoMarker";																																																			
+				document.getElementById('blog_nav_li').className = "navTreeItem visualNoMarker";
+				document.getElementById('weather_forecast_nav_li').className = "navTreeItem visualNoMarker";
+				// document.getElementById('sign_guestbook_nav_li').className = "navTreeItem visualNoMarker";
+				document.getElementById(id_nav_li).className = id_nav_li_class; 
+				
+				document.getElementById('main_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById('resume_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById('projects_nav_div').className = "visualIcon contenttype-folder";				
+				document.getElementById('gsm_nav_div').className = "visualIcon contenttype-folder";				
+				document.getElementById('erlang_nav_div').className = "visualIcon contenttype-folder";				
+				document.getElementById('statistics_nav_div').className = "visualIcon contenttype-folder";	
+				document.getElementById('data_analysis_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById('interactive_python_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById('programming_android_nav_div').className = "visualIcon contenttype-folder";				
+				document.getElementById('ruby_on_rails_nav_div').className = "visualIcon contenttype-folder";				
+				document.getElementById('sms_analysis_nav_div').className = "visualIcon contenttype-folder";				
+				document.getElementById('cheat_sheets_nav_div').className = "visualIcon contenttype-folder";				
+				document.getElementById('perl_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById('sql_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById('links_nav_div').className = "visualIcon contenttype-folder";																																			
+				document.getElementById('blog_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById('weather_forecast_nav_div').className = "visualIcon contenttype-folder";
+				// document.getElementById('sign_guestbook_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById(id_nav_div).className = id_nav_div_class; 
+			
+				document.getElementById('main_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById('resume_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById('projects_nav_ref').className = "state-published visualIconPadding";				
+				document.getElementById('gsm_nav_ref').className = "state-published visualIconPadding";				
+				document.getElementById('erlang_nav_ref').className = "state-published visualIconPadding";				
+				document.getElementById('statistics_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById('data_analysis_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById('interactive_python_nav_ref').className = "state-published visualIconPadding";				
+				document.getElementById('programming_android_nav_ref').className = "state-published visualIconPadding";								
+				document.getElementById('ruby_on_rails_nav_ref').className = "state-published visualIconPadding";												
+				document.getElementById('sms_analysis_nav_ref').className = "state-published visualIconPadding";				
+				document.getElementById('cheat_sheets_nav_ref').className = "state-published visualIconPadding";				
+				document.getElementById('perl_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById('sql_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById('links_nav_ref').className = "state-published visualIconPadding";																																				
+				document.getElementById('blog_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById('weather_forecast_nav_ref').className = "state-published visualIconPadding";
+				// document.getElementById('sign_guestbook_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById(id_nav_ref).className = id_nav_ref_class;	
+				
+				if ((id == "projects") || (id == "gsm") || (id == "erlang") || (id == "statistics") || (id == "data_analysis") || (id == "interactive_python") || (id == "sms_analysis") || (id == "programming_android") || (id == "ruby_on_rails"))
+				{
+					document.getElementById('gsm_nav_ul').className = "navTree navTreeLevel2"; 
+					document.getElementById('erlang_nav_ul').className = "navTree navTreeLevel2"; 
+					document.getElementById('statistics_nav_ul').className = "navTree navTreeLevel2"; 	
+					document.getElementById('data_analysis_nav_ul').className = "navTree navTreeLevel2"; 
+					document.getElementById('interactive_python_nav_ul').className = "navTree navTreeLevel2"; 
+					document.getElementById('programming_android_nav_ul').className = "navTree navTreeLevel2"; 					
+					document.getElementById('ruby_on_rails_nav_ul').className = "navTree navTreeLevel2"; 										
+					document.getElementById('sms_analysis_nav_ul').className = "navTree navTreeLevel2"; 
+				}
+				else
+				{
+					document.getElementById('gsm_nav_ul').className = "hiddenStructure"; 
+					document.getElementById('erlang_nav_ul').className = "hiddenStructure"; 
+					document.getElementById('statistics_nav_ul').className = "hiddenStructure"; 
+					document.getElementById('data_analysis_nav_ul').className = "hiddenStructure"; 
+					document.getElementById('interactive_python_nav_ul').className = "hiddenStructure"; 
+					document.getElementById('programming_android_nav_ul').className = "hiddenStructure"; 					
+					document.getElementById('ruby_on_rails_nav_ul').className = "hiddenStructure"; 										
+					document.getElementById('sms_analysis_nav_ul').className = "hiddenStructure"; 
+				}
+
+				if ((id == "cheat_sheets") || (id == "sql") || (id == "perl"))
+				{
+					document.getElementById('perl_nav_ul').className = "navTree navTreeLevel2"; 
+					document.getElementById('sql_nav_ul').className = "navTree navTreeLevel2"; 
+				}
+				else
+				{
+					document.getElementById('perl_nav_ul').className = "hiddenStructure"; 
+					document.getElementById('sql_nav_ul').className = "hiddenStructure"; 
+				}
+				
+				document.getElementById('portal-footer').innerHTML = "<p>&nbsp;</p>"; // "Page Last Updated on : " + writeDateModified(false, document.getElementById('iframe_area'));				
+			}
+		</script>
+		<script type="text/javascript">
+			function iframeRedirection()
+			{ 
+				var loc_var=this.location.href; 
+				var index=loc_var.indexOf('redirectedFrom=');
+				if(index!=-1)
+				{ 
+					var source=loc_var.slice((index+15)); 
+					document.getElementById('iframe_area').src=source; 
+
+					var anchor="";
+					if (source=="projects.html")
+					{
+						anchor="projects_nav_ref";
+					}
+					else if (source=="cellular_network_structure.html") 
+					{
+						anchor="gsm_nav_ref";
+					}
+					else if (source=="erlang.html") 
+					{
+						anchor="erlang_nav_ref";
+					}
+					else if (source=="statistics.html")
+					{
+						anchor="statistics_nav_ref";
+					}
+					else if (source=="data_analysis_and_statistical_inference.html")
+					{
+						anchor="data_analysis_nav_ref";
+					}
+					else if (source=="interactive_programming_in_python.html")
+					{
+						anchor="interactive_python_nav_ref";
+					}	
+					else if (source=="programming_mobile_applications_for_android_handheld_systems.html")
+					{
+						anchor="programming_android_nav_ref";
+					}						
+					else if (source=="ruby_on_rails.html")
+					{
+						anchor="ruby_on_rails_nav_ref";
+					}					
+					else if (source=="sms_message_analyser.html")
+					{
+						anchor="sms_analysis_nav_ref";
+					}					
+					else if (source=="cheat_sheets.html")
+					{
+						anchor="cheat_sheets_nav_ref";
+					}
+					else if (source=="perl.html") 
+					{
+						anchor="perl_nav_ref";
+					}
+					else if (source=="sql.html") 
+					{
+						anchor="sql_nav_ref";
+					}					
+					else if (source=="bookmarks.html")
+					{ 	
+						anchor="links_nav_ref";
+					}
+					else // if (source=="main_page.html") 
+					{
+						anchor="main_nav_ref";
+					}			
+					$('#'+anchor).trigger('click');
+				}
+			} 
+		</script>
+		<script type="text/javascript">		
+			var initialisation = true;
+			var iframe_area_size_default = 0;
+			var portal_column_one_menu_size_default = 0;
+						
+			function iframeResize()
+			{
+				if ( initialisation )
+				{
+					iframe_area_size_default = document.getElementById( 'iframe_area' ).height;
+					portal_column_one_menu_size_default = document.getElementById( 'portal-column-one' ).offsetHeight;
+					
+					initialisation = false;
+				}								
+				document.getElementById( 'iframe_area' ).height = iframe_area_size_default;
+								
+				var portal_column_one_menu_size = document.getElementById( 'portal-column-one' ).offsetHeight;
+								
+				if ( portal_column_one_menu_size > portal_column_one_menu_size_default )
+				{
+					document.getElementById( 'iframe_area' ).height = parseInt( iframe_area_size_default ) + ( portal_column_one_menu_size - portal_column_one_menu_size_default );
+				}							
+			}					
+		</script>
+	</head>
+	<body class="section-main" dir="ltr" onload="manageStylesheets(); iframeRedirection();" onunload="window.name='';">
+		<h1 class="hiddenStructure" id="portal-logo"> 
+        	<a href="http://xxx.xxx.xxx" accesskey="1">Homepages of Aristotelis Metsinis...</a> 
+        </h1>
+		<div id="portal-skinswitcher"></div>
+		<ul id="portal-globalnav">
+  			<li id="main" class="selected">
+            	<a href="main_page.html" target="page_iframe" title="Main Page"
+	               	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("main page","main_page.html",
+                    					 "main","selected",
+                                         "main_nav_li","navTreeItem",
+                                         "main_nav_div","visualIcon contenttype-plone-site",
+                                         "main_nav_ref","navTreeCurrentItem visualIconPadding")'>                
+                	Main Page
+                </a> 
+            </li>
+  			<li id="resume" class="plain"> 
+            	<a href="Aristotelis_Metsinis.pdf" target="page_iframe" title="Curriculum Vitae of Aristotelis Metsinis (pdf version)"
+                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("curriculum vitae","Aristotelis_Metsinis.pdf",
+                    					 "resume","selected",
+                                         "resume_nav_li","navTreeItem",
+                                         "resume_nav_div","visualIcon contenttype-plone-site",
+                                         "resume_nav_ref","navTreeCurrentItem visualIconPadding")'>                
+                	Curriculum Vitae
+                </a> 
+            </li>
+  			<li id="projects" class="plain"> 
+            	<a href="projects.html" target="page_iframe" title="MSc. Projects: GSM, Java (Applets)"
+                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","projects.html",
+                    					 "projects","selected",
+                                         "projects_nav_li","navTreeItem",
+                                         "projects_nav_div","visualIcon contenttype-plone-site",
+                                         "projects_nav_ref","navTreeCurrentItem visualIconPadding")'>                
+                	Projects
+                </a> 
+            </li>
+  			<li id="cheat_sheets" class="plain"> 
+            	<a href="cheat_sheets.html" target="page_iframe" title="Cheat Sheets for Perl, SQL"
+                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("cheat sheets","cheat_sheets.html",
+                    					 "cheat_sheets","selected",
+                                         "cheat_sheets_nav_li","navTreeItem",
+                                         "cheat_sheets_nav_div","visualIcon contenttype-plone-site",
+                                         "cheat_sheets_nav_ref","navTreeCurrentItem visualIconPadding")'>                
+                	cheat sheets
+                </a> 
+            </li>			
+  			<li id="links" class="plain"> 
+            	<a href="bookmarks.html" target="page_iframe" title="Internet Bookmarks"
+                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("web links","bookmarks.html",
+                    					 "links","selected",
+                                         "links_nav_li","navTreeItem",
+                                         "links_nav_div","visualIcon contenttype-plone-site",
+                                         "links_nav_ref","navTreeCurrentItem visualIconPadding")'>
+            		Web Links
+                </a> 
+            </li>
+  			<li id="blog" class="plain"> 
+            	<a href="http://aristotelis-metsinis.blogspot.gr" target="page_iframe" title="blog"
+                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("blog","http://aristotelis-metsinis.blogspot.gr",
+                    					 "blog","selected",
+                                         "blog_nav_li","navTreeItem",
+                                         "blog_nav_div","visualIcon contenttype-plone-site",
+                                         "blog_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                    blog
+                </a> 
+         	</li>
+  			<!--<li id="sign_guestbook" class="plain"> 
+            	<a href="http://guestbooks.netservices.gr/addgb.cgi?name=ametsi" target="page_iframe" title="Sign my Guestbook"
+                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("sign my guestbook","http://guestbooks.netservices.gr/addgb.cgi?name=ametsi",
+                    					 "sign_guestbook","selected",
+                                         "sign_guestbook_nav_li","navTreeItem",
+                                         "sign_guestbook_nav_div","visualIcon contenttype-plone-site",
+                                         "sign_guestbook_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                    sign my guestbook
+                </a> 
+          	</li>-->
+  			<li id="contact" class="plain"> 
+            	<a title="Email Address" onclick='alert("Feel free to contact me at the following email address:\n\naristotelis.metsinis@gmail.com")'>
+           			contact
+            	</a>                 
+            </li>
+  			<li id="weather_forecast" class="plain"> 
+            	<a href="weather_forecast.html" target="page_iframe" title="Weather Forecast"
+                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("weather forecast","weather_forecast.html",
+                    					 "weather_forecast","selected",
+                                         "weather_forecast_nav_li","navTreeItem",
+                                         "weather_forecast_nav_div","visualIcon contenttype-plone-site",
+                                         "weather_forecast_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                    weather forecast
+                </a> 
+         	</li>			
+		</ul>
+		<div>
+  			<ul id="portal-personaltools">
+    			<li>your are visitor: <img src="http://counter.pathfinder.gr/showcounter/354" alt="visitor_counter" height="15" align="baseline" /></li>
+  			</ul>
+		</div>
+		<div id="portal-breadcrumbs"> 
+        	<span id="breadcrumbs-you-are-here">You are here:</span> 
+            <span id="sitemap">
+	            main page
+          	</span>
+        </div>
+		<div class="visualClear" id="clear-space-before-wrapper-table"></div>
+		<table id="portal-columns">
+  			<tbody>
+    			<tr>
+      				<td id="portal-column-one">
+                    	<div class="visualPadding">
+          					<dl class="portlet" id="portlet-navigation-tree">
+            					<dt class="portletHeader"> 
+                            		<span class="portletTopLeft">Navigation</span> 
+	                                <span class="portletTopRight"></span> 
+    	                        </dt>
+        	    				<dd class="portletItem lastItem">
+            	  					<ul class="portletNavigationTree navTreeLeve8">
+						                <li class="navTreeItem" id="main_nav_li">
+							                <div class="visualIcon contenttype-plone-site" id="main_nav_div"> 
+                        	                	<a href="main_page.html" target="page_iframe" id="main_nav_ref"
+                                                	title="Main Page"
+                                                	class="navTreeCurrentItem visualIconPadding"
+                                                    onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("main page","main_page.html",
+                    					 								 "main","selected",
+								                                         "main_nav_li","navTreeItem",
+                                								         "main_nav_div","visualIcon contenttype-plone-site",
+								                                         "main_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                            	                	main page
+                                	            </a> 
+                                    	    </div>
+	 					                </li>
+						                <li class="navTreeItem visualNoMarker" id="resume_nav_li">
+					  	                	<div class="visualIcon contenttype-folder" id="resume_nav_div"> 
+            	                            	<a href="Aristotelis_Metsinis.pdf" target="page_iframe" id="resume_nav_ref"
+                	                            	title="Curriculum Vitae of Aristotelis Metsinis (pdf version)"
+                                                    class="state-published visualIconPadding" 
+                									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("curriculum vitae","Aristotelis_Metsinis.pdf",
+                    					 								 "resume","selected",
+								                                         "resume_nav_li","navTreeItem",
+                                								         "resume_nav_div","visualIcon contenttype-plone-site",
+								                                         "resume_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                    	                            curriculum vitae
+                        	                    </a> 
+                            	            </div>
+					            	    </li>
+                						<li class="navTreeItem visualNoMarker" id="projects_nav_li">
+				                    		<div class="visualIcon contenttype-folder" id="projects_nav_div"> 
+                                        		<a href="projects.html" target="page_iframe" id="projects_nav_ref"   
+                                        			title="MSc. Projects: GSM, Java (Applets)"
+                                                    class="state-published visualIconPadding"
+                									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","projects.html",
+                    					 								 "projects","selected",
+								                                         "projects_nav_li","navTreeItem",
+                                								         "projects_nav_div","visualIcon contenttype-plone-site",
+								                                         "projects_nav_ref","navTreeCurrentItem visualIconPadding")'>
+	                                        		projects
+    	                                    	</a> 
+        	                          		</div>                                            
+                                            <ul class="hiddenStructure" id="gsm_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="gsm_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="gsm_nav_div">         
+												        <a href="cellular_network_structure.html" target="page_iframe" id="gsm_nav_ref"  
+                                                        	title="Cellular Structure of Mobile Networks"
+                                                            class="state-published visualIconPadding"
+															onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","cellular_network_structure.html",
+                    					 								 		 "gsm","",
+								                                         		 "gsm_nav_li","navTreeItem",
+                                								         		 "gsm_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "gsm_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            cellular structure of mobile networks
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>    
+                                            <ul class="hiddenStructure" id="erlang_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="erlang_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="erlang_nav_div">         
+												        <a href="erlang.html" target="page_iframe" id="erlang_nav_ref"  
+                                                        	title="Erlang's Loss Formula"
+                                                            class="state-published visualIconPadding"
+                        									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","erlang.html",
+                    					 								 		 "erlang","",
+								                                         		 "erlang_nav_li","navTreeItem",
+                                								         		 "erlang_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "erlang_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            erlang's loss formula
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>
+                                            <ul class="hiddenStructure" id="statistics_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="statistics_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="statistics_nav_div">         
+												        <a href="statistics.html" target="page_iframe" id="statistics_nav_ref"  
+                                                        	title="Statistical Analysis of Experimental Data"
+                                                            class="state-published visualIconPadding"
+                                                            onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","statistics.html",
+                    					 								 		 "statistics","",
+								                                         		 "statistics_nav_li","navTreeItem",
+                                								         		 "statistics_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "statistics_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            statistical analysis of experimental data
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>                                       
+                                            <ul class="hiddenStructure" id="data_analysis_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="data_analysis_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="data_analysis_nav_div">         
+												        <a href="data_analysis_and_statistical_inference.html" target="page_iframe" id="data_analysis_nav_ref"  
+                                                        	title="Data Analysis and Statistical Inference"
+                                                            class="state-published visualIconPadding"
+                                                            onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","data_analysis_and_statistical_inference.html",
+                    					 								 		 "data_analysis","",
+								                                         		 "data_analysis_nav_li","navTreeItem",
+                                								         		 "data_analysis_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "data_analysis_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            data analysis and statistical inference
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>											
+                                            <ul class="hiddenStructure" id="interactive_python_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="interactive_python_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="interactive_python_nav_div">         
+												        <a href="interactive_programming_in_python.html" target="page_iframe" id="interactive_python_nav_ref"  
+                                                        	title="Interactive Programming in Python"
+                                                            class="state-published visualIconPadding"
+                                                            onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","interactive_programming_in_python.html",
+                    					 								 		 "interactive_python","",
+								                                         		 "interactive_python_nav_li","navTreeItem",
+                                								         		 "interactive_python_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "interactive_python_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            interactive programming in python
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>
+                                            <ul class="hiddenStructure" id="programming_android_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="programming_android_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="programming_android_nav_div">         
+												        <a href="programming_mobile_applications_for_android_handheld_systems.html" target="page_iframe" id="programming_android_nav_ref"  
+                                                        	title="Programming Mobile Applications for Android Handheld Systems"
+                                                            class="state-published visualIconPadding"
+                                                            onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","programming_mobile_applications_for_android_handheld_systems.html",
+                    					 								 		 "programming_android","",
+								                                         		 "programming_android_nav_li","navTreeItem",
+                                								         		 "programming_android_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "programming_android_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            programming mobile applications for android handheld systems
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>											
+                                            <ul class="hiddenStructure" id="ruby_on_rails_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="ruby_on_rails_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="ruby_on_rails_nav_div">         
+												        <a href="ruby_on_rails.html" target="page_iframe" id="ruby_on_rails_nav_ref"  
+                                                        	title="Ruby on Rails"
+                                                            class="state-published visualIconPadding"
+                                                            onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","ruby_on_rails.html",
+                    					 								 		 "ruby_on_rails","",
+								                                         		 "ruby_on_rails_nav_li","navTreeItem",
+                                								         		 "ruby_on_rails_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "ruby_on_rails_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            ruby on rails
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>											
+                                            <ul class="hiddenStructure" id="sms_analysis_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="sms_analysis_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="sms_analysis_nav_div">         
+												        <a href="sms_message_analyser.html" target="page_iframe" id="sms_analysis_nav_ref"  
+                                                        	title="SMS Message Analyser"
+                                                            class="state-published visualIconPadding"
+                                                            onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","sms_message_analyser.html",
+                    					 								 		 "sms_analysis","",
+								                                         		 "sms_analysis_nav_li","navTreeItem",
+                                								         		 "sms_analysis_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "sms_analysis_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            sms message analyser
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>												
+										</li>
+										<li class="navTreeItem visualNoMarker" id="cheat_sheets_nav_li">
+				                    		<div class="visualIcon contenttype-folder" id="cheat_sheets_nav_div"> 
+                                        		<a href="cheat_sheets.html" target="page_iframe" id="cheat_sheets_nav_ref"   
+                                        			title="Cheat Sheets for Perl, SQL"
+                                                    class="state-published visualIconPadding"
+                									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("cheat sheets","cheat_sheets.html",
+                    					 								 "cheat_sheets","selected",
+								                                         "cheat_sheets_nav_li","navTreeItem",
+                                								         "cheat_sheets_nav_div","visualIcon contenttype-plone-site",
+								                                         "cheat_sheets_nav_ref","navTreeCurrentItem visualIconPadding")'>
+	                                        		cheat sheets
+    	                                    	</a> 
+        	                          		</div>                                            
+                                            <ul class="hiddenStructure" id="perl_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="perl_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="perl_nav_div">         
+												        <a href="perl.html" target="page_iframe" id="perl_nav_ref"  
+                                                        	title="Perl Cheat Sheet"
+                                                            class="state-published visualIconPadding"
+															onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("cheat sheets","perl.html",
+                    					 								 		 "perl","",
+								                                         		 "perl_nav_li","navTreeItem",
+                                								         		 "perl_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "perl_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            perl cheat sheet
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>
+                                            <ul class="hiddenStructure" id="sql_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="sql_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="sql_nav_div">         
+												        <a href="sql.html" target="page_iframe" id="sql_nav_ref"  
+                                                        	title="SQL Cheat Sheet"
+                                                            class="state-published visualIconPadding"
+															onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("cheat sheets","sql.html",
+                    					 								 		 "sql","",
+								                                         		 "sql_nav_li","navTreeItem",
+                                								         		 "sql_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "sql_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            sql cheat sheet
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>										
+										</li>
+                						<li class="navTreeItem visualNoMarker" id="links_nav_li">
+                  							<div class="visualIcon contenttype-folder" id="links_nav_div"> 
+                        	                	<a href="bookmarks.html" target="page_iframe" id="links_nav_ref"
+                            		           	    title="Internet Bookmarks"
+                                                    class="state-published visualIconPadding"
+                									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("web links","bookmarks.html",
+                    					 								 "links","selected",
+								                                         "links_nav_li","navTreeItem",
+                                								         "links_nav_div","visualIcon contenttype-plone-site",
+								                                         "links_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                    	        	web links
+                                        	    </a> 
+	                                        </div>
+    	            					</li>
+        	        					<li class="navTreeItem visualNoMarker" id="blog_nav_li">
+            	      						<div class="visualIcon contenttype-folder" id="blog_nav_div">                    
+                	    						<a href="http://aristotelis-metsinis.blogspot.gr" target="page_iframe" id="blog_nav_ref"
+                    	                        	title="blog"
+                        	                    	class="state-published visualIconPadding" 
+                									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("blog","http://aristotelis-metsinis.blogspot.gr",
+                    					 								 "blog","selected",
+								                                         "blog_nav_li","navTreeItem",
+                                								         "blog_nav_div","visualIcon contenttype-plone-site",
+								                                         "blog_nav_ref","navTreeCurrentItem visualIconPadding")'>
+								                    blog
+                                    	        </a>                                             
+                                      		</div>
+	                					</li>
+    	            					<!--<li class="navTreeItem visualNoMarker" id="sign_guestbook_nav_li">
+        	          						<div class="visualIcon contenttype-folder" id="sign_guestbook_nav_div">                    
+            	        						<a href="http://guestbooks.netservices.gr/addgb.cgi?name=ametsi" target="page_iframe" id="sign_guestbook_nav_ref"
+                	                            	title="Sign my GuestBook"
+                    	                        	class="state-published visualIconPadding" 
+                        	                    	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("sign my guestbook","http://guestbooks.netservices.gr/addgb.cgi?name=ametsi",
+                    					 								 "sign_guestbook","selected",
+                                         								 "sign_guestbook_nav_li","navTreeItem",
+                                         								 "sign_guestbook_nav_div","visualIcon contenttype-plone-site",
+                                         								 "sign_guestbook_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                    								sign my guestbook
+                                	           	</a> 
+                                    	  	</div>
+	                					</li>-->
+    	            					<li class="navTreeItem visualNoMarker">
+        	          						<div class="visualIcon contenttype-folder"> 
+            	                            	<a class="state-published visualIconPadding" title="Email Address" onclick='alert("Feel free to contact me at the following email address:\n\naristotelis.metsinis@gmail.com")'>
+                	                        		contact
+                    	                        </a> 
+                        	              	</div>
+					        	        </li>										
+										<li class="navTreeItem visualNoMarker" id="weather_forecast_nav_li">
+            	      						<div class="visualIcon contenttype-folder" id="weather_forecast_nav_div">                    
+                	    						<a href="weather_forecast.html" target="page_iframe" id="weather_forecast_nav_ref"
+                    	                        	title="Weather Forecast"
+                        	                    	class="state-published visualIconPadding" 
+                									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("weather forecast","weather_forecast.html",
+                    					 								 "weather_forecast","selected",
+								                                         "weather_forecast_nav_li","navTreeItem",
+                                								         "weather_forecast_nav_div","visualIcon contenttype-plone-site",
+								                                         "weather_forecast_nav_ref","navTreeCurrentItem visualIconPadding")'>
+								                    weather forecast
+                                    	        </a>                                             
+                                      		</div>
+	                					</li>										
+					      			</ul>
+						            <span class="portletBottomLeft"></span> 
+    	                            <span class="portletBottomRight"></span> 
+        	                 	</dd>
+				          	</dl>
+						</div>
+			        	<div class="visualPadding" style="float: right; margin-bottom: 1em;  padding: 0em 0em 0em 2em;" id="calendar-container">
+          					<script type="text/javascript">
+  								function dateChanged(calendar) {};
+	  							Calendar.setup(
+    									{
+							     			flat         : "calendar-container", // ID of the parent element
+	      									flatCallback : dateChanged           // our callback function
+    									});
+      	           			</script>
+				        </div>
+						<div id="linkedin" style="padding: 6em 0em 0em 0em; margin-bottom: 2em; margin-top: 12em; margin-left: 2em; text-align: center;"> 							
+							<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+							<script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/aristotelismetsinis" data-format="hover" data-text="view my profile on LinkedIn" data-related="false"></script>						
+						</div>
+					</td>
+			        <td id="portal-column-content">
+            	    	<!--<div id="content" class="">-->
+			    	    	<div class="documentContent" id="region-content">
+            					<div class="documentActions">
+              						<ul>
+                						<li> 
+                                	    	<a href="javascript:document.getElementById('iframe_area').contentWindow.print();"> 
+                                    	    	<img src="img/print_icon.gif" alt="Print this page" title="Print this page" id="icon-print" width="16" height="16" /> 
+                                       		</a> 
+	                                   	</li>
+					                </ul>
+						            <ul id="global-languageselector" class="hiddenStructure">
+            	    					<li> 
+                	                    	<a href="http://xxx.xxx.xx/view?set_language=en" title="Switch language to English"> 
+                    	                    	<img src="img/flag-gb.gif" alt="English" height="11" width="14" class="currentItem" /> 
+                        	               	</a> 
+                            	      	</li>
+                						<li> 
+                                    		<a href="http://xxx.xxx.xx/view?set_language=el" title="Switch language to "> 
+                                        		<img src="img/flag-gr.gif" alt="" height="11" width="14" /> 
+	                                       	</a>	 
+    	                              	</li>
+        	      					</ul>
+            					</div>
+            					<h1 class="documentFirstHeading" id='title'>Welcome to Aristotelis Metsinis Homepages...</h1>
+            					<div class="plain">
+              						<iframe src="main_page.html" name="page_iframe" width="100%" height="750" scrolling="auto" id="iframe_area" onload='iframeResize()'> 
+              							<p>Your browser does not support iframes.</p>
+					                </iframe>
+    	        				</div>
+        	  				</div>
+        				<!--</div>--> 
+             		</td>                    
+                    <td id="portal-column-two">               			
+                    </td>                    
+				</tr>
+			</tbody>
+		</table>		
+		<div id="portal-footer">
+			<p>&nbsp;</p>
+  			<!--<p>Page Last Updated on :
+    			<script type="text/javascript">writeDateModified(false, document.getElementById('iframe_area'));</script>
+	  		</p>-->
+		</div>		
+		<!--<div id="forecast_panel">    
+			<table id="forecast_table">
+				<tr>
+					<td width="20%" id="forecast_table_selection_col">
+						<table id="forecast_selection_table">
+							<tr>
+								<td><input type="text" id="forecast_address" placeholder=" Enter a location..."/></td>
+							</tr>
+							<tr>								
+								<td><input type="button" id="forecast_button" value="refresh weather report" onclick="locate_address()"/></td>
+							</tr>
+						</table>
+					</td>			
+					<td width="80%" id="forecast_col">
+						<div id="forecast_div">											
+							<iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat=38.009257&lon=23.801755&name=Thessalias Str, Halandri - Athens, Greece&text-color=black&color=#e1ddce&font=%27Lucida Grande%27%2CVerdana%2CLucida%2CHelvetica%2CArial%2Csans-serif&units=ca"></iframe>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>-->				
+	</body>
+</html>

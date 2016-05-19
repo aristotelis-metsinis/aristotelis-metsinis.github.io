@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">           
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el">
+	<!--
+	/** ----------------------------------------------------------------------------------------------------------------------*/    
+	/**
+	* This web app encodes message strings to the "SMS default" alphabet; supporting
+	* the default "extension" table as well; according to the "GSM 03.38" spec.
+	* It encodes also messages to the "UCS2" alphabet. In theory, encoding to "ISO-8859-1" should be also possible in a
+	* future version (current version: 1.0). It also displays a set of message "attributes" as well as the encoded "PDU". 
+	* In case of a "long" sms, it splits the "encoded" message and displays the encoded "user data" message parts along with the 
+	* proper "UDH" fields.
+	*
+	* The functions that implement the "encoding" phase have been based upon the "java" source code
+	* of the "cloudhopper" project for "mobile messaging applications" that can be found @
+	*
+	* https://github.com/twitter/cloudhopper-commons/tree/master/ch-commons-charset/src/main/java/com/cloudhopper/commons/charset
+	*
+	* The code translated into "java script" by aristotelis metsinis (aristotelis.metsinis@gmail.com)
+	* in July 2014 (ver 1.0) adding proper "helper" functions and other utilities.
+	*
+	* Have a look also at the "java script" code that can be found @
+	*
+	* http://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-message-analyzer/
+	*
+	* as well as at the "java" code that can be found @
+	*
+	* https://github.com/twitter/cloudhopper-commons/blob/master/ch-commons-gsm/src/main/java/com/cloudhopper/commons/gsm/GsmUtil.java
+	*
+	* and @
+	*
+	* https://code.google.com/p/jsmpp/source/browse/trunk/src/java/examples/org/jsmpp/examples/SubmitMultipartMultilangualExample.java
+	*/
+	/** ----------------------------------------------------------------------------------------------------------------------*/
+	-->
+	<head>
+		<title>Homepages of Aristotelis Metsinis...</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, miscellaneous web site links" />
+		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets" />
+		<meta name="author"      content="Aristotelis Metsinis" />  
+		
+		<link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
+		<link rel="stylesheet" type="text/css" href="css/ccs_1.css" />
+		
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		
+		<script src="js/sms_message_analyser.js"></script>
+		<script type="text/javascript"> 
+			if(top.location == self.location) 
+			{ 
+				top.location.href = 'index.html'+'?redirectedFrom=sms_message_analyser.html'; 
+			} 
+		</script>  
+	</head>
+	<body>
+		<br />
+		<table width="100%" border="0" cellpadding="10">
+			<tr>
+				<td>  
+					<p class="documentDescription">SMS Message Analyser</p>		
+					<div id="msg_analysis_div" class="plain">
+						<p>This on-line "<i>SMS</i>" message analyser can be used to encode a "<i>SMPP</i>" short message text into the proper hexadecimal data-stream representation according to either the "GSM" or "Unicode" alphabets as well as determine how many message parts a "long SMS" message generates, splitting the encoded message accordingly and presenting the "User Data Headers" (UDH) that specify how such a (concatenated SMS) message must be formatted and processed.
+							<br>&nbsp;<br>
+							<u>References</u>		
+							<table border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td>
+											<ul>
+												<li style="margin-left: 1.0pt;">
+													<a href="http://opensmpp.org/specs/SMPP_v3_4_Issue1_2.pdf" target="_blank">SMPP Protocol Specification v3.4</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<ul>
+												<li style="margin-left: 1.0pt;">
+													<a href="http://opensmpp.org/specs/smppv34_gsmumts_ig_v10.pdf" target="_blank">SMPP v3.4 Protocol Implementation guide for GSM / UMTS</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<ul>
+												<li style="margin-left: 1.0pt;">
+													<a href="http://www.ozekisms.com/attachments/209/GSM-Alphabet-Character-Translations.pdf" target="_blank">GSM Alphabet Character Translations</a>
+												</li>
+											</ul>
+										</td>
+									</tr>									
+								</tbody>
+							</table>																	
+							<br>
+							<noscript>(JavaScript required)</noscript>
+						</p>
+						<form id="message_form" name="message_form" action="">
+							<input type="hidden" name="messagetype" value="message">
+							<p></p>
+							<table width="100%">
+								<tbody>
+									<tr>
+										<td style="text-align:left;">
+											<label for="message_textarea"><strong>Message</strong></label>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<textarea id="message_textarea" name="message_textarea" class="textarea" type="textarea" rows="4" onkeyup="JavaScript: analyzeMessage();" onchange="JavaScript: analyzeMessage();" onpaste="JavaScript: analyzeMessage();" oncut="JavaScript: analyzeMessage();" style="width:100%;" onfocus="JavaScript: if(this.value == 'type your short message text here...'){this.value=''}; return false;">type your short message text here...</textarea>
+										<!--<p></p>
+											<div id="message_error_div">
+												<p id="message_error_id"></p>
+											</div>-->
+										</td>
+									</tr>
+									<tr></tr>
+									<tr>
+										<td style="text-align:right;">
+											<button type="reset" value="Reset" onClick="reset_pdu_analysis()">&#160;Reset&#160;</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+						<!--<p></p>-->
+						<div id="pdu_analysis_div">
+							<table id="pdu_analysis_table" width="100%">
+								<tbody>
+									<tr>
+										<th style="text-align:left;">Message analysis</th>
+									</tr>
+									<tr>
+										<td style="width:15%;">Character set:</td>
+										<td id="charset_id" style="width:85%;">GSM</td>
+									</tr>
+									<tr>
+										<td style="width:15%;">Characters:</td>
+										<td id="characters_id" style="width:85%;">0</td>
+									</tr>
+									<tr>
+										<td style="width:15%;">Message parts:</td>
+										<td id="message_parts_id" style="width:85%;">1</td>
+									</tr>
+								</tbody>
+							</table>
+							<p></p>
+							<table width="100%">
+								<tbody>
+									<tr>
+										<td style="text-align:left;">
+											<label for="pdu_textarea"><strong>PDU</strong></label>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<textarea id="pdu_textarea" name="pdu_textarea" class="textarea" type="textarea" rows="27" style="width:100%;" readonly></textarea>
+											<p></p>
+											<div id="pdu_error_div">
+												<p id="pdu_error_id"></p>
+											</div>
+										</td>
+									</tr>
+									<tr></tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

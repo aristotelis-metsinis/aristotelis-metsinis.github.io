@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el">  
+	<head>
+		<title>Homepages of Aristotelis Metsinis...</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, miscellaneous web site links" />
+		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets" />
+		<meta name="author"      content="Aristotelis Metsinis" />
+
+		<link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
+		<link rel="stylesheet" type="text/css" href="css/ccs_1.css" />
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<script type="text/javascript"> 
+			if(top.location == self.location) 
+			{ 
+				top.location.href = 'index.html'+'?redirectedFrom=cellular_network_structure.html';
+			} 
+		</script>
+	</head>
+	<body>
+		<br />
+        <table width="100%" border="0" cellpadding="10">
+	  		<tr>
+    			<td>                
+                	<p class="documentDescription">Cellular Structure of Mobile Networks</p>             
+    				<div class="plain">			
+       				 	<p>
+                        	The following article published by the "<i>Mobile Telephony and Telecommunications</i>" magazine (no. 28, February 1999; <a href="gsm_article.pdf" target="_self">read here the actual magazine extract in Greek</a>). It constitutes part of the MSc dissertation which presented by Metsinis Aristotelis as part of the course work of the MSc in "<i>Telecommunication and Information Systems</i>" offered by the university of Essex during 1997 - 98 academic year, with title: "<i>Radio Wave Propagation with Applications on Cellular Mobile Radio Systems</i>".
+                      	</p>
+                        <br />
+					  	<p><u>Cellular radio concept</u></p>
+                        <p>
+                        	The principle idea behind the design of either an analog or digital (e.g. GSM, DCS/GSM1800) radio network is based upon the cell concept. Each geographical area is divided into smaller areas - cells, i.e. hexagonals tangent at each other composing a cell pattern. This cell pattern can be repeatedly placed over that area providing radio coverage.<sup>7</sup> The transmission power is kept at such levels in order to confine the radio signal within the boundaries of a cell while providing adequate coverage and quality of service. 
+                      	</p>
+                        <p>
+                        	The advantage of this strategy is the increase in the network capacity through frequency re-use to cover cells separated from one another by sufficient distances, minimizing co-channel interference (phenomenon which refers to the impact on a channel that a mobile is tuned, by the transmission of a distant base station antenna over the same channel). <sup>5,7,9</sup>
+                   	  	</p>
+						<br />
+						<p><u>Cell dimensioning and co-channel interference considerations</u></p>
+						<p>
+                        	In order to confine the interference between adjacent cells at minimum levels, cells are organized in clusters. Within a cluster of cells, the whole available radio spectrum is exploited. A portion of the total number of channels is allocated to each cell, while adjacent cells within the same cluster are assigned different groups of channels. To effectively filter the co-channel interference, the mean re-use distance D of a frequency can be calculated by the following formula:&nbsp;<img src="img/ReuseEquation.gif" alt="ReuseEquationIcon" border=0 height=41 width=65 align=middle>, where R stands for the cell radius and k for the number of cells which form a cluster (e.g. k=4, 7, 12). The equation shows clearly that co-channel interference is decreased by increasing k while the cell size is kept constant, at the expense of less available channels per cell. It should be noted that unlike thermal noise, co-channel interference can not be combated by increasing the transmitter power, as such a solution may increase the interference in an adjacent cell. <sup>4,5,6,7</sup>
+                     	</p>
+						<p>
+	                        An increasing capacity demand can lead to cell splitting, so that a cell contains several smaller size cells. Each smaller size cell provides the same number of channels as the former cell, without the need of a wider spectrum. This approach requires lower power and height transmitters as well as an increase in the number of those, to provide essentially coverage to the same area. Over a relatively short propagation path, it is often possible to arrange the radio link between the transmitter and the receiver to be clear line - of - sight path. In such a microcellular pattern, the relatively low antennas located above the local vehicular traffic and below the surrounding buildings benefit in two ways: First, shadow fading due to the local traffic can be eliminated, and second the radio signal can be confined and directed into a limited size microcell. Moreover, the lower microcellular base station antenna limits excess signal delay spread due to multipath reflection, which can cause intersymbol interference (ISI) in digital radio systems, since the distant reflectors are blocked. However, co-channel interference may increase again.<sup>2,5,7</sup>
+                     	</p>
+                        <p>
+                        	In this case, sectoring can improve the carrier to interference ratio. This solution requires the replacement of the omni-directional base station antennas by directive antennas for each e.g. 60<sup>o</sup>, 120<sup>o</sup> cell sector. The penalty for improved signal to interference ratio is clearly an increased number of antennas at each base station and actually a reduced number of available channels, because the number of individual cells in a cluster increases by a factor equal to the number of the newly formed sectors. Such conditions increase the number of handoffs (a cellular network mechanism explained later).<sup>4,7</sup>	
+                      	</p>
+						<p>
+                        	Further improvement in signal to interference ratio can be achieved by antenna down-titling, which deliberately focuses the radiated energy 
+from the base station towards the ground rather towards the horizon, limiting the radio coverage of newly formed microcells or sectors.<sup>4</sup>
+						</p>
+						<p>
+                        	It is worth mentioning that installation of a base station with three 120<sup>o</sup> directive antennas on a cell vertex can offer coverage in three cells instead of one (if the base station had been located in the center of a cell), reducing the number of base station sites.<sup>8</sup>
+                      	</p>
+						<p>
+                        	In mobile networks, the cell dimensioning depends on user density. Hence, smaller cells are used within urban areas (which are interference limited), whereas cells are made as large as the propagation loss allows in rural areas, where the required channels per square km is lower.&nbsp; In practice, both GSM and DCS networks consist of similar size cells in urban areas, but in rural areas an extra 10 dB propagation loss, due to the higher operational frequency of the latter system, halves the diameter of DCS radio cells.<sup>5,8</sup>
+                      	</p>
+						<p>
+                        	The hexagonal cell shape is conceptual and a simplistic model of the coverage of each base station transmitting antenna. The actual cellular
+coverage is determined by the contour in which a transmitter provides adequate quality of service.<sup>3</sup>
+						</p>
+						<br />
+						<p><u>Adjacent channel interference. An additional limitation in cellular radio</u>
+					  	<p>
+                        	Interference is more severe in urban areas due to the greater radio frequency noise floor and the large number of base stations and mobiles. Recognizing co-channel interference as one of the two major types of system-generating cellular interference, adjacent channel interference also constitutes a bottleneck in the efficient network operation.
+                   	  	</p>
+                        <p>
+                        	Adjacent channel interference results from imperfect receiver filters, which allow nearby frequencies to leak into the passband. Such an interference can severely affect the transmission between a receiver and a base station, if an adjacent channel user is transmitting either in a very close range 
+to the receiving antenna or very close to the base station (in this case, on a channel close to the one being used by a “weak” mobile). Careful filtering and channel assignment between adjacent cells can minimize adjacent channel interference which is worse in small cell clusters and heavily loaded cells.<sup>4</sup>
+					  	</p>
+                        <p>
+                        	However, the most significant problem in (cellular) mobile radio systems is due to the channel itself, referred to as multipath interference, which give rise to fading and dispersion effects. 
+                      	</p>
+                        <br />
+                        <p><u>Handover, as an example of network functionality to compensate for propagation limitations</u></p>
+						<p>
+                        	Handover (handoff) is the mechanism that hands - over the subscriber’s radio connection from frequencies used in one cell to frequencies used in an adjacent cell while the mobile migrates between cells. It can be triggered either by the signal falling below a threshold level, or detecting a large power budget from an adjacent base site, or by a poor signal quality (indicated e.g. by an error rate exceeding a threshold), or, even, by an excessive timing advance while the mobile is located too far from the base site.<sup>4</sup>
+                        </p>
+						<p>
+                        	An effective and reliable handover mechanism can play a significant role in the control of co-channel interference, particularly as the cell size is reduced, as well as in the mobile power control. Essentially, by controlling the power of the mobile, the likelihood of its causing interference is reduced. On the other hand, an effective handover mechanism needs to ensure that the drop in the measure signal is not due to momentary fading which may lead to unnecessary handover actions. It should be noted that even when the mobile is stationary, ambient motion in the vicinity of the base station and the mobile can produce fading.<sup>5</sup>
+                      	</p>
+						<p>
+                        	Furthermore, high-speed vehicles pass through the coverage region of a cell in a matter of seconds, whereas e.g. pedestrians may never need 
+a handover during a call. In such cases, by using different antenna heights and different power levels, it is possible to provide “large” and “small” cells co-located at a single area, offering large coverage area to high speed users and smaller coverage to low speed users. This approach ensures that the number of handovers is minimized for high-speed users and provides additional microcell capacity for pedestrian users.<sup>4</sup>
+						</p>
+						<br />
+						<p><u>GSM/DCS transmission specifications</u></p>
+						<p>
+                        	The International Telecommunications Union (ITU) has allocated a paired frequency bands of 890 - 915 MHz and 935 - 960 MHz for operation by a GSM network. The former band is used for upward communication (uplink) from the mobile to the base station, while the latter band is used for downward communication (downlink) from the base station to the mobile unit, supporting full duplex transmission by using two sub-bands spaced 45 MHz apart. A channel spacing of 200 kHz defines a maximum of 124 frequency channels in each band. 
+                        <p>
+                        	For a DCS network, the frequency band runs from 1710 MHz to 1785 MHz on the uplink, and from 1805 MHz to 1880 MHz on the downlink, supporting full duplex communication by using two sub-bands spaced 95 MHz apart. A channel spacing of 200 kHz allows a maximum of 374 carries in each DCS band.
+                      	</p>
+                        <p>
+                        	Essentially, DCS maintains the structure of a GSM network. However, the evolution from 900 MHz transmission to 1800 MHz operation will emerge access to a wider available bandwidth (150 MHz compared to 50 MHz for GSM), as well as small and lower power handsets (250 mWatt - 1Watt compared to 20mWatts - 2Watt for GSM). In addition, DCS cells extend up to 5 km compared to 35 km for GSM. The higher operational frequency, in the case of a DCS system, implies both greater propagation loss and a radio signal even more prone to interference and dispersion due to reflections. On the other hand, a DCS system will be suitable for transmission within microcellular patterns, which will provide exclusive coverage to buildings, underground railway stations, etc., due to the small cell size and low transmission power.
+                      	</p>
+                        <p>
+                        	The GSM network is designed so that the mobile station is instructed to use only the minimum power level necessary to achieve effective communication with the base station, increasing the battery lifetime and reducing interference. The power output of a base station transceiver may be controlled, nominally in 2 dB steps, in order to provide better co-channel interference performance. The following table illustrates the base station transceiver (BTS) and 
+mobile unit power classes.
+						</p>
+						<br /><br />
+						<center>
+                        	<table border cols="3" width="50%">
+								<tr>
+									<td align="center" valign="center">Power class</td>
+									<td align="center" valign="center">BTS power (Watt)</td>
+									<td align="left" valign="center">&nbsp;Mobile power (Watt)</td>
+								</tr>
+								<tr>
+									<td align="center" valign="center">1</td>
+									<td align="center" valign="center">320</td>
+									<td align="left" valign="center">&nbsp;20&nbsp;(car mounted phone)</td>
+								</tr>
+								<tr>
+									<td align="center" valign="center">2</td>
+									<td align="center" valign="center">160</td>
+									<td align="left" valign="center">&nbsp;8&nbsp;&nbsp;(transportable)</td>
+								</tr>
+								<tr>
+									<td align="center" valign="center">3</td>
+									<td align="center" valign="center">80</td>
+									<td align="left" valign="center">&nbsp;5&nbsp;&nbsp;(transportable)</td>
+								</tr>
+								<tr>
+									<td align="center" valign="center">4</td>
+									<td align="center" valign="center">40</td>
+									<td align="left" valign="center">&nbsp;2&nbsp;&nbsp;(hand-portable)</td>
+								</tr>
+								<tr>
+									<td align="center" valign="center">5</td>
+									<td align="center" valign="center">20</td>
+									<td align="left" valign="center">&nbsp;0.8&nbsp;(hand-portable)</td>
+								</tr>
+								<tr>
+									<td align="center" valign="center">6</td>
+									<td align="center" valign="center">10</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td align="center" valign="center">7</td>
+									<td align="center" valign="center">5</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td align="center" valign="center">8</td>
+									<td align="center" valign="center">2.5</td>
+									<td></td>
+								</tr>
+							</table>
+                   		</center>
+                        <br /><br />
+						<p>
+                        	High power repeaters are used at rural areas where the nominal cell radius could be well in excess of 3 km (up to 35 km), while low power repeaters are used for indoor applications.
+                     	</p>
+                        <p>
+                        	In urban areas the cell radius implemented, may be less than 1 km, or in the region of 200 - 300 m if a microcellular pattern is designed.
+                       	</p>
+						<p>
+                        	The signal level received at mobile and base transceiver stations have to meet the threshold specified in GSM technical specification 05.05, referred to as the reference sensitivity. For a hand portable unit the reference sensitivity is -102 dBm, while for a BTS is set to -104 dBm.<sup>5,7</sup>
+                      	</p>
+						<p>
+                        	Finally, according to the GSM specifications, a GSM receiver will work properly if the carrier to co-channel interference (due to intersymbol interference or due to interference from GSM transmitters in other cells) is better than 9 dB.<sup>1</sup>
+                      	</p>
+						<br />
+						<p><u>References - bibliography</u></p>
+						<p>
+                        	<ul>
+                            	<li>1. Lovnes, G., Paulsen, S., Raekken, R., "<i>Estimating GSM coverage using 900 Mhz multipath measurements</i>", Proceedings of the IEEE VTC, 1994, pp. 1798 - 1802.</li>
+							</ul>                      	
+                        	<ul>
+                            	<li>2. Xia, H.H., Bertoni, H. L., Maciel, L. R., Lindsaystewart, A., Rowe, R., "<i>Radio propagation characteristics for line-of-sight micro cellular and personal communications</i>", IEEE transactions on antennas and propagation, 1993, vol. 41, no. 10, pp. 1439 - 1447.</li>
+                          	</ul>                      	
+                        	<ul>
+                            	<li>3. Adawi, N.S., Bertoni, H. L., Child, J. R., Daniel, W. A., Dettra, J. E., Eckert, R. P., Flath, E. H., Forrest, R. T., "<i>Coverage prediction for mobile radio systems operating in the 800/900 Mhz frequency range</i>", IEEE transactions on vehicular technology, 1988, vol. 37, no. 1, p. 3.</li>
+                          	</ul>                      
+                        	<ul>
+                            	<li>4. Rappaport, T. S., "<i>Wireless communications, principles and practice</i>", Prentice Hall, 1996.</li>
+							</ul>                
+                        	<ul>
+                            	<li>5. Macario, R. C. V., "<i>Modern personal radio systems</i>", The Institution of Electrical Engineers, 1996.</li>
+							</ul>                
+                        	<ul>
+                            	<li>6. Balston, D. M., Macario, R. V. C., "<i>Cellular radio systems</i>", Artech House, 1993.</li>
+                           	</ul>
+                        	<ul>
+                            	<li>7. Soulis, D., "<i>The PanEuropian Mobile Telephony System GSM and its implementation in Greece</i>", Laser Press, 1992.</li>
+                      		</ul>
+                        	<ul>
+                            	<li>8. Jones, E.V., "<i>Transmission Systems</i>", University of Essex - Dept. of Electronic Systems Engineering, EE902 Transmission Systems, 1997.</li>
+                            </ul>
+                        	<ul>
+                            	<li>9. Bebbington, D., "<i>Radio systems design, satellite systems, radar systems</i>", University of Essex - Dept. of Electronic Systems Engineering, EE414 Radio Frequency Systems, 1996.</li>
+                        	</ul>                    
+                       	</p>  					            
+					</div>                               
+                </td>
+  			</tr>	  		
+		</table>    	
+	</body>
+</html>
