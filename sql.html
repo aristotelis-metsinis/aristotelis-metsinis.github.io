@@ -31,6 +31,7 @@
 		-->
 		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushSql.js"></script>
 		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushPlain.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushBash.js"></script>
 		<!-- Include *at least* the core style and "eclipse" theme -->
 		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/>
 		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemeEclipse.css"/>
@@ -210,7 +211,21 @@
 								<a href="#load_data_onto_an_Oracle_Database">load data onto an Oracle Database</a></li>
 						</ul>
 					</td>
-				</tr>
+				</tr>				
+				<tr>
+					<td style="width:225px;">
+						&nbsp;
+					</td>
+					<td style="width:225px;">
+						&nbsp;
+					</td>
+					<td colspan="3" style="width:513px;">
+						<ul>
+							<li style="margin-left: 1.0pt;">
+								<a href="#load_data_onto_an_Oracle_Database_script_for_cdr_upload">load data onto an Oracle Database | script for cdr upload</a></li>
+						</ul>
+					</td>
+				</tr>								
 			</tbody>
 		</table>
 		<br /><hr />							
@@ -589,10 +604,10 @@ Making use of &quot;sqlldr&quot; (SQL loader) utility:
 </pre>
     where 
 
-    - INTO TABLE "&lt;table_name&gt;" defines the target table.
-    - FIELDS TERMINATED BY ',' the comma delimited file format.
-    - and the following block defines the table column names and format.
-    - In practice the rows of the imported data file will be APPENDED at the end of the mentioned db table.
+    + INTO TABLE "&lt;table_name&gt;" defines the target table.<br />
+    + FIELDS TERMINATED BY ',' the comma delimited file format.<br />
+    + and the following block defines the table column names and format.<br />
+    + In practice the rows of the imported data file will be APPENDED at the end of the mentioned db table.<br />
 
 •   Login to the proper server as &lt;user&gt; user and ftp the above import.dat and import.ctl files and save them under the same directory. 
 
@@ -604,8 +619,124 @@ Making use of &quot;sqlldr&quot; (SQL loader) utility:
 <pre class="brush: text;">
     sqlldr &lt;username&gt;/&lt;password&gt;@&lt;table_schema&gt;.&lt;domain&gt; control=&lt;control filename&gt; log=&lt;export log filename&gt; data=&lt;import data filename&gt; rows=&lt;rows before commit&gt;
 </pre>
-    The script commits automatically and in case where something goes wrong created files consisting of the error happened.
-    In any case, it creates a log file consisting of information about the status of the execution, the number of rows inserted, etc.
+    The script commits automatically and in case where something goes wrong created files consisting of the error happened.<br />
+    In any case, it creates a log file consisting of information about the status of the execution, the number of rows inserted, etc.<br /><br />
+<u><a name="load_data_onto_an_Oracle_Database_script_for_cdr_upload">load data onto an Oracle Database | script for cdr upload</a></u>
+
+"<i>GitHub</i>" repository of this script can be found at : <a href="https://github.com/aristotelis-metsinis/cdr-import" target="_blank">https://github.com/aristotelis-metsinis/cdr-import</a> (source code along with line by line comments).
+
+Making use of &quot;sqlldr&quot; (SQL loader) utility:
+
+•   Assuming that you have adjusted the following "cdr_import.sh" shell script:
+<pre class="brush: bash;">
+#!/bin/bash
+#
+# CDRs import script.
+#
+# The script imports CDRs produced by a service application. 
+# * It may run for example once per day through "cron".
+# * Gets all "CDR" files produced on the day before (if any) and 
+# * converts them into "iso8859-7" as they (may) contain Greek text in "UTF8". 
+# * The converted CDRs are being appended into a single (daily) file. 
+# * It also moves each original "CDR" file under the proper "archive" directory.
+# * Then it executes "SQL loader" Oracle utility, uploading the data onto the proper db table. 
+# * In case where an "Oracle" exception has been thrown, it catches this error, submits the proper 
+#   email notification and exits. 
+# * Else, it retrieves the number of "successfully loaded" and the number of "total read" records, 
+#   verifying whether the two numbers match or not submitting the proper email notification per case.
+#
+
+# Set the email of service "admin". Any notification will be sent to this email.
+adminEmail=someone@somewhere.com
+
+# Set the necessary db connection configurations.
+dbport=&lt;port&gt;
+dbsid=&lt;id&gt;
+dbpwd=&lt;pwd&gt;
+dbuser=&lt;user&gt;
+dbname=&lt;name&gt;
+
+# Calculate the date of the day before.
+yesterday=`perl \-e '@y=localtime(time()-86400); printf "\%04d\%02d\%02d",$y[5]+1900,$y[4]+1,$y[3];'`
+
+# Set the name "template" of the "CDR" files we are looking for; for example: 
+filename=cdr_$yesterday
+
+# Check if there are files for processing, which reside under for example "cdr" directory:
+files=`ls cdr/$filename*.cdr | wc -l | sed 's/^[ ]*//g'`
+
+# If no files found then submit the proper email notification and terminate.
+if [ $files -eq 0 ] 
+then
+	subject="No CDRs for $yesterday..."
+	message="No CDR files found..."
+	(echo "$message") | mailx -s "$subject" $adminEmail
+
+	exit 0
+fi
+
+# Get "CDR" files, convert their encoding, appending their data into a single file under the proper path 
+# and finally move them into the proper "archive" dir.
+for file in $(ls cdr/$filename*.cdr)
+do
+	iconv -c -f utf8 -t iso8859-7 $file >> cdr/closed/$filename.cdr
+	mv $file cdr/archived/
+done
+
+# Execute "SQL loader" utility, uploading the "encoded" data file onto the proper db table.
+sqlldr $dbuser/$dbpwd@"(DESCRIPTION\=(ADDRESS\=(PROTOCOL\=TCP)(HOST\=$dbname)(PORT\=$dbport))(CONNECT_DATA\=(SERVICE_NAME\=$dbsid)))" control=cdr_import.ctl log=cdr/log/$filename.log bad=cdr/log/$filename.bad data=cdr/closed/$filename.cdr rows=5000
+
+# Check if an "Oracle" exception has been thrown. Submit the proper notification email and terminate.
+if grep -q -i "ORA-" cdr/log/$filename.log 
+then
+	subject="CAUTION: error uploading CDRs for $yesterday..."
+	message=`grep -i "ORA-" cdr/log/$filename.log`
+    (echo "$message") | mailx -s "$subject" $adminEmail
+        
+	exit 0
+fi
+
+# Get number of "successfully loaded" and "total read CDR" rows.
+cdrLoaded=`grep "successfully loaded" cdr/log/$filename.log | sed 's/^[ ]*//g' | cut -f 1 -d " "`
+cdrRead=`grep "Total logical records read" cdr/log/$filename.log | cut -d " " -f 5- | cut -f 5- | sed 's/^[ ]*//g'`
+
+# Check if both numbers are equal and submit the proper notification email.
+if [ $cdrLoaded != $cdrRead ]
+then
+	subject="CAUTION: error uploading CDRs for $yesterday..."
+	message="Total logical records read : $cdrRead, while successfully loaded : $cdrLoaded"
+	(echo "$message") | mailx -s "$subject" $adminEmail
+else
+	subject="Success: CDRs uploaded for $yesterday..."
+	message="Total logical records read and successfully loaded : $cdrLoaded"
+	(echo "$message") | mailx -s "$subject" $adminEmail
+fi
+
+exit 0 
+</pre>
+•   and that you have also adjusted the following control file "cdr_import.ctl":
+<pre class="brush: sql;">
+--
+-- "SQL Loader" control file.
+--
+-- Contains the configuration necessary for "SQL Loader" utility. 
+-- Uploads CDRs data on the proper db table for a service application.  
+--
+LOAD DATA
+APPEND
+INTO TABLE "&lt;table_name&gt;"
+FIELDS TERMINATED BY '|'
+TRAILING NULLCOLS
+(
+  "&lt;column-1&gt;" 	DATE "DDMMYYYY HH24:MI:SS",
+  "&lt;column-2&gt;" 	CHAR,  
+  "&lt;column-3&gt;" 	CHAR,
+  "&lt;column-4&gt;" 	CHAR,
+	:
+	:
+  "&lt;column-n&gt;" 	CHAR
+)
+</pre>
 </span></div>			
 					</div>                               
                 </td>
