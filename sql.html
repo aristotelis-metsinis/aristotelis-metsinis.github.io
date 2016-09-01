@@ -283,7 +283,7 @@ CREATE SEQUENCE &lt;table_schema&gt;.&lt;sequence_name&gt;
 <pre class="brush: sql;">   
 SELECT * 
     FROM &lt;table_name&gt; 
-    where &lt;column_#1_name&gt; = '&lt;value_#1&gt;' AND &lt;column_#2_name&gt; = '&lt;value_#2&gt;'
+    WHERE &lt;column_#1_name&gt; = '&lt;value_#1&gt;' AND &lt;column_#2_name&gt; = '&lt;value_#2&gt;'
 </pre> 
 <pre class="brush: sql;"> 
 SELECT &lt;column_#1_name&gt;, &lt;column_#3_name&gt; 
@@ -293,12 +293,12 @@ SELECT &lt;column_#1_name&gt;, &lt;column_#3_name&gt;
 <pre class="brush: sql;"> 
 SELECT &lt;column_#1_name&gt; 
     FROM &lt;table_name&gt; 
-    WHERE &lt;column_#1_name&gt; not LIKE '&lt;value_#1&gt;%'
+    WHERE &lt;column_#1_name&gt; NOT LIKE '&lt;value_#1&gt;%'
 </pre> 
 <pre class="brush: sql;"> 
-SELECT ( floor( &lt;column_#1_name&gt; / 1024 ) || ',' || mod( &lt;column_#1_name&gt;, 1024 ) ) as &lt;alias_#1_name&gt;,  
-        to_char( &lt;column_#2_name&gt;, 'DD/MM' ) as &lt;alias_#2_name&gt;, 
-        to_char( LAST_DAY( SYSDATE ), 'DD/MM' ) as &lt;alias_#3_name&gt;
+SELECT ( floor( &lt;column_#1_name&gt; / 1024 ) || ',' || mod( &lt;column_#1_name&gt;, 1024 ) ) AS &lt;alias_#1_name&gt;,  
+        to_char( &lt;column_#2_name&gt;, 'DD/MM' ) AS &lt;alias_#2_name&gt;, 
+        to_char( LAST_DAY( SYSDATE ), 'DD/MM' ) AS &lt;alias_#3_name&gt;
     FROM &lt;table_schema&gt;.&lt;table_name&gt; 
     WHERE &lt;column_#4_name&gt; = '&lt;value_#4&gt;' 
 </pre> 
@@ -311,13 +311,13 @@ SELECT &lt;column_#1_name&gt;, &lt;column_#2_name&gt;
         AND &lt;column_#4_name&gt; NOT IN ( '&lt;value_#4a&gt;', '&lt;value_#4b&gt;' )
 </pre> 
 <pre class="brush: sql;"> 
-select &lt;table_schema&gt;.&lt;table_#1_name&gt;.&lt;column_#1.1_name&gt;, 
+SELECT &lt;table_schema&gt;.&lt;table_#1_name&gt;.&lt;column_#1.1_name&gt;, 
         to_char( &lt;table_schema&gt;.&lt;table_#1_name&gt;.&lt;column_#1.2_name&gt;, 'dd/mm, HH24:mi' ), 
         to_char( ( &lt;table_schema&gt;.&lt;table_#1_name&gt;.&lt;column_#1.3_name&gt; - 1 ), 'dd/mm' )
-    from &lt;table_schema&gt;.&lt;table_#1_name&gt;, &lt;table_schema&gt;.&lt;table_#2_name&gt; 
-    where &lt;table_schema&gt;.&lt;table_#1_name&gt;.&lt;column_name&gt; = &lt;table_schema&gt;.&lt;table_#2_name&gt;.&lt;column_name&gt; 
-        and &lt;table_schema&gt;.&lt;table_#2_name&gt;.&lt;column_name&gt; = '&lt;value&gt;' 
-        and &lt;table_schema&gt;.&lt;table_#2_name&gt;.&lt;column_#2.1_name&gt; in ( '&lt;value_#2.1a&gt;', '&lt;value_#2.1b&gt;' )
+    FROM &lt;table_schema&gt;.&lt;table_#1_name&gt;, &lt;table_schema&gt;.&lt;table_#2_name&gt; 
+    WHERE &lt;table_schema&gt;.&lt;table_#1_name&gt;.&lt;column_name&gt; = &lt;table_schema&gt;.&lt;table_#2_name&gt;.&lt;column_name&gt; 
+        AND &lt;table_schema&gt;.&lt;table_#2_name&gt;.&lt;column_name&gt; = '&lt;value&gt;' 
+        AND &lt;table_schema&gt;.&lt;table_#2_name&gt;.&lt;column_#2.1_name&gt; IN ( '&lt;value_#2.1a&gt;', '&lt;value_#2.1b&gt;' )
 </pre> 
 <pre class="brush: sql;"> 
 SELECT &lt;column_#1_name&gt;,
@@ -330,34 +330,34 @@ SELECT &lt;column_#1_name&gt;,
 </pre> 
 <pre class="brush: sql;"> 
 SELECT &lt;column_#1_name&gt;,
-        CEIL( ( &lt;column_#2_name&gt; - mod( &lt;column_#2_name&gt;, 60 ) ) / 60 ) || ':' || ( mod( &lt;column_#2_name&gt;, 60 ) ) as &lt;alias_#2_name&gt;,          
-        to_char( &lt;column_#3_name&gt;, 'dd/mm, HH24:mi' ) as &lt;alias_#3_name&gt;,
-        to_char( &lt;column_#4_name&gt;, 'MONTH', 'NLS_DATE_LANGUAGE = GREEK' ) as &lt;alias_#4_name&gt;,                  
-        to_char( last_day( sysdate ),'dd/MM' ) as &lt;alias_#5_name&gt;,         
+        CEIL( ( &lt;column_#2_name&gt; - mod( &lt;column_#2_name&gt;, 60 ) ) / 60 ) || ':' || ( mod( &lt;column_#2_name&gt;, 60 ) ) AS &lt;alias_#2_name&gt;,          
+        to_char( &lt;column_#3_name&gt;, 'dd/mm, HH24:mi' ) AS &lt;alias_#3_name&gt;,
+        to_char( &lt;column_#4_name&gt;, 'MONTH', 'NLS_DATE_LANGUAGE = GREEK' ) AS &lt;alias_#4_name&gt;,                  
+        to_char( last_day( SYSDATE ),'dd/MM' ) AS &lt;alias_#5_name&gt;,         
     FROM &lt;table_schema&gt;.&lt;table_name&gt; a
-    WHERE &lt;column_#1_name&gt; in ( '&lt;value_#1&gt;', '&lt;value_#2&gt;' ) 
+    WHERE &lt;column_#1_name&gt; IN ( '&lt;value_#1&gt;', '&lt;value_#2&gt;' ) 
 </pre> 
 <pre class="brush: sql;"> 
-SELECT substr( &lt;column_#1_name&gt;, instr( &lt;column_#1_name&gt;, '(') + 1, instr( &lt;column_#1_name&gt;, ')' ) - instr( &lt;column_#1_name&gt;, '(' ) - 1 ) as &lt;alias_#1_name&gt;
+SELECT substr( &lt;column_#1_name&gt;, instr( &lt;column_#1_name&gt;, '(') + 1, instr( &lt;column_#1_name&gt;, ')' ) - instr( &lt;column_#1_name&gt;, '(' ) - 1 ) AS &lt;alias_#1_name&gt;
     FROM &lt;table_name&gt;
-    where ( ( &lt;column_#1_name&gt; in ( '&lt;value_#1&gt;', '&lt;value_#2&gt;' ) ) 
-            or ( &lt;column_#1_name&gt; is null 
-                and &lt;column_#2_name&gt; in ( '&lt;value_#3&gt;', '&lt;value_#4&gt;' ) )
-            or ( &lt;column_#1_name&gt; like '%&lt;value_#5&gt;%' ) 
-            or ( &lt;column_#1_name&gt; like '%&lt;value_#6&gt;%' ) )
-        and ( &lt;column_#3_name&gt; &gt;= to_date( '&lt;value_#5&gt;', 'ddmmyyyy' ) 
-        and &lt;column_#3_name&gt; &lt;= to_date( '&lt;value_#6&gt; 23:59:59', 'ddmmyyyy hh24:mi:ss' ) ) 
-    group by &lt;column_#1_name&gt;, &lt;column_#4_name&gt;
-    order by &lt;column_#1_name&gt;, &lt;column_#4_name&gt; asc
+    WHERE ( ( &lt;column_#1_name&gt; IN ( '&lt;value_#1&gt;', '&lt;value_#2&gt;' ) ) 
+            OR ( &lt;column_#1_name&gt; IS NULL 
+                AND &lt;column_#2_name&gt; IN ( '&lt;value_#3&gt;', '&lt;value_#4&gt;' ) )
+            OR ( &lt;column_#1_name&gt; LIKE '%&lt;value_#5&gt;%' ) 
+            OR ( &lt;column_#1_name&gt; LIKE '%&lt;value_#6&gt;%' ) )
+        AND ( &lt;column_#3_name&gt; &gt;= to_date( '&lt;value_#5&gt;', 'ddmmyyyy' ) 
+        AND &lt;column_#3_name&gt; &lt;= to_date( '&lt;value_#6&gt; 23:59:59', 'ddmmyyyy hh24:mi:ss' ) ) 
+    GROUP BY &lt;column_#1_name&gt;, &lt;column_#4_name&gt;
+    ORDER BY &lt;column_#1_name&gt;, &lt;column_#4_name&gt; ASC
 </pre> 
 <pre class="brush: sql;"> 
-SELECT a.&lt;column_#1_name&gt; as &lt;alias_#1_name&gt;, 
-        to_char( trunc( a.&lt;column_#2_name&gt; ), 'dd-mm-yyyy' ) as &lt;alias_#2_name&gt;, 
-        count(*) as &lt;alias_3_name&gt;
+SELECT a.&lt;column_#1_name&gt; AS &lt;alias_#1_name&gt;, 
+        to_char( trunc( a.&lt;column_#2_name&gt; ), 'dd-mm-yyyy' ) AS &lt;alias_#2_name&gt;, 
+        count(*) AS &lt;alias_3_name&gt;
     FROM &lt;table_name&gt; a
-    where a.&lt;column_#4_name&gt; = '&lt;value_#1&gt;' and a.&lt;column_#5_name&gt; = '&lt;value_#2&gt;'
-    group by a.&lt;column_#1_name&gt;, trunc( a.&lt;column_#2_name&gt; )  
-    order by trunc( a.&lt;column_#2_name&gt; ) desc 
+    WHERE a.&lt;column_#4_name&gt; = '&lt;value_#1&gt;' AND a.&lt;column_#5_name&gt; = '&lt;value_#2&gt;'
+    GROUP BY a.&lt;column_#1_name&gt;, trunc( a.&lt;column_#2_name&gt; )  
+    ORDER BY trunc( a.&lt;column_#2_name&gt; ) DESC 
 </pre> 
 <pre class="brush: sql;"> 
 SELECT &lt;column_#1_name&gt; 
@@ -368,76 +368,76 @@ SELECT &lt;column_#1_name&gt;
 <pre class="brush: sql;"> 
 SELECT a.&lt;column_#1_name&gt;, count( * )
     FROM &lt;table_name&gt; a
-    where a.&lt;column_#2_name&gt; &gt;= trunc( sysdate ) - 7 
-        and a.&lt;column_#2_name&gt; &lt; trunc( sysdate ) 
-        and a.&lt;column_#3_name&gt; = '&lt;value_#1&gt;' 
-        and a.&lt;column_#4_name&gt; = '&lt;value_#2&gt;'
-    group by a.&lt;column_#1_name&gt;
+    WHERE a.&lt;column_#2_name&gt; &gt;= trunc( SYSDATE ) - 7 
+        AND a.&lt;column_#2_name&gt; &lt; trunc( SYSDATE ) 
+        AND a.&lt;column_#3_name&gt; = '&lt;value_#1&gt;' 
+        AND a.&lt;column_#4_name&gt; = '&lt;value_#2&gt;'
+    GROUP BY a.&lt;column_#1_name&gt;
 </pre> 
 <pre class="brush: sql;"> 
 SELECT distinct( a.&lt;column_#1_name&gt; )
     FROM &lt;table_name&gt; a
-    where a.&lt;column_#2_name&gt; like '&lt;value_#2&gt;%' and a.&lt;column_#3_name&gt; = '&lt;value_#3&gt;'
+    WHERE a.&lt;column_#2_name&gt; LIKE '&lt;value_#2&gt;%' AND a.&lt;column_#3_name&gt; = '&lt;value_#3&gt;'
 </pre> 
 <pre class="brush: sql;"> 
 SELECT DISTINCT( &lt;column_#1_name&gt; ), &lt;column_#2_name&gt; 
     FROM &lt;table_schema&gt;.&lt;table_name&gt; 
-    WHERE &lt;column_#3_name&gt; = to_char( sysdate, 'DD' ) 
+    WHERE &lt;column_#3_name&gt; = to_char( SYSDATE, 'DD' ) 
         AND &lt;column_#4_name&gt; &gt;= TRUNC( SYSDATE ) - 1
         AND &lt;column_#2_name&gt; IN ( '&lt;value_#1&gt;', '&lt;value_#2&gt;' )     
 </pre> 
 <pre class="brush: sql;"> 
-select &lt;table_#2_alias&gt;.&lt;column_#1_name&gt; 
-    from &lt;table_schema&gt;.&lt;table_#1_name&gt; &lt;table_#1_alias&gt;, &lt;table_schema&gt;.&lt;table_#2_name&gt; &lt;table_#2_alias&gt;
+SELECT &lt;table_#2_alias&gt;.&lt;column_#1_name&gt; 
+    FROM &lt;table_schema&gt;.&lt;table_#1_name&gt; &lt;table_#1_alias&gt;, &lt;table_schema&gt;.&lt;table_#2_name&gt; &lt;table_#2_alias&gt;
     Where &lt;table_#1_alias&gt;.&lt;column_#2_name&gt; = '&lt;value_#1&gt;' 
-        and &lt;table_#1_alias&gt;.&lt;column_#3_name&gt; in ( '&lt;value_#2&gt;, '&lt;value_#3&gt;' ) 
-        and &lt;table_#1_alias&gt;.&lt;column_#4_name&gt; = &lt;table_#2_alias&gt;.&lt;column_#5_name&gt; 
-        and &lt;table_#1_alias&gt;.&lt;column_#6_name&gt; = '&lt;value_#4&gt;'
+        AND &lt;table_#1_alias&gt;.&lt;column_#3_name&gt; IN ( '&lt;value_#2&gt;, '&lt;value_#3&gt;' ) 
+        AND &lt;table_#1_alias&gt;.&lt;column_#4_name&gt; = &lt;table_#2_alias&gt;.&lt;column_#5_name&gt; 
+        AND &lt;table_#1_alias&gt;.&lt;column_#6_name&gt; = '&lt;value_#4&gt;'
 </pre> 
 <pre class="brush: sql;"> 
-select * 
-    from (
-        select &lt;column_#1_name&gt;, &lt;column_#2_name&gt; 
-            from &lt;table_#1_name&gt; 
-            where &lt;column_#3_name&gt; = '&lt;value_#1&gt;'
-        union all
-        select &lt;column_#1_name&gt;, &lt;column_#2_name&gt; 
-            from &lt;table_#2_name&gt; )
-    order by &lt;column_#1_name&gt; asc
+SELECT * 
+    FROM (
+        SELECT &lt;column_#1_name&gt;, &lt;column_#2_name&gt; 
+            FROM &lt;table_#1_name&gt; 
+            WHERE &lt;column_#3_name&gt; = '&lt;value_#1&gt;'
+        UNION all
+        SELECT &lt;column_#1_name&gt;, &lt;column_#2_name&gt; 
+            FROM &lt;table_#2_name&gt; )
+    ORDER BY &lt;column_#1_name&gt; ASC
 </pre> 
 <pre class="brush: sql;"> 
-select &lt;column_#1_name&gt;, 
-        decode( &lt;column_#2_name&gt;, '0', '', '1', 'YES' ) as &lt;alias_#2_name&gt;, 
-        '' as &lt;alias_#3_name&gt;, 
-        count( * ) as &lt;alias_4_name&gt; 
-    from &lt;table_name&gt;
-    where &lt;column_#3_name&gt; is null
-    group by &lt;column_#1_name&gt;, &lt;column_#2_name&gt; 
-union
-select &lt;column_#1_name&gt;, 
-        decode( &lt;column_#2_name&gt;, '0', '', '1', 'YES' ) as &lt;alias_#2_name&gt;, 
-        'YES' as &lt;alias_#3_name&gt;, 
-        count( * ) as &lt;alias_4_name&gt; 
-    from &lt;table_name&gt;
-    where &lt;column_#3_name&gt; is not null
-    group by &lt;column_#1_name&gt;, &lt;column_#2_name&gt;
+SELECT &lt;column_#1_name&gt;, 
+        decode( &lt;column_#2_name&gt;, '0', '', '1', 'YES' ) AS &lt;alias_#2_name&gt;, 
+        '' AS &lt;alias_#3_name&gt;, 
+        count( * ) AS &lt;alias_4_name&gt; 
+    FROM &lt;table_name&gt;
+    WHERE &lt;column_#3_name&gt; IS NULL
+    GROUP BY &lt;column_#1_name&gt;, &lt;column_#2_name&gt; 
+UNION
+SELECT &lt;column_#1_name&gt;, 
+        decode( &lt;column_#2_name&gt;, '0', '', '1', 'YES' ) AS &lt;alias_#2_name&gt;, 
+        'YES' AS &lt;alias_#3_name&gt;, 
+        count( * ) AS &lt;alias_4_name&gt; 
+    FROM &lt;table_name&gt;
+    WHERE &lt;column_#3_name&gt; IS NOT NULL
+    GROUP BY &lt;column_#1_name&gt;, &lt;column_#2_name&gt;
 </pre> 
 <u><a name="update_table_values">update table values</a></u>
 <pre class="brush: sql;"> 
 UPDATE &lt;table_name&gt;
     SET &lt;column_#1_name&gt; = '&lt;value_#1_new&gt;'
     WHERE &lt;column_#1_name&gt; = '&lt;value_#1_old&gt;' 
-        and &lt;column_#2_name&gt; = '&lt;value_#2&gt;' 
-        and &lt;column_#3_name&gt; = '&lt;value_#3&gt;' 
+        AND &lt;column_#2_name&gt; = '&lt;value_#2&gt;' 
+        AND &lt;column_#3_name&gt; = '&lt;value_#3&gt;' 
 </pre> 
 <pre class="brush: sql;"> 
 UPDATE &lt;table_name&gt; 
-    SET &lt;column_#1_name&gt; = null 
-    WHERE &lt;column_#1_name&gt; is not null
+    SET &lt;column_#1_name&gt; = NULL 
+    WHERE &lt;column_#1_name&gt; IS NOT NULL
 </pre> 
 <pre class="brush: sql;"> 
 UPDATE &lt;table_name&gt; 
-    SET &lt;column_#1_name&gt; = '&lt;value_#1&gt;', &lt;column_#2_name&gt; = sysdate 
+    SET &lt;column_#1_name&gt; = '&lt;value_#1&gt;', &lt;column_#2_name&gt; = SYSDATE 
     WHERE &lt;column_#3_name&gt; = '&lt;value_#3&gt;'
 </pre> 
 <u><a name="insert_table_values">insert table values</a></u>
@@ -473,12 +473,12 @@ ALTER TABLE &lt;table_name&gt;
 </pre> 
 <u><a name="alter_table_sequence_cache_size">alter table sequence cache size</a></u>
 <pre class="brush: sql;"> 
-alter sequence &lt;sequence_name&gt; cache 20
+ALTER SEQUENCE &lt;sequence_name&gt; cache 20
 </pre>
 <u><a name="delete_table_values">delete table values</a></u>
 <pre class="brush: sql;"> 
 DELETE FROM &lt;table_name&gt; 
-    WHERE &lt;column_name&gt; is not null
+    WHERE &lt;column_name&gt; IS NOT NULL
 </pre> 
 <pre class="brush: sql;"> 
 DELETE FROM &lt;table_name&gt; 
@@ -508,36 +508,36 @@ TRUNCATE TABLE &lt;table_name&gt;
 </pre>
 <u><a name="show_db_jobs">show db jobs</a></u>
 <pre class="brush: sql;"> 
-select * from user_jobs
+SELECT * FROM user_jobs
 </pre>
 <u><a name="execute_PL_SQL_block">pl/sql block execution</a></u>
 
 Execute the following PL/SQL block - stored procedure via the &quot;sqlplus&quot; utility:
 <pre class="brush: sql;"> 
-set serveroutput on
+SET serveroutput ON
 DECLARE 
     &lt;input_parameter_#1_name&gt; varchar2(30) := '&lt;value_#1&gt;';
     &lt;input_parameter_#2_name&gt; varchar2(30) := '&lt;value_#2&gt;';
     &lt;output_parameter_#3_name&gt; number;
     &lt;output_parameter_#4_name&gt; varchar2(30);            
-begin
+BEGIN
     &lt;table_schema&gt;.&lt;stored_procedure_name&gt;(&lt;input_parameter_#1_name&gt;, &lt;input_parameter_#2_name&gt;,
                                            &lt;output_parameter_#3_name&gt;, &lt;output_parameter_#4_name&gt; );
     DBMS_OUTPUT.PUT_LINE( 'output: ' || &lt;output_parameter_#3_name&gt; );
     DBMS_OUTPUT.PUT_LINE( 'output: ' || &lt;output_parameter_#4_name&gt; );
-end;
+END;
 </pre>
 <u><a name="show_long_running_queries">show long-running queries</a></u>
 <pre class="brush: sql;"> 
 SELECT * FROM 
-    ( select username, opname, sid, serial#, context, sofar, totalwork, round( sofar / totalwork * 100, 2 ) "% Complete" 
-        from v$session_longops ) 
+    ( SELECT username, opname, sid, serial#, context, sofar, totalwork, round( sofar / totalwork * 100, 2 ) "% Complete" 
+        FROM v$session_longops ) 
     WHERE "% Complete" != 100
 </pre>
 <u><a name="SID_of_established_db_session">sid of established db session</a></u>
 <pre class="brush: sql;"> 
-Select distinct( SID ) 
-    from V$MyStat
+SELECT distinct( SID ) 
+    FROM V$MyStat
 </pre>
 <u><a name="show_db_sequences">show db sequences</a></u>
 <pre class="brush: sql;"> 
