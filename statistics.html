@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el">  
 	<head>
 		<title>Homepages of Aristotelis Metsinis...</title>
@@ -9,7 +9,8 @@
 
 		<link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
 		<link rel="stylesheet" type="text/css" href="css/ccs_1.css" />
-
+		<link rel="stylesheet" type="text/css" href="css/statistics.css" />
+		
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" /> 
 		<script type="text/javascript"> 
 			if(top.location == self.location) 
@@ -19,7 +20,7 @@
 		</script>               
 	</head>    
 	<body>
-    	<applet code="statsapplet.class" name="statistics" width="1" height="1" archive="statistics.jar" id="statistics">Your browser is not Java enabled.</applet>
+    	<!--<applet code="statsapplet.class" name="statistics" width="1" height="1" archive="statistics.jar" id="statistics">Your browser is not Java enabled.</applet>-->
 		<br />
         <table width="100%" border="0" cellpadding="10">
 	  		<tr>
@@ -27,13 +28,24 @@
                 	<p class="documentDescription">Statistical Analysis of Experimental Data</p>             
     				<div class="plain">			
         				<p>
-                        	The statistical analysis of experimental data is an important requirement of an engineer. In the context of this project we were required to develop a Java applet program which computes statistical information based on an input data file consisting of (x, y) data observation pairs. The following notes present a briefly introduction (background) on the statistical topics that the applet computes.
+                        	The statistical analysis of experimental data is an important requirement of an engineer. In the context of this project we were required to develop a Java applet program, converted now to "Java Web Start" (JNLP) application, which computes statistical information based on an input data file consisting of (x, y) data observation pairs. The following notes present a briefly introduction (background) on the statistical topics that the applet computes.
                       	</p>
                         <br />
-                        <p><u>Process your data sample &amp; obtain your data sample statistics</u></p>
+                        <p><u>Java app</u></p>
                         <p>
                         	If you would like to process your data samples, it is required to store data as (x,y) pairs in a text (.txt) file and process it by opening 
 <i>file</i> menu and chossing <i>open</i>. Particularly, the file must consist of rows of data. Each row must have two columns separated by space(s). Each row  represents a (x,y) sample, where the first and the second column contain the "x" and "y" values of your data respectively.
+						</p>
+						<br />
+						<p>
+							<a href="statistics/statistics.jnlp"><img class="jnlp_img" src="img/statsbn_small.gif" alt="statistics app"></a>
+							Click on this icon to download "statistics.jnlp" (JNLP) file. Then just accept and double click on this "JNLP" file. This should start "Java Web Start" and you should be able to launch the "Java" application shortly.
+						</p>
+						<p>
+							"Java Web Start" (JNLP) file is for user to download and launch a "Java" program, when user clicks on the downloaded "JNLP" file. With browsers being more restrictive when it comes to running "Java applets", the initially developed "Java applet" converted to "Java Web Start" (JNLP) application so that instead of being launched from "html", it is now being launched with "JNLP", independently of a browser, as it does not rely on a browser (Java) plugin.
+						</p>
+						<p>
+							Prerequisites : a) install "Java JDK/JRE". b) starting with Java 7 Update 51, an application that does not conform with the latest security practices, such as an application not signed with a certificate from "trusted certificate authority" or an application that is digitally signed by an unknown publisher - as in our case - or a "JAR" file not having the "Permission" manifest attribute or an application signed with an expired certificate, can still be authorized to run by including the site (URL) that hosts it to the "Exception Site List" of the "Java Control Panel / Security tab". "Java Control Panel" can be launched e.g. through the "Windows Start menu / Java program listing / Configure Java" or e.g. by searching for the "javacpl.exe" executable. Have a look at <a href="https://java.com/en/download/faq/exception_sitelist.xml" target="_blank">https://java.com/en/download/faq/exception_sitelist.xml</a> for more information. So in our case, the "Exception Site List" of the "Java Control Panel" should be properly updated with the following "URL" : "http://aristotelis-metsinis.github.io/".
 						</p>
                         <br />
 						<p><u>Introduction</u></p>

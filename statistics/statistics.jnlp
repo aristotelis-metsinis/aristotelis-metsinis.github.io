@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+	"Java Web Start" (JNLP) file for user to download and launch a "Java AWT" program, 
+    when user clicks on the downloaded "JNLP" file. 
+	
+	With browsers being more restrictive when it comes to running "Java applets", the 
+	initially developed "Java applet" converted to "Java Web Start" (JNLP) application 
+	so that instead of being launched from "html", it is now being launched with "JNLP", 
+	independently of a browser, as it does not rely on a browser (Java) plugin. 
+	  
+	Prerequisites :
+	- install "Java JDK/JRE". 
+	- starting with Java 7 Update 51, an application that does not conform with the latest 
+	  security practices, such as an application not signed with a certificate from "trusted 
+	  certificate authority" or an application that is digitally signed by an unknown 
+	  publisher - as in our case - or a "JAR" file not having the "Permission" manifest attribute 
+	  or an application signed with an expired certificate, can still be authorized to run by 
+	  including the site (URL) that hosts it to the "Exception Site List" of the "Java Control Panel / 
+	  Security tab". "Java Control Panel" can be launched e.g. through the "Windows Start menu / 
+	  Java program listing / Configure Java" or e.g. by searching for the "javacpl.exe" executable. 
+	  Have a look at "https://java.com/en/download/faq/exception_sitelist.xml" for more information. 
+	  So in our case, the "Exception Site List" of the "Java Control Panel" should be properly updated 
+	  with the following "URL" : "http://aristotelis-metsinis.github.io/".
+
+	"Java Web Start" is a mechanism for program delivery through a standard Web server. 
+	Typically initiated through the browser, these programs are deployed to the client and 
+	executed outside the scope of the browser. Once deployed, the programs do not need to be 
+	downloaded again, and they can automatically download updates on start-up without requiring 
+	the user to go through the whole installation process again.
+	
+	So in practice, with "Java Web Start", the user can launch a "Java" application by clicking a 
+	"HTML" link to a "JNLP" (Java Network Launching Protocol) file for this application inside a web 
+	browser. The "JNLP" file, which is a special configuration file, instructs "Java Web Start" to 
+	download, cache, and run the "Java" application. To run applications with "Java Web Start", it is 
+	enough to have a compatible version of the "Java Runtime Environment" (JRE) installed on the client 
+	machine. The installation of the "Java Development Kit" (JDK) is not required.
+	
+	Summary of "Java Web Start" steps :
+	- Create "Java AWT" program and "JAR" it; locate Java’s classes folder and "JAR" it with e.g. 
+	  the following command in command prompt "jar -cvf statistics.jar *.*". This will pack all the Java’s 
+	  classes into a new "JAR" file.
+	- Add a new "keystore" with e.g. the following command : 
+	  "keytool -genkey -keystore key_store -alias statistics_alias -validity 36500".
+	- Attached the newly created "keystore" to "JAR" file with e.g. the following command : 
+	  "jarsigner -keystore key_store -tsa http://tsa.safecreative.org statistics.jar statistics_alias".
+	- To verify that the "JAR" file was signed (and timestamped) successfully, run e.g. the following 
+	  command from the command prompt: "jarsigner -verify -verbose -certs statistics.jar".
+	- Create "JNLP" file (statistics.jnlp).
+	- Deploy both "JAR" and "JNLP" onto web server.
+	- Access "JAR" from web through e.g. "http://aristotelis-metsinis.github.io/statistics/statistics.jnlp". 
+	  It will prompt to download the "statistics.jnlp" file; just accept and double click on it to launch 
+	  the application.
+-->
+
+<!-- The topmost "xml" element for this "JNLP" file defining the base location for all relative URLs 
+     specified in "href" attributes in this "JNLP" file and the "URL" of this "JNLP" file itself. -->
+<jnlp codebase="http://aristotelis-metsinis.github.io/statistics" href="statistics.jnlp" spec="1.0+">
+	<!-- Describe this "Rich Internet Application" (RIA) and its source. -->
+    <information>
+		<!-- The title of this "RIA". -->
+        <title>Statistical Analysis of Experimental Data</title>
+		<!-- The provider of this "RIA". -->
+        <vendor>Aristotelis Metsinis</vendor>
+		<!-- The homepage of this "RIA"; a "URL" pointing to where more information about this "RIA" can be found. -->
+        <homepage href="http://aristotelis-metsinis.github.io/statistics.html"/>
+		<!-- A short statement describing this "RIA". -->
+        <description>The statistical analysis of experimental data is an important requirement of an engineer. In the context of this project, we were required to develop a "Java applet" program, now converted to a "Java Web Start" (JNLP) application, which computes statistical information based on an input data file consisting of (x, y) data observation pairs. If you would like to process your data samples, it is required to store data as (x,y) pairs in a text (.txt) file and process it by opening file menu and choosing open. Particularly, the file must consist of rows of data. Each row must have two columns separated by space(s). Each row represents a (x,y) sample, where the first and the second column contain the "x" and "y" values of your data respectively.</description>
+		<!-- A short statement describing this "RIA" defining an indicator as to the type of description. -->
+        <description kind="short">The statistical analysis of experimental data is an important requirement of an engineer. In the context of this project, we were required to develop a "Java applet" program, now converted to a "Java Web Start" (JNLP) application, which computes statistical information based on an input data file consisting of (x, y) data observation pairs. If you would like to process your data samples, it is required to store data as (x,y) pairs in a text (.txt) file and process it by opening file menu and choosing open. Particularly, the file must consist of rows of data. Each row must have two columns separated by space(s). Each row represents a (x,y) sample, where the first and the second column contain the "x" and "y" values of your data respectively.</description>
+		<!-- An icon identifying this "RIA" to the user defining a "URL" pointing to the icon file  
+		     and an indication about the suggested use of this icon. -->
+        <icon href="statsbn.gif" kind="splash"/>
+		<!-- An icon identifying this "RIA" to the user defining a "URL" pointing to the icon file  
+		     and an indication about the suggested use of this icon. -->
+        <icon href="statsbn.gif" kind="default"/>
+		<!-- This "RIA" can operate when the client system is disconnected from the network. -->
+        <offline-allowed/>
+    </information>
+	<!-- How and when this "RIA" updates should be handled by the "JNLP" client. -->
+    <update check="background"/>
+	<!-- Request enhanced permissions. -->
+    <security>
+		<!-- Request that this "RIA" should be run with all permissions. -->
+        <all-permissions/>
+    </security>
+	<!-- Resources that are needed for this "RIA". -->
+    <resources>
+		<!-- Versions of "Java" software to run this "RIA" with. -->
+        <java version="1.4+"/>
+		<!-- "JAR" file that is part of this RIA's class-path defining the "URL" of the "JAR" file
+             and indicating that this "JAR" file contains the class containing the main method of this "RIA". -->
+        <jar href="statistics.jar" main="true"/>
+    </resources>
+	<!-- This is the "JNLP" file for an "application" and this is the name of the class containing the 
+	    "public static void main(String[])" method of the application as well as the name of this application. -->
+    <application-desc main-class="statsapplet" name="statistics"/>
+</jnlp>
+ 
