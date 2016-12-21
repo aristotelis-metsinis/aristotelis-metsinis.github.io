@@ -1,0 +1,14 @@
+.jnlp_img
+{
+	float: left;
+	margin: 10px 10px 0px 0;
+	border: 1px solid #ccc;
+	padding: 3px;
+}
+
+.jnlp_img:hover 
+{
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
