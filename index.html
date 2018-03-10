@@ -54,10 +54,10 @@
         
 		<script type="text/javascript" src="js/datemodified.js"></script>
 
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>	
-		<script src="js/weather_report.js"></script>
+		<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>	
+		<script src="js/weather_report.js"></script> 
 	
-		<link rel="stylesheet" type="text/css" href="css/weather_report.css">
+		<link rel="stylesheet" type="text/css" href="css/weather_report.css"> -->
         
 		<script type="text/javascript">
 			function interactive(value, ref,
@@ -98,6 +98,7 @@
 				document.getElementById('links').className = "plain"; 				
 				document.getElementById('blog').className = "plain"; 
 				document.getElementById('weather_forecast').className = "plain";
+				document.getElementById('latest_earthquakes').className = "plain";
 				// document.getElementById('sign_guestbook').className = "plain"; 
 				
 				if (id_class != "")
@@ -122,6 +123,7 @@
 				document.getElementById('links_nav_li').className = "navTreeItem visualNoMarker";																																																			
 				document.getElementById('blog_nav_li').className = "navTreeItem visualNoMarker";
 				document.getElementById('weather_forecast_nav_li').className = "navTreeItem visualNoMarker";
+				document.getElementById('latest_earthquakes_nav_li').className = "navTreeItem visualNoMarker";
 				// document.getElementById('sign_guestbook_nav_li').className = "navTreeItem visualNoMarker";
 				document.getElementById(id_nav_li).className = id_nav_li_class; 
 				
@@ -142,6 +144,7 @@
 				document.getElementById('links_nav_div').className = "visualIcon contenttype-folder";																																			
 				document.getElementById('blog_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById('weather_forecast_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById('latest_earthquakes_nav_div').className = "visualIcon contenttype-folder";
 				// document.getElementById('sign_guestbook_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById(id_nav_div).className = id_nav_div_class; 
 			
@@ -162,6 +165,7 @@
 				document.getElementById('links_nav_ref').className = "state-published visualIconPadding";																																				
 				document.getElementById('blog_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById('weather_forecast_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById('latest_earthquakes_nav_ref').className = "state-published visualIconPadding";
 				// document.getElementById('sign_guestbook_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById(id_nav_ref).className = id_nav_ref_class;	
 				
@@ -392,6 +396,16 @@
                     weather forecast
                 </a> 
          	</li>			
+  			<li id="latest_earthquakes" class="plain"> 
+            	<a href="latest_earthquakes.html" target="page_iframe" title="Latest Earthquakes"
+                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("latest earthquakes","latest_earthquakes.html",
+                    					 "latest_earthquakes","selected",
+                                         "latest_earthquakes_nav_li","navTreeItem",
+                                         "latest_earthquakes_nav_div","visualIcon contenttype-plone-site",
+                                         "latest_earthquakes_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                    latest earthquakes
+                </a> 
+         	</li>
 		</ul>
 		<div>
   			<ul id="portal-personaltools">
@@ -695,7 +709,21 @@
 								                    weather forecast
                                     	        </a>                                             
                                       		</div>
-	                					</li>										
+	                					</li>	
+										<li class="navTreeItem visualNoMarker" id="latest_earthquakes_nav_li">
+            	      						<div class="visualIcon contenttype-folder" id="latest_earthquakes_nav_div">                    
+                	    						<a href="latest_earthquakes.html" target="page_iframe" id="latest_earthquakes_nav_ref"
+                    	                        	title="Latest Earthquakes"
+                        	                    	class="state-published visualIconPadding" 
+                									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("latest earthquakes","latest_earthquakes.html",
+                    					 								 "latest_earthquakes","selected",
+								                                         "latest_earthquakes_nav_li","navTreeItem",
+                                								         "latest_earthquakes_nav_div","visualIcon contenttype-plone-site",
+								                                         "latest_earthquakes_nav_ref","navTreeCurrentItem visualIconPadding")'>
+								                    latest earthquakes
+                                    	        </a>                                             
+                                      		</div>
+	                					</li>
 					      			</ul>
 						            <span class="portletBottomLeft"></span> 
     	                            <span class="portletBottomRight"></span> 
