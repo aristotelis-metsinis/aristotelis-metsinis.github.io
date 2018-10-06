@@ -304,6 +304,16 @@
 		
 		<!-- "github" button. -->
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		
+		<!-- Hit counter -->
+		<!-- Firebase App is always required and must be first - The core firebase client (required) -->
+		<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+		<!-- The Firebase Realtime Database -->
+		<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+		<!-- Hit counter using Firebase Realtime Database -->
+		<script src="js/hit_counter.js"></script>
+		<!-- Hit counter stylesheet -->
+		<link rel="stylesheet" type="text/css" href="css/hit_counter.css">
 	</head>
 	<body class="section-main" dir="ltr" onload="manageStylesheets(); iframeRedirection();" onunload="window.name='';">
 		<h1 class="hiddenStructure" id="portal-logo"> 
@@ -409,7 +419,7 @@
 		</ul>
 		<div>
   			<ul id="portal-personaltools">
-    			<li>your are visitor: <img src="http://counter.pathfinder.gr/showcounter/354" alt="visitor_counter" height="15" align="baseline" /></li>
+    			<li>your are visitor : <span id="hit_counter"></span></li>
   			</ul>
 		</div>
 		<div id="portal-breadcrumbs"> 
