@@ -1,7 +1,7 @@
 
 // Ref @ https://alansimpson.thinkific.com/courses/create-a-hit-counter-with-firebase-and-javascript
 
-if ( location.hostname.toLowerCase() != 'aristotelis-metsinis.github.com' ) {
+if ( location.hostname.toLowerCase() == "aristotelis-metsinis.github.io" ) {
 	// Initialization information to configure the Firebase JavaScript SDK to use the Realtime Database. 
 	// The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized 
 	// in realtime to every connected client.
@@ -62,8 +62,8 @@ if ( location.hostname.toLowerCase() != 'aristotelis-metsinis.github.com' ) {
 		var postData = {
 			page: location.pathname,
 			count: counts,
-			lastVisit: firebase.database.ServerValue.TIMESTAMP,
-			lastreferrer: document.referrer
+			lastVisit: firebase.database.ServerValue.TIMESTAMP
+			// lastreferrer: document.referrer
 		}
 		var updates = {};
 		updates[ "/pageCounts/" + key ] = postData;
