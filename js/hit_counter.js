@@ -28,7 +28,7 @@ if ( location.hostname.toLowerCase() == "aristotelis-metsinis.github.io" ) {
 		// A snapshot of data without listening for changes - 
 		// Use "once()" method; it triggers once and then does not trigger again - data needs to 
 		// be loaded once and isn't expected to change frequently or require active listening.
-		pageCountRef.orderByChild( "page" ).equalTo( location.pathname ).once( "value", function( snapshot ) {
+		pageCountRef.orderByChild( "page" ).equalTo( location.pathname.substr( 0, location.pathname.indexOf( "/" ) + 1 ) ).once( "value", function( snapshot ) {
 			snapshot.forEach( function( child ) {
 				obj = {
 					key: child.key,
@@ -60,10 +60,10 @@ if ( location.hostname.toLowerCase() == "aristotelis-metsinis.github.io" ) {
 		counts = pastcounts + 1;
 		// Gather info to post.
 		var postData = {
-			page: location.pathname,
+			page: location.pathname.substr( 0, location.pathname.indexOf( "/" ) + 1 ),
 			count: counts,
-			lastVisit: firebase.database.ServerValue.TIMESTAMP
-			// lastreferrer: document.referrer
+			lastVisit: firebase.database.ServerValue.TIMESTAMP,
+			lastreferrer: document.referrer
 		}
 		var updates = {};
 		updates[ "/pageCounts/" + key ] = postData;
