@@ -1,0 +1,45 @@
+/* Wrap FlipClock in a container and override some of it's CSS */
+.clock_container {
+	text-align: left;
+}
+
+.clock {
+	/* By default .clock has width: 100% and display: block. 
+	   By setting width: auto and display: inline-table, the item no 
+	   longer spans the width of it's parent and is able to be properly
+	   aligned by adding text-align : right to it's container */
+	display: inline-table;
+	vertical-align: sub;
+	width: auto;
+	
+	/* Fix size issue in FlipClock */
+	zoom: 0.14;
+	-moz-transform: scale( 0.14 );
+	
+	margin: 0px;
+}
+
+.flip {
+	padding: 1px 4px 1px;
+}
+
+.flip-clock-wrapper ul {
+	font-size: 0px;
+	margin: 5px 12px;
+	width: 90px;
+	height: 90px;
+	border-radius: 3px;
+}
+
+.flip-clock-wrapper ul li a div div.inn {
+	background: #c6c6c6;	
+	color: #777051;
+	font-weight: normal;
+	text-shadow: unset;
+	font: 100% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+	border-radius: 3px;
+}
+
+.flip-clock-divider  {
+	margin : 0px 15px;
+}

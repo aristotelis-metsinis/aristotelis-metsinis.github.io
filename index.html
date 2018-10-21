@@ -41,7 +41,7 @@
 
 		<script type="text/javascript" src="js/js_scripts_2.js"></script>
 		<script type="text/javascript" src="js/js_scripts_1.js"></script>
-		<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 		<!-- calendar stylesheet -->
 		<link rel="stylesheet" type="text/css" media="all" href="js/jscalendar-1.0/calendar-win2k-cold-1.css" title="calendar" />
@@ -314,6 +314,24 @@
 		<script src="js/hit_counter.js"></script>
 		<!-- Hit counter stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/hit_counter.css">
+		
+		<!-- Digital flip clock -->
+		<!-- Digital flip clock core stylesheet -->
+ 		<link rel="stylesheet" type="text/css" href="flipclock/compiled/flipclock.css">
+		<!-- Digital flip clock helper stylesheet -->
+ 		<link rel="stylesheet" type="text/css" href="flipclock/compiled/flipclock_plus.css">		
+		<!-- Digital flip clock core javascript library -->
+ 		<script src="flipclock/compiled/flipclock.js"></script>		
+		<!-- Twenty-four hour clock face --> 
+ 		<script type="text/javascript">
+ 			var clock;
+ 			
+ 			$(document).ready(function() {
+ 				clock = $('.clock').FlipClock({
+ 					clockFace: 'TwentyFourHourClock'
+ 				});
+ 			});
+ 		</script>
 	</head>
 	<body class="section-main" dir="ltr" onload="manageStylesheets(); iframeRedirection();" onunload="window.name='';">
 		<h1 class="hiddenStructure" id="portal-logo"> 
@@ -419,7 +437,8 @@
 		</ul>
 		<div>
   			<ul id="portal-personaltools">
-    			<li>your are visitor : <span id="hit_counter"></span></li>
+				<li style="margin-left: 0px;">time now : <span class="clock_container"><span class="clock"></span></span></li>
+    			<li style="margin-left: 0px;">&nbsp;|&nbsp;&nbsp;your are visitor : <span id="hit_counter"></span></li>
   			</ul>
 		</div>
 		<div id="portal-breadcrumbs"> 
