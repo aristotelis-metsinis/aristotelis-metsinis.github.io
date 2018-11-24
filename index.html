@@ -99,6 +99,7 @@
 				document.getElementById('blog').className = "plain"; 
 				document.getElementById('weather_forecast').className = "plain";
 				document.getElementById('latest_earthquakes').className = "plain";
+				document.getElementById('sky_map').className = "plain";
 				// document.getElementById('sign_guestbook').className = "plain"; 
 				
 				if (id_class != "")
@@ -124,6 +125,7 @@
 				document.getElementById('blog_nav_li').className = "navTreeItem visualNoMarker";
 				document.getElementById('weather_forecast_nav_li').className = "navTreeItem visualNoMarker";
 				document.getElementById('latest_earthquakes_nav_li').className = "navTreeItem visualNoMarker";
+				document.getElementById('sky_map_nav_li').className = "navTreeItem visualNoMarker";
 				// document.getElementById('sign_guestbook_nav_li').className = "navTreeItem visualNoMarker";
 				document.getElementById(id_nav_li).className = id_nav_li_class; 
 				
@@ -145,6 +147,7 @@
 				document.getElementById('blog_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById('weather_forecast_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById('latest_earthquakes_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById('sky_map_nav_div').className = "visualIcon contenttype-folder";
 				// document.getElementById('sign_guestbook_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById(id_nav_div).className = id_nav_div_class; 
 			
@@ -166,6 +169,7 @@
 				document.getElementById('blog_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById('weather_forecast_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById('latest_earthquakes_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById('sky_map_ref').className = "state-published visualIconPadding";
 				// document.getElementById('sign_guestbook_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById(id_nav_ref).className = id_nav_ref_class;	
 				
@@ -433,7 +437,17 @@
                                          "latest_earthquakes_nav_ref","navTreeCurrentItem visualIconPadding")'>
                     latest earthquakes
                 </a> 
-         	</li>
+         	</li>		
+  			<li id="sky_map" class="plain"> 
+            	<a href="sky_map.html" target="page_iframe" title="Sky Map"
+                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("sky map","sky_map.html",
+                    					 "sky_map","selected",
+                                         "sky_map_nav_li","navTreeItem",
+                                         "sky_map_nav_div","visualIcon contenttype-plone-site",
+                                         "sky_map_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                    sky map
+                </a> 
+         	</li>			
 		</ul>
 		<div>
   			<ul id="portal-personaltools">
@@ -753,6 +767,20 @@
                                     	        </a>                                             
                                       		</div>
 	                					</li>
+										<li class="navTreeItem visualNoMarker" id="sky_map_nav_li">
+            	      						<div class="visualIcon contenttype-folder" id="sky_map_nav_div">                    
+                	    						<a href="sky_map.html" target="page_iframe" id="sky_map_nav_ref"
+                    	                        	title="Sky Map"
+                        	                    	class="state-published visualIconPadding" 
+                									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("sky map","sky_map.html",
+                    					 								 "sky_map","selected",
+								                                         "sky_map_nav_li","navTreeItem",
+                                								         "sky_map_nav_div","visualIcon contenttype-plone-site",
+								                                         "sky_map_nav_ref","navTreeCurrentItem visualIconPadding")'>
+								                    sky map
+                                    	        </a>                                             
+                                      		</div>
+	                					</li>										
 					      			</ul>
 						            <span class="portletBottomLeft"></span> 
     	                            <span class="portletBottomRight"></span> 
