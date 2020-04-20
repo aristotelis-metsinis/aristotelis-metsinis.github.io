@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>hangman</title>
+	<link rel="stylesheet" href="./hangman/bootstrap.min.css">
+	<link rel="stylesheet" href="./hangman/font-awesome.min.css">
+	<link rel="stylesheet" href="./hangman/style.css">
+	<script type="text/javascript"> 
+		if(top.location == self.location) 
+		{ 
+			top.location.href = 'index.html'+'?redirectedFrom=hangman.html'; 
+		} 
+	</script>
+</head>
+
+<body>
+    <div class="col-md-2 left-section"><img style="margin-top:25px;" src="./hangman/girl.png" alt=""></div>
+    <div class="col-md-10" id="hangman-app">
+        <div data-reactroot="">
+            <div class=" hangman-content">
+                <div class="results-container" style="display: none; width: inherit;"><img src="./hangman/boy.png" style="width: 20%;"><a>Παίξε ξανά</a></div>
+                <div class=" row text-center">
+                    <canvas>This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+                </div>
+                <div class="find-word text-center">
+                    <h2>Προσπάθησε να μαντέψεις την κρυμμένη λέξη !</h2>
+                    <div>
+                        <ul class="letters">
+                            <li class="letter">α</li>
+                            <li class="letter">β</li>
+                            <li class="letter">γ</li>
+                            <li class="letter">δ</li>
+                            <li class="letter">ε</li>
+                            <li class="letter">ζ</li>
+                            <li class="letter">η</li>
+                            <li class="letter">θ</li>
+                            <li class="letter">ι</li>
+                            <li class="letter">κ</li>
+                            <li class="letter">λ</li>
+                            <li class="letter">μ</li>
+                            <li class="letter">ν</li>
+                            <li class="letter">ξ</li>
+                            <li class="letter">ο</li>
+                            <li class="letter">π</li>
+                            <li class="letter">ρ</li>
+                            <li class="letter">σ</li>
+                            <li class="letter">τ</li>
+                            <li class="letter">υ</li>
+                            <li class="letter">φ</li>
+                            <li class="letter">χ</li>
+                            <li class="letter">ψ</li>
+                            <li class="letter">ω</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="hidden-word">
+                            <li id="hidden-letter0">_</li>
+                            <li id="hidden-letter1">_</li>
+                            <li id="hidden-letter2">_</li>
+                            <li id="hidden-letter3">_</li>
+                            <li id="hidden-letter4">_</li>
+                            <li id="hidden-letter5">_</li>
+                        </ul>
+                    </div>
+                    <h2>
+														Απομένουν 
+
+														6
+
+														 προσπάθειες
+
+													</h2></div>
+            </div>
+        </div>
+    </div>
+    <script src="./hangman/hangman.bundle.js"></script>
+</body>
+
+</html>
