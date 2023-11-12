@@ -22439,14 +22439,14 @@ var GameOverMessage = function (_React$Component) {
         visible = "";
         message = _react2.default.createElement(
           "h2",
-          { style: { 'white-space': 'pre-wrap' } },
+          { style: { 'whiteSpace': 'pre-wrap' } },
           "\u03A3\u03C5\u03B3\u03C7\u03B1\u03C1\u03B9\u03C4\u03AE\u03C1\u03B9\u03B1 \u03BA\u03AD\u03C1\u03B4\u03B9\u03C3\u03B5\u03C2 !\n\u0397 \u03bb\u03ad\u03be\u03b7 \u03c0\u03bf\u03c5 \u03ad\u03c8\u03b1\u03c7\u03bd\u03b5\u03c2 \u03ae\u03c4\u03b1\u03bd \u003a " + word
         );
       } else if (gameOver) {
         visible = "";
         message = _react2.default.createElement(
           "h2",
-          { style: { 'white-space': 'pre-wrap' } },
+          { style: { 'whiteSpace': 'pre-wrap' } },
           "\u0394\u03C5\u03C3\u03C4\u03C5\u03C7\u03CE\u03C2 \u03AD\u03C7\u03B1\u03C3\u03B5\u03C2.\n\u0397 \u03bb\u03ad\u03be\u03b7 \u03c0\u03bf\u03c5 \u03ad\u03c8\u03b1\u03c7\u03bd\u03b5\u03c2 \u03ae\u03c4\u03b1\u03bd \u003a " + word
         );
       }
