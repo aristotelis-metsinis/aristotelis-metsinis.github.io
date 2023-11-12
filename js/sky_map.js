@@ -8,11 +8,11 @@
       map for the input location; sky map built by Dirk Matussek on server side.
 */
 
-/*  Initialize application by fetching the sky map of Athens, Greece; set-up the proper image source address.
-    Why this one ? Because it is my home city @ lat: 37.983810, lng: 23.727539 */
-var sky_map_src = "http://www.astrobot.eu/skymapserver/skymap?type=png&size=580&colorset=0&lang=en&lon=23.7275&lat=37.9838&city=Athens%2C+Greece+%3A%0D%0A37.9838%C2%B0+N%2C+23.7275%C2%B0+E&timezone=UTC&deco=16399";
+/*  Initialize application by fetching the sky map of Athens, Greece; set-up the proper source address.
+    Why this one ? Because it is my home city @ lat: 37.976, lon: 23.735 */
+var sky_map_src = "https://astroviewer.net/av/widgets/skymap-av4-widget.php?lon=23.735&lat=37.976&deco=16415&bgColor=ffffff&lang=en&size=600&name=Athens&tz=Europe/Athens";
 
-// Set the source attribute of the sky map image element after the document (DOM) is loaded.
+// Set the source attribute of the sky map element after the document (DOM) is loaded.
 $( document ).ready( function() {
 	$( '#sky_map' ).attr( 'src', sky_map_src );
 });	
@@ -40,14 +40,48 @@ function sky_map() {
 		}
 		
 		// The "place" has a geometry; save location's coordinates ( latitude, longitude ) and its name ( URL encoded ).
-		var lat  = encodeURI( place.geometry.location.lat().toFixed( 4 ) );
-		var lon  = encodeURI( place.geometry.location.lng().toFixed( 4 ) ); 
-		var city = encodeURI( place.formatted_address )+ "+%3A%0D%0A" + lat + "%C2%B0+N%2C+" + lon + "%C2%B0+E";
+		var lat  = encodeURI( place.geometry.location.lat().toFixed( 3 ) );
+		var lon  = encodeURI( place.geometry.location.lng().toFixed( 3 ) ); 
+		var name = encodeURI( place.formatted_address );
 		
-		// Set-up the proper image source address for the input location.
-		sky_map_src = "http://www.astrobot.eu/skymapserver/skymap?type=png&size=580&colorset=0&lang=en&lon=" + lon + "&lat=" + lat + "&city=" + city + "&timezone=UTC&deco=16399";
+		// Current timestamp in seconds.
+		const timestamp = Math.floor( Date.now() / 1000 ); 
 		
-		// Set the source attribute of the sky map image element.
+		// HTTP request to the Time-Zone API to get back the time-zone id of the input location.
+		const url = "https://maps.googleapis.com/maps/api/timezone/json?" + 
+			"location=" + lat + "%2C" + lon +
+			"&timestamp=" + timestamp + 
+			"&key=AIzaSyDlA5DFMdvjfPlzq51CnGsyJK8aUWS1sMo";
+
+		let timeZone;
+		
+		// Make an synchronous HTTP request to the Time-Zone API to get back the time-zone id of the input location.
+		var xhr = new XMLHttpRequest();
+		xhr.open( 'GET', url, false );
+		xhr.send();
+
+		if ( xhr.status === 200 ) {
+			// Parse the JSON response.
+			var data = JSON.parse( xhr.responseText ); 
+			// Access the time-zone id of the input location in the JSON response.		
+			timeZone = data.timeZoneId;
+		} 
+		else {
+			console.error( 'Request failed : ', xhr.status, xhr.statusText );
+		}				
+		
+		// Set-up the proper source address for the input location.
+		sky_map_src = "https://astroviewer.net/av/widgets/skymap-av4-widget.php?" + 
+			"lon=" + lon + 
+			"&lat=" + lat + 
+			"&deco=16415" +
+			"&bgColor=ffffff" +
+			"&lang=en" + 
+			"&size=600" + 
+			"&name=" + name + 
+			"&tz=" + timeZone;
+		
+		// Set the source attribute of the sky map element.
 		$( '#sky_map' ).attr( 'src', sky_map_src );
 	})
 }

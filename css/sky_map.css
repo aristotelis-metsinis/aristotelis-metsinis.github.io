@@ -21,7 +21,7 @@ html, body {
 }
 
 .location { 
-	grid-area: location_container; 
+	grid-area: location_container;
 }
 
 .sky_map { 
@@ -31,9 +31,9 @@ html, body {
 .grid-container {
 	display: grid;
 	grid-template-areas:
-		'location_container sky_map_container sky_map_container sky_map_container sky_map_container sky_map_container'
-		'location_container sky_map_container sky_map_container sky_map_container sky_map_container sky_map_container'
-		'location_container sky_map_container sky_map_container sky_map_container sky_map_container sky_map_container';
+		'location_container location_container sky_map_container sky_map_container sky_map_container sky_map_container'
+		'location_container location_container sky_map_container sky_map_container sky_map_container sky_map_container'
+		'location_container location_container sky_map_container sky_map_container sky_map_container sky_map_container';
 	grid-gap: 1px;
 	/* background-color: #2196F3; */
 	padding: 2px;
