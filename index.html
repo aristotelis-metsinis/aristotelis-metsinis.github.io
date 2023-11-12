@@ -96,7 +96,7 @@
 				document.getElementById('projects').className = "plain"; 
 				document.getElementById('cheat_sheets').className = "plain";
 				document.getElementById('links').className = "plain"; 				
-				// document.getElementById('blog').className = "plain"; 
+				document.getElementById('hangman').className = "plain"; 
 				document.getElementById('weather_forecast').className = "plain";
 				document.getElementById('latest_earthquakes').className = "plain";
 				document.getElementById('sky_map').className = "plain";
@@ -122,7 +122,7 @@
 				document.getElementById('perl_nav_li').className = "navTreeItem visualNoMarker";				
 				document.getElementById('sql_nav_li').className = "navTreeItem visualNoMarker";				
 				document.getElementById('links_nav_li').className = "navTreeItem visualNoMarker";																																																			
-				// document.getElementById('blog_nav_li').className = "navTreeItem visualNoMarker";
+				document.getElementById('hangman_nav_li').className = "navTreeItem visualNoMarker";
 				document.getElementById('weather_forecast_nav_li').className = "navTreeItem visualNoMarker";
 				document.getElementById('latest_earthquakes_nav_li').className = "navTreeItem visualNoMarker";
 				document.getElementById('sky_map_nav_li').className = "navTreeItem visualNoMarker";
@@ -144,7 +144,7 @@
 				document.getElementById('perl_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById('sql_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById('links_nav_div').className = "visualIcon contenttype-folder";																																			
-				// document.getElementById('blog_nav_div').className = "visualIcon contenttype-folder";
+				document.getElementById('hangman_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById('weather_forecast_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById('latest_earthquakes_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById('sky_map_nav_div').className = "visualIcon contenttype-folder";
@@ -166,7 +166,7 @@
 				document.getElementById('perl_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById('sql_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById('links_nav_ref').className = "state-published visualIconPadding";																																				
-				// document.getElementById('blog_nav_ref').className = "state-published visualIconPadding";
+				document.getElementById('hangman_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById('weather_forecast_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById('latest_earthquakes_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById('sky_map_nav_ref').className = "state-published visualIconPadding";
@@ -393,16 +393,16 @@
             		Web Links
                 </a> 
             </li>
-  			<!--<li id="blog" class="plain"> 
-            	<a href="http://aristotelis-metsinis.blogspot.gr" target="page_iframe" title="blog"
-                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("blog","http://aristotelis-metsinis.blogspot.gr",
-                    					 "blog","selected",
-                                         "blog_nav_li","navTreeItem",
-                                         "blog_nav_div","visualIcon contenttype-plone-site",
-                                         "blog_nav_ref","navTreeCurrentItem visualIconPadding")'>
-                    blog
+  			<li id="hangman" class="plain"> 
+            	<a href="hangman.html" target="page_iframe" title="hangman"
+                	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("hangman","hangman.html",
+                    					 "hangman","selected",
+                                         "hangman_nav_li","navTreeItem",
+                                         "hangman_nav_div","visualIcon contenttype-plone-site",
+                                         "hangman_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                    hangman
                 </a> 
-         	</li>-->
+         	</li>
   			<!--<li id="sign_guestbook" class="plain"> 
             	<a href="http://guestbooks.netservices.gr/addgb.cgi?name=ametsi" target="page_iframe" title="Sign my Guestbook"
                 	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("sign my guestbook","http://guestbooks.netservices.gr/addgb.cgi?name=ametsi",
@@ -704,20 +704,20 @@
                                         	    </a> 
 	                                        </div>
     	            					</li>
-        	        					<!--<li class="navTreeItem visualNoMarker" id="blog_nav_li">
-            	      						<div class="visualIcon contenttype-folder" id="blog_nav_div">                    
-                	    						<a href="http://aristotelis-metsinis.blogspot.gr" target="page_iframe" id="blog_nav_ref"
-                    	                        	title="blog"
+        	        					<li class="navTreeItem visualNoMarker" id="hangman_nav_li">
+            	      						<div class="visualIcon contenttype-folder" id="hangman_nav_div">                    
+                	    						<a href="hangman.html" target="page_iframe" id="hangman_nav_ref"
+                    	                        	title="hangman"
                         	                    	class="state-published visualIconPadding" 
-                									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("blog","http://aristotelis-metsinis.blogspot.gr",
-                    					 								 "blog","selected",
-								                                         "blog_nav_li","navTreeItem",
-                                								         "blog_nav_div","visualIcon contenttype-plone-site",
-								                                         "blog_nav_ref","navTreeCurrentItem visualIconPadding")'>
-								                    blog
+                									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("hangman","hangman.html",
+                    					 								 "hangman","selected",
+								                                         "hangman_nav_li","navTreeItem",
+                                								         "hangman_nav_div","visualIcon contenttype-plone-site",
+								                                         "hangman_nav_ref","navTreeCurrentItem visualIconPadding")'>
+								                    hangman
                                     	        </a>                                             
                                       		</div>
-	                					</li>-->
+	                					</li>
     	            					<!--<li class="navTreeItem visualNoMarker" id="sign_guestbook_nav_li">
         	          						<div class="visualIcon contenttype-folder" id="sign_guestbook_nav_div">                    
             	        						<a href="http://guestbooks.netservices.gr/addgb.cgi?name=ametsi" target="page_iframe" id="sign_guestbook_nav_ref"
