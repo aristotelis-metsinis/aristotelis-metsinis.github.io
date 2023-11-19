@@ -1,0 +1,76 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#location {
+	height: 30px;
+	width: 75%;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-left: 5px;
+	border-radius: 4px;
+	border: 1px solid rgb( 186, 178, 178 );
+	box-shadow: 0px 0px 12px #EFEFEF;
+}
+
+.location { 
+	grid-area: location_container;
+}
+
+.weather_forecast { 
+	grid-area: weather_forecast_container; 
+}
+
+.weather_forecast_daily { 
+	grid-area: weather_forecast_daily_container; 
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-areas:
+		'location_container               weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container'
+		'weather_forecast_daily_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container'		
+		'weather_forecast_daily_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container'		
+		'weather_forecast_daily_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container'		
+		'weather_forecast_daily_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container'				
+		'weather_forecast_daily_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container weather_forecast_container';
+	grid-gap: 1px;
+	/* background-color: #2196F3; */
+	padding: 2px;
+}
+
+.grid-container > div {
+	background-color: rgba( 255, 255, 255, 0.8 );
+	text-align: center;
+	padding: 20px 0;
+	/* font-size: 40px; */
+}
+
+.modal {
+	color: #ffffff;
+}
+
+.modal .aboutModalHeader {
+	border-bottom: 1px solid #afbec5;
+}
+
+.modal .close {
+	color: #ffffff;
+}
+
+.modal .modal-content {
+	box-shadow: 0 5px 20px rgba( 0, 0, 0, 0.31 );
+	border-radius: 3px;
+	border: 0;
+	background: #607d8b;
+}
