@@ -9,7 +9,7 @@
 	   longer spans the width of it's parent and is able to be properly
 	   aligned by adding text-align : right to it's container */
 	display: inline-table;
-	vertical-align: sub;
+	vertical-align: text-top;
 	width: auto;
 	
 	/* Fix size issue in FlipClock */
