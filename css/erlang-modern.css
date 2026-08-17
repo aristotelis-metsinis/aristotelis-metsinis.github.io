@@ -1,0 +1,73 @@
+/* Modern calculator styles are scoped to .erlang-calculator so the legacy site CSS remains untouched. */
+.erlang-calculator { margin: 2em 0; padding: 1.25em; border: 1px solid #a3a3a3; background: #fff; color: #000; }
+.erlang-calculator, .erlang-calculator * { box-sizing: border-box; }
+.erlang-calculator h2, .erlang-calculator h3 { border: 0; margin: 0 0 .35em; }
+.erlang-calculator .calculator-intro { margin-bottom: 1.25em; }
+.erlang-calculator .calculator-layout {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: minmax(18rem, 22rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+.erlang-calculator .calculator-layout > .card { width: 100%; min-width: 0; }
+.erlang-calculator .card { border: 1px solid #ccc; background: #fafafa; padding: 1.25em; }
+.erlang-calculator .field-group { margin: 0 0 1em; }
+.erlang-calculator .field-group label { display: block; margin-bottom: .35em; font-weight: bold; }
+.erlang-calculator .field-group input { width: 100%; min-height: 2.5em; padding: .35em .5em; font-size: 100%; background: #fff; color: #000; }
+.erlang-calculator .field-error { min-height: 1.2em; margin: .25em 0 0; color: #a00; font-size: 90%; }
+.erlang-calculator .field-group input[aria-invalid="true"] { border-color: #a00; }
+.erlang-calculator .form-actions { display: flex; gap: .6em; margin-top: 1em; }
+.erlang-calculator .button { min-height: 2.5em; padding: .4em 1em; border: 1px solid #888; cursor: pointer; font-weight: bold; background: #e1ddce; color: #000; }
+.erlang-calculator .button:hover { background: #d6d0bf; }
+.erlang-calculator .button:focus-visible, .erlang-calculator input:focus-visible { outline: 2px solid #39798f; outline-offset: 2px; }
+.erlang-calculator .status-message { min-height: 1.4em; margin: 1em 0 0; }
+.erlang-calculator .status-message[data-state="error"] { color: #a00; }
+.erlang-calculator .status-message[data-state="success"] { color: #176b36; }
+.erlang-calculator .chart-shell {
+  position: relative;
+  min-width: 0;
+  min-height: 30em;
+  padding: .5em;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: hidden;
+}
+.erlang-calculator .chart { width: 100%; min-height: 30em; }
+.erlang-calculator .erlang-chart { display: block; width: 100%; height: auto; min-height: 30em; font-family: "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif; }
+.erlang-calculator .chart-background { fill: #fff; stroke: #ddd; stroke-width: 1; }
+.erlang-calculator .chart-grid-line { stroke: #d8d8d8; stroke-width: 1; }
+.erlang-calculator .chart-axis, .erlang-calculator .chart-plot { stroke: #555; stroke-width: 1; }
+.erlang-calculator .chart-curve { fill: none; stroke: #39798f; stroke-width: 1.5; opacity: .72; }
+.erlang-calculator .chart-point-hit-area { fill: #000; fill-opacity: 0; stroke: none; cursor: crosshair; pointer-events: all; }
+.erlang-calculator .chart-tooltip {
+  position: absolute;
+  z-index: 10;
+  transform: translate(-50%, -100%);
+  max-width: min(18rem, calc(100% - 1rem));
+  padding: .6em .75em;
+  border: 1px solid #777;
+  border-radius: .35em;
+  background: #fff;
+  color: #000;
+  box-shadow: 0 .2em .6em rgba(0, 0, 0, .2);
+  font-size: 90%;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.erlang-calculator .chart-tooltip[hidden] { display: none; }
+.erlang-calculator .chart-tooltip div + div { margin-top: .15em; }
+.erlang-calculator .chart-tooltip span { font-weight: normal; }
+.erlang-calculator .chart-tooltip strong { font-weight: bold; }
+.erlang-calculator .chart-y-label, .erlang-calculator .chart-x-label { fill: #444; font-size: 12px; }
+.erlang-calculator .chart-x-tick { stroke: #555; stroke-width: 1; }
+.erlang-calculator .chart-axis-title { fill: #222; font-size: 13px; font-weight: bold; }
+.erlang-calculator .result-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75em; margin-top: 1em; }
+.erlang-calculator .result-details div { padding: .75em; border: 1px solid #ddd; background: #fafafa; }
+.erlang-calculator .result-details span, .erlang-calculator .result-details strong { display: block; }
+.erlang-calculator .result-details span { color: #666; font-size: 90%; }
+.erlang-calculator .result-details strong { margin-top: .2em; }
+.erlang-calculator .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 800px) { .erlang-calculator .calculator-layout { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .erlang-calculator { padding: .9em; } .erlang-calculator .result-details { grid-template-columns: 1fr; } .erlang-calculator .form-actions { flex-direction: column; } }
