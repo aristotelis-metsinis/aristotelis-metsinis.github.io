@@ -3,8 +3,8 @@
 	<head>
 		<title>Homepages of Aristotelis Metsinis...</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, miscellaneous web site links" />
-		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets" />
+		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Erlang's loss formula and statistical analysis, Coursera course projects, SMS message and SMPP traffic analysers, Perl & SQL cheat sheets, weather, earthquake and sky map widgets, miscellaneous web site links" />
+		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets,SMPP traffic analyser,SMS message analyser,SMPP,pcap,Erlang B calculator,statistical analysis" />
 		<meta name="author"      content="Aristotelis Metsinis" />
 
 		<link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
@@ -17,31 +17,59 @@
 				top.location.href = 'index.html'+'?redirectedFrom=main_page.html'; 
 			} 
 		</script>              
+		<script type="text/javascript">
+			// Opens a page through the site menu (keeps the menu highlight, title and path in step).
+			// Falls back to a normal link when the page is not inside the site frame or the menu entry is missing.
+			function openPage(id)
+			{
+				try
+				{
+					if (window.parent !== window)
+					{
+						var a = window.parent.document.getElementById(id);
+						if (a) { a.click(); return false; }
+					}
+				}
+				catch (e) {}
+				return true;
+			}
+		</script>
 	</head>    
 	<body>
 		<br />
         <table width="100%" border="0" cellpadding="10">
 	  		<tr>
     			<td>
-                	<div class="plain">			
-        				<p>                       
- 							Click on the left or top menu links to have a look at: 
-                        </p>                   
-                		<ul>               
-                			<li>the curriculum vitae of Aristotelis Metsinis...</li>             
-		                    <li>MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, Python scripts, Android apps or Ruby on Rails web applications...</li> 
- 			                <li>a "sms" analyser app written in Java Script as well as a weather forecast widget...</li>							
- 			                <li>"Perl" & "SQL" cheat sheets...</li>        
-							<li>links to miscellaneous web sites...</li>             
-        	            </ul>
+                	<div class="plain">
+                        <p>
+                            Welcome to the personal homepages of Aristotelis Metsinis. Click on the left or top menu links, or on the links below, to see, use and discover:
+                        </p>
+                        <ul>
+                            <li><a href="Aristotelis_Metsinis_Resume.pdf" target="_self" onclick="return openPage('resume_nav_ref');"><b>curriculum vitae</b></a> - the curriculum vitae of Aristotelis Metsinis, as a "<i>PDF</i>" document...</li>
+                            <li><a href="projects.html" target="_self" onclick="return openPage('projects_nav_ref');"><b>projects</b></a> - MSc. projects, on-line class projects and small web tools:
+                                <ul>
+                                    <li><a href="cellular_network_structure.html" target="_self" onclick="return openPage('gsm_nav_ref');">Cellular Structure of Mobile Networks</a> - an article on the cellular structure of mobile networks, published in the "<i>Mobile Telephony and Telecommunications</i>" magazine (February 1999) and part of the MSc. dissertation in "<i>Telecommunication and Information Systems</i>" (University of Essex)...</li>
+                                    <li><a href="erlang.html" target="_self" onclick="return openPage('erlang_nav_ref');">Erlang's Loss Formula</a> - the theory behind the "<i>Erlang B</i>" formula, with an interactive loss probability calculator, and <a href="statistics.html" target="_self" onclick="return openPage('statistics_nav_ref');">Statistical Analysis of Experimental Data</a> - load X,Y experimental data to get descriptive statistics, a scatter plot and a least-squares regression model of up to 5th degree...</li>
+                                    <li>course work of on-line classes offered by "<i>Coursera</i>": <a href="data_analysis_and_statistical_inference.html" target="_self" onclick="return openPage('data_analysis_nav_ref');">a data analysis project</a> in "<i>R</i>", <a href="interactive_programming_in_python.html" target="_self" onclick="return openPage('interactive_python_nav_ref');">"<i>Python</i>"</a> mini-projects (including the games "Pong", "Blackjack" and "Asteroids"), an <a href="programming_mobile_applications_for_android_handheld_systems.html" target="_self" onclick="return openPage('programming_android_nav_ref');">"<i>Android</i>" app</a> and a <a href="ruby_on_rails.html" target="_self" onclick="return openPage('ruby_on_rails_nav_ref');">"<i>Ruby on Rails</i>" web application</a>...</li>
+                                    <li>tools for "<i>SMS</i>" / "<i>SMPP</i>" troubleshooting: the <a href="sms_message_analyser.html" target="_self" onclick="return openPage('sms_analysis_nav_ref');">"<i>SMS Message Analyser</i>"</a>, which encodes a short message text into its hexadecimal data-stream representation (GSM or Unicode alphabet) and shows how a long SMS is split into parts with the proper "<i>UDH</i>" fields, and the new <a href="smpp_traffic_analyser.html" target="_self" onclick="return openPage('smpp_traffic_nav_ref');">"<i>SMPP Traffic Analyser</i>"</a>, which loads a "<i>pcap</i>" / "<i>pcapng</i>" capture of "<i>SMPP</i>" over "<i>TCP</i>" and charts the request / response latency, the SMS rate, submitted (MT), received (MO) and delivery receipt statistics, errors and the "<i>SMPP</i>" window used, per connection and for all connections combined...</li>
+                                </ul>
+                            </li>
+                            <li><a href="cheat_sheets.html" target="_self" onclick="return openPage('cheat_sheets_nav_ref');"><b>cheat sheets</b></a> - quick reference cheat sheets with ready-to-use code templates: a <a href="sql.html" target="_self" onclick="return openPage('sql_nav_ref');">"<i>SQL</i>" cheat sheet</a> ("<i>Oracle</i>" "<i>SQL</i>" and "<i>PL/SQL</i>" script templates) and a <a href="perl.html" target="_self" onclick="return openPage('perl_nav_ref');">"<i>Perl</i>" cheat sheet</a> (<i>under construction</i>)...</li>
+                            <li><a href="hangman.html" target="_self" onclick="return openPage('hangman_nav_ref');"><b>hangman</b></a> - a "hangman" word guessing game (in Greek)...</li>
+                            <li><a href="weather_forecast.html" target="_self" onclick="return openPage('weather_forecast_nav_ref');"><b>weather forecast</b></a>, <a href="latest_earthquakes.html" target="_self" onclick="return openPage('latest_earthquakes_nav_ref');"><b>latest earthquakes</b></a> and <a href="sky_map.html" target="_self" onclick="return openPage('sky_map_nav_ref');"><b>sky map</b></a> - live widgets: a weather forecast, a map of the latest earthquakes (near real-time data from the U.S. Geological Survey, up to the past 30 days) and a sky map...</li>
+                            <li><a href="bookmarks.html" target="_self" onclick="return openPage('links_nav_ref');"><b>web links</b></a> - links to miscellaneous web sites, such as programming tutorials and references...</li>
+                        </ul>
+                        <p>
+                            The interactive tools (the "<i>Erlang B</i>" calculator, the statistical analysis, the "<i>SMS</i>" message analyser and the "<i>SMPP</i>" traffic analyser) run entirely in your browser: any data or file you open is processed locally and is never uploaded.
+                        </p>
                     </div>
                     <br />
                     <br />
-    				<div class="plain">			
-        				<p>                       
- 							Feel free to send any comments to: aristotelis.metsinis@gmail.com, read and sign my guestbook.                        
+                    <div class="plain">
+                        <p>
+                            Feel free to send any comments to: <a href="mailto:aristotelis.metsinis@gmail.com">aristotelis.metsinis@gmail.com</a> (see also the "contact" link of the top menu).
                         </p>
-                   	</div>
+                    </div>
             	</td>
         	</tr>
     	</table>

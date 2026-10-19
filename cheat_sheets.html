@@ -3,7 +3,7 @@
 	<head>
 	<title>Homepages of Aristotelis Metsinis...</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<meta name="description" content="Homepages of Aristotelis Metsinis: curriculum vitae, MSc. projects such as an article on GSM, Mathematical & Statistical topics, Java applets, miscellaneous web site links" />
+		<meta name="description" content="Homepages of Aristotelis Metsinis: Perl and SQL cheat sheets with ready-to-use code templates" />
 		<meta name="keywords"    content="Homepages of Aristotelis Metsinis,curriculum vitae of Aristotelis Metsinis,cv of Aristotelis Metsinis,resume of Aristotelis Metsinis,Αριστοτέλης Μετσίνης,ΑΡΙΣΤΟΤΕΛΗΣ ΜΕΤΣΙΝΗΣ,Value Added Services,SMS,MMS,Frequency Planning,Base Stations Design,GSM,Cellular Radio,GSM article,Erlang's Loss Formula,Sample mean,Sample standard deviation,Skewness,Kurtosis,Least squares method,Chi-Squared statistics,Java Applets" />
 		<meta name="author"      content="Aristotelis Metsinis" />
 
@@ -17,6 +17,23 @@
 				top.location.href = 'index.html'+'?redirectedFrom=cheat_sheets.html'; 
 			} 
 		</script>
+		<script type="text/javascript">
+			// Opens a page through the site menu (keeps the menu highlight, title and path in step).
+			// Falls back to a normal link when the page is not inside the site frame or the menu entry is missing.
+			function openPage(id)
+			{
+				try
+				{
+					if (window.parent !== window)
+					{
+						var a = window.parent.document.getElementById(id);
+						if (a) { a.click(); return false; }
+					}
+				}
+				catch (e) {}
+				return true;
+			}
+		</script>
 	</head>
 	<body>
 		<br />
@@ -25,10 +42,10 @@
     			<td>                
                 	<p class="documentDescription">cheat sheets</p>             
     				<div class="plain">			
-        				<p>cheat sheets for "<i>Perl</i>" & "<i>SQL</i>" based upon the experience working for Vodafone as a "<i>Value Added Services - Data Messaging Services Development Engineer</i>" until June 2013.</p>
+        				<p>quick reference cheat sheets with ready-to-use code templates, based upon hands-on development experience.</p>
 						<ul>
-				  	    	<li><a href="perl.html" target="_self">Perl Cheat Sheet</a></li>
-                            <li><a href="sql.html" target="_self">SQL Cheat Sheet</a></li>
+				  	    	<li><a href="perl.html" target="_self" onclick="return openPage('perl_nav_ref');">Perl Cheat Sheet</a> - sample "<i>Perl</i>" scripts and code (<i>under construction</i>).</li>
+                            <li><a href="sql.html" target="_self" onclick="return openPage('sql_nav_ref');">SQL Cheat Sheet</a> - "general purpose" "<i>Oracle</i>" "<i>SQL</i>" and "<i>PL/SQL</i>" script templates: creating, altering and dropping tables, indexes and sequences; inserting, updating, selecting and deleting table values; monitoring database jobs and long-running queries; "<i>tnsnames.ora</i>" connection-string configuration; loading data onto an "<i>Oracle</i>" database with "<i>sqlldr</i>".</li>
 				  		</ul>            
 					</div>                               
                 </td>

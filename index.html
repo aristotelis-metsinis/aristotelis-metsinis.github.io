@@ -72,7 +72,7 @@
 																+ document.getElementById(id_nav_ref).innerHTML + "</a>";				*/
 				document.getElementById('sitemap').innerHTML = document.getElementById(id_nav_ref).innerHTML;				
 																
-				if ((id == "gsm") || (id == "erlang") || (id == "statistics") || (id == "data_analysis") || (id == "interactive_python") || (id == "sms_analysis") || (id == "programming_android") || (id == "ruby_on_rails"))
+				if ((id == "gsm") || (id == "erlang") || (id == "statistics") || (id == "data_analysis") || (id == "interactive_python") || (id == "sms_analysis") || (id == "smpp_traffic") || (id == "programming_android") || (id == "ruby_on_rails"))
 				{					
 /*					var parent = "<a href=\"" + document.getElementById('projects_nav_ref').href + "\" target=\"page_iframe\">"
 								  + document.getElementById('projects_nav_ref').innerHTML + "</a>";	*/
@@ -118,6 +118,7 @@
 				document.getElementById('programming_android_nav_li').className = "navTreeItem visualNoMarker";								
 				document.getElementById('ruby_on_rails_nav_li').className = "navTreeItem visualNoMarker";								
 				document.getElementById('sms_analysis_nav_li').className = "navTreeItem visualNoMarker";				
+				document.getElementById('smpp_traffic_nav_li').className = "navTreeItem visualNoMarker";				
 				document.getElementById('cheat_sheets_nav_li').className = "navTreeItem visualNoMarker";												
 				document.getElementById('perl_nav_li').className = "navTreeItem visualNoMarker";				
 				document.getElementById('sql_nav_li').className = "navTreeItem visualNoMarker";				
@@ -140,6 +141,7 @@
 				document.getElementById('programming_android_nav_div').className = "visualIcon contenttype-folder";				
 				document.getElementById('ruby_on_rails_nav_div').className = "visualIcon contenttype-folder";				
 				document.getElementById('sms_analysis_nav_div').className = "visualIcon contenttype-folder";				
+				document.getElementById('smpp_traffic_nav_div').className = "visualIcon contenttype-folder";				
 				document.getElementById('cheat_sheets_nav_div').className = "visualIcon contenttype-folder";				
 				document.getElementById('perl_nav_div').className = "visualIcon contenttype-folder";
 				document.getElementById('sql_nav_div').className = "visualIcon contenttype-folder";
@@ -162,6 +164,7 @@
 				document.getElementById('programming_android_nav_ref').className = "state-published visualIconPadding";								
 				document.getElementById('ruby_on_rails_nav_ref').className = "state-published visualIconPadding";												
 				document.getElementById('sms_analysis_nav_ref').className = "state-published visualIconPadding";				
+				document.getElementById('smpp_traffic_nav_ref').className = "state-published visualIconPadding";				
 				document.getElementById('cheat_sheets_nav_ref').className = "state-published visualIconPadding";				
 				document.getElementById('perl_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById('sql_nav_ref').className = "state-published visualIconPadding";
@@ -173,7 +176,7 @@
 				// document.getElementById('sign_guestbook_nav_ref').className = "state-published visualIconPadding";
 				document.getElementById(id_nav_ref).className = id_nav_ref_class;	
 				
-				if ((id == "projects") || (id == "gsm") || (id == "erlang") || (id == "statistics") || (id == "data_analysis") || (id == "interactive_python") || (id == "sms_analysis") || (id == "programming_android") || (id == "ruby_on_rails"))
+				if ((id == "projects") || (id == "gsm") || (id == "erlang") || (id == "statistics") || (id == "data_analysis") || (id == "interactive_python") || (id == "sms_analysis") || (id == "smpp_traffic") || (id == "programming_android") || (id == "ruby_on_rails"))
 				{
 					document.getElementById('gsm_nav_ul').className = "navTree navTreeLevel2"; 
 					document.getElementById('erlang_nav_ul').className = "navTree navTreeLevel2"; 
@@ -183,6 +186,7 @@
 					document.getElementById('programming_android_nav_ul').className = "navTree navTreeLevel2"; 					
 					document.getElementById('ruby_on_rails_nav_ul').className = "navTree navTreeLevel2"; 										
 					document.getElementById('sms_analysis_nav_ul').className = "navTree navTreeLevel2"; 
+					document.getElementById('smpp_traffic_nav_ul').className = "navTree navTreeLevel2"; 
 				}
 				else
 				{
@@ -194,6 +198,7 @@
 					document.getElementById('programming_android_nav_ul').className = "hiddenStructure"; 					
 					document.getElementById('ruby_on_rails_nav_ul').className = "hiddenStructure"; 										
 					document.getElementById('sms_analysis_nav_ul').className = "hiddenStructure"; 
+					document.getElementById('smpp_traffic_nav_ul').className = "hiddenStructure"; 
 				}
 
 				if ((id == "cheat_sheets") || (id == "sql") || (id == "perl"))
@@ -256,6 +261,10 @@
 					else if (source=="sms_message_analyser.html")
 					{
 						anchor="sms_analysis_nav_ref";
+					}					
+					else if (source=="smpp_traffic_analyser.html")
+					{
+						anchor="smpp_traffic_nav_ref";
 					}					
 					else if (source=="cheat_sheets.html")
 					{
@@ -365,7 +374,7 @@
                 </a> 
             </li>
   			<li id="projects" class="plain"> 
-            	<a href="projects.html" target="page_iframe" title="MSc. Projects: GSM, Java (Applets)"
+            	<a href="projects.html" target="page_iframe" title="Projects: GSM article, on-line classes, SMS / SMPP tools, mathematical &amp; statistical tools"
                 	onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","projects.html",
                     					 "projects","selected",
                                          "projects_nav_li","navTreeItem",
@@ -506,7 +515,7 @@
                 						<li class="navTreeItem visualNoMarker" id="projects_nav_li">
 				                    		<div class="visualIcon contenttype-folder" id="projects_nav_div"> 
                                         		<a href="projects.html" target="page_iframe" id="projects_nav_ref"   
-                                        			title="MSc. Projects: GSM, Java (Applets)"
+                                        			title="Projects: GSM article, on-line classes, SMS / SMPP tools, mathematical &amp; statistical tools"
                                                     class="state-published visualIconPadding"
                 									onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","projects.html",
                     					 								 "projects","selected",
@@ -640,6 +649,22 @@
                                 								         		 "sms_analysis_nav_div","visualIcon contenttype-plone-site",
 								                                         		 "sms_analysis_nav_ref","navTreeCurrentItem visualIconPadding")'>
                                                             sms message analyser
+                                                      	</a> 
+    												</div> 
+ 												</li>
+                                         	</ul>												
+                                            <ul class="hiddenStructure" id="smpp_traffic_nav_ul"> 
+												<li class="navTreeItem visualNoMarker" id="smpp_traffic_nav_li"> 
+ 												    <div class="visualIcon contenttype-folder" id="smpp_traffic_nav_div">         
+												        <a href="smpp_traffic_analyser.html" target="page_iframe" id="smpp_traffic_nav_ref"  
+                                                        	title="SMPP Traffic Analyser"
+                                                            class="state-published visualIconPadding"
+                                                            onClick='this.href=this.href.split("?seed=")[0]+"?seed="+(new Date().getTime()); interactive("projects","smpp_traffic_analyser.html",
+                    					 								 		 "smpp_traffic","",
+								                                         		 "smpp_traffic_nav_li","navTreeItem",
+                                								         		 "smpp_traffic_nav_div","visualIcon contenttype-plone-site",
+								                                         		 "smpp_traffic_nav_ref","navTreeCurrentItem visualIconPadding")'>
+                                                            smpp traffic analyser
                                                       	</a> 
     												</div> 
  												</li>
