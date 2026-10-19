@@ -1,0 +1,45 @@
+/* SMPP traffic analyser - page styles. Loaded after css/ccs_2.css and css/ccs_1.css so these rules refine the site's look. */
+[hidden] { display: none !important; }
+body > table { table-layout: fixed; }   /* the site's outer layout table must not grow with the widest result table; tables scroll inside .tw instead */
+#drop { border: 1px dashed #a3a3a3; background-color: #f4f4f4; padding: 1.5em; text-align: center; cursor: pointer; margin: 0.5em 0; }
+#drop.o { border-color: #39798F; background-color: #e1ddce; }
+#priv { border: 1px solid #a3a3a3; background-color: #e1ddce; padding: 0.5em 1em; margin: 0.5em 0; }
+#pgb { border: 1px solid #a3a3a3; background-color: White; height: 12px; }
+#pgf { height: 100%; width: 0; background-color: #39798F; }
+.hint { color: #76797c; }
+/* results: sections with a divider line and a titled band */
+.sec { border-top: 1px solid #a3a3a3; margin-top: 2em; scroll-margin-top: 90px; }
+.sh { background-color: #e1ddce; border-left: 4px solid #39798F; padding: 0.3em 0.7em; margin: 0.9em 0 0.8em 0; font-weight: bold; }
+.sh span { font-weight: normal; color: #5d6063; }
+.sub { font-weight: bold; margin: 1.2em 0 0.3em 0; }
+/* sticky selector bar */
+#bar { position: sticky; top: 0; z-index: 10; background-color: White; border-bottom: 1px solid #a3a3a3; padding: 0.3em 0 0.2em 0; margin-top: 1em; }
+#bar p { margin: 0.35em 0; }
+#res label { font-weight: normal; }
+@media (max-height: 520px), (max-width: 700px) { #bar { position: static; } }   /* a sticky bar would cover too much of a small screen */
+/* tables */
+.tw { overflow-x: auto; }
+#res table.listing { width: 100%; }
+#res table.listing th, #res table.listing td { text-align: right; white-space: nowrap; }
+#res table.listing th:first-child, #res table.listing td:first-child, #res table.listing th.l, #res table.listing td.l { text-align: left; }
+#res table.listing tbody tr:nth-child(even) td { background-color: #f6f5ef; }
+#res table.listing tbody tr.all td { background-color: #eceae0; font-weight: bold; border-top: 1px solid #a3a3a3; }
+#res table.listing tbody tr.sel td { background-color: #dcebf0; }
+#res table.listing tbody tr.k { cursor: pointer; }
+#res table.listing tbody tr.k:hover td { background-color: #e9e6d8; }
+#res table.sum td.lb { text-align: left; color: #444444; width: 1%; padding-right: 1.2em; }
+#res table.sum td.vl { text-align: left; font-weight: bold; border-right: 1px solid #cfcfc4; }
+#res table.sum td.vl:last-child { border-right: 0; }
+#res table.sum tr.grp th { text-align: left; background-color: #e1ddce; }
+#res table.sum tr.det td { text-align: left; white-space: normal; }
+#res table.sum tr.det td.lb { white-space: nowrap; }
+#res table.ft td, #res table.ft th { text-align: left; white-space: normal; }
+#res table.ft td.lb { color: #444444; width: 1%; white-space: nowrap; }
+/* charts */
+button.on { background-color: #39798F; color: White; }
+canvas { width: 100%; height: 240px; box-sizing: border-box; background-color: White; border: 1px solid #a3a3a3; display: block; }
+#ch.one canvas { height: 320px; }
+/* hover tooltip over the charts (positioned by the script; never takes the mouse) */
+#tip { position: fixed; z-index: 30; background-color: White; border: 1px solid #39798F; padding: 0.35em 0.6em; font-size: 11px; line-height: 1.5; pointer-events: none; max-width: 440px; box-shadow: 2px 2px 5px #00000033; }
+canvas { cursor: crosshair; }
+@media (max-width: 600px) { canvas { height: 200px; } #ch.one canvas { height: 240px; } }

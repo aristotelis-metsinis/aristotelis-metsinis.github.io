@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="el" lang="el">
+	<head>
+		<title>Homepages of Aristotelis Metsinis...</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="description" content="Homepages of Aristotelis Metsinis: SMPP traffic analyser - parse a tcpdump / Wireshark capture in the browser and chart SMPP request / response latency, SMS rate, delivery receipts and other statistics" />
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; worker-src 'self'" />
+		<meta name="author"      content="Aristotelis Metsinis" />
+		<link rel="stylesheet" type="text/css" href="css/ccs_2.css" />
+		<link rel="stylesheet" type="text/css" href="css/ccs_1.css" />
+		<link rel="stylesheet" type="text/css" href="css/smpp_traffic_analyser.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<script src="js/smpp_traffic_analyser.js" defer></script>
+		<script type="text/javascript">
+			if(top.location == self.location)
+			{
+				top.location.href = 'index.html'+'?redirectedFrom=smpp_traffic_analyser.html';
+			}
+		</script>
+	</head>
+	<body>
+		<br />
+		<table width="100%" border="0" cellpadding="10">
+			<tr>
+				<td>
+					<p class="documentDescription">SMPP Traffic Analyser</p>
+					<div id="msg_analysis_div" class="plain">
+						<p>This on-line "<i>SMPP</i>" traffic analyser parses a "<i>pcap</i>" / "<i>pcapng</i>" packet capture (e.g. from "<i>tcpdump</i>" or "<i>Wireshark</i>") containing "<i>SMPP</i>" over "<i>TCP</i>", reassembles every connection (channel) and matches each request with its response by sequence number, so requests sent without waiting for an acknowledgement (an "<i>SMPP</i>" window) and out-of-order responses are handled. Per channel and for all channels combined, it reports the request / response latency (distribution and over time), the SMS rate (messages submitted per second), the numbers of messages submitted (MT-SMS), acknowledged and received (MO-SMS), delivery receipts, errors and unanswered requests, statistics per "<i>PDU</i>" type, the fastest and slowest responses, the peak rate and the outstanding requests (the "<i>SMPP</i>" window actually used). The capture is analysed locally in your browser and is never uploaded.
+							<br>&nbsp;<br>
+							<u>References</u>
+						</p>
+						<ul>
+							<li style="margin-left: 1.0pt;"><a href="http://opensmpp.org/specs/SMPP_v3_4_Issue1_2.pdf" target="_blank">SMPP Protocol Specification v3.4</a></li>
+						</ul>
+						<noscript>(JavaScript required)</noscript>
+						<div id="priv"><b>Privacy:</b> the capture file is analysed locally in your browser. No data is uploaded or sent to any remote site.</div>
+						<div id="drop" tabindex="0">Drop a capture file here or click to choose one<input id="fi" type="file" hidden="hidden" /></div>
+						<p>SMPP port(s): <input id="pt" value="2775" size="14" /> <span class="hint">(leave blank to auto-detect on all TCP flows)</span> <span id="st"></span></p>
+						<div id="pg" hidden="hidden">
+							<p><span id="pgl"></span> <b id="pgp"></b> <button id="cx" type="button">&#160;Cancel&#160;</button></p>
+							<div id="pgb"><div id="pgf"></div></div>
+							<p id="pgs" class="hint"></p>
+						</div>
+						<div id="res" hidden="hidden">
+							<div class="sec" id="s-file" style="border-top: 0; margin-top: 1em;">
+								<p class="sh">Capture file</p>
+								<div class="tw"><table id="ft" class="listing ft"></table></div>
+								<p class="hint">Jump to: <a href="#s-charts">Charts</a> &middot; <a href="#s-sum">Summary</a> &middot; <a href="#s-pdu">PDU types</a> &middot; <a href="#s-lat">Latency statistics</a> &middot; <a href="#s-ext">Fastest / slowest</a> &middot; <a href="#s-rate">Request rate</a></p>
+							</div>
+							<div id="bar">
+								<p>Channel: <select id="sc"></select>&nbsp;&nbsp;PDU type: <select id="ty"></select></p>
+								<p>View: <button id="m0" class="on" type="button">&#160;All charts&#160;</button> <button id="m1" type="button">&#160;Latency distribution&#160;</button> <button id="m2" type="button">&#160;Latency over time&#160;</button> <button id="m3" type="button">&#160;Request rate over time&#160;</button>&nbsp;&nbsp;<label><input type="checkbox" id="pts" /> individual points (latency over time)</label></p>
+							</div>
+							<div class="sec" id="s-charts" style="border-top: 0; margin-top: 0.8em;">
+								<p class="sh">Charts <span>(channel and PDU type as selected above)</span></p>
+								<p id="lg"></p>
+								<div id="ch">
+									<div id="c1"><p class="sub">Latency distribution</p><canvas id="cv1"></canvas><p id="cap1" class="hint"></p></div>
+									<div id="c2"><p class="sub">Latency over time</p><canvas id="cv2"></canvas><p id="cap2" class="hint"></p></div>
+									<div id="c3"><p class="sub">Request rate over time</p><canvas id="cv3"></canvas><p id="cap3" class="hint"></p></div>
+								</div>
+							</div>
+							<div class="sec" id="s-sum">
+								<p class="sh">Summary <span>(selected channel and PDU type)</span></p>
+								<div class="tw"><table id="cd" class="listing sum"></table></div>
+							</div>
+							<div class="sec" id="s-pdu">
+								<p class="sh">SMPP PDU types <span>(selected channel)</span></p>
+								<div class="tw"><table id="tt" class="listing"></table></div>
+							</div>
+							<div class="sec" id="s-lat">
+								<p class="sh">Latency statistics by channel <span>(ms, selected PDU type)</span></p>
+								<div class="tw"><table id="tc" class="listing"></table></div>
+								<p class="hint">Click a row to select that channel (or "All channels") for the charts and summary. Percentiles use the nearest-rank method; std dev is the sample standard deviation.</p>
+							</div>
+							<div class="sec" id="s-ext">
+								<p class="sh">Fastest and slowest responses by channel <span>(selected PDU type)</span></p>
+								<div class="tw"><table id="tx" class="listing"></table></div>
+								<p id="xn" class="hint"></p>
+							</div>
+							<div class="sec" id="s-rate">
+								<p class="sh">Request rate and outstanding requests</p>
+								<p id="rh" class="hint"></p>
+								<div class="tw"><table id="tr" class="listing"></table></div>
+								<p class="hint">average = requests / send period (first to last request, minimum 1 s); peak = busiest 1-second bin (bins start at the first SMPP PDU); max outstanding = most requests sent but not yet answered at the same time, i.e. the "SMPP" window the client actually used (All channels: summed over the connections). Click a row to select that channel.</p>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div id="tip" hidden="hidden" role="tooltip"></div>
+	</body>
+</html>
