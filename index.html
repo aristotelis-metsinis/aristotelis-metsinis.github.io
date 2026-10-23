@@ -312,7 +312,17 @@
 				{
 					document.getElementById( 'iframe_area' ).height = parseInt( iframe_area_size_default ) + ( portal_column_one_menu_size - portal_column_one_menu_size_default );
 				}							
+				// Fill the window: stretch the iframe by any free space below the footer (e.g. browser zoom < 100%).
+				var footer = document.getElementById( 'portal-footer' );
+				var pageBottom = footer.getBoundingClientRect().bottom + window.pageYOffset + parseFloat( getComputedStyle( footer ).marginBottom );
+				var freeSpace = Math.floor( window.innerHeight - pageBottom );
+				if ( freeSpace > 0 )
+				{
+					document.getElementById( 'iframe_area' ).height = parseInt( document.getElementById( 'iframe_area' ).height ) + freeSpace;
+				}
 			}					
+			// Re-fit the iframe when the window is resized or the browser zoom changes.
+			window.addEventListener( 'resize', function() { if ( !initialisation ) { iframeResize(); } } );
 		</script>
 		
 		<!-- "github" button. -->
