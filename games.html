@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Games - Homepages of Aristotelis Metsinis...</title>
+<meta name="description" content="Games: hangman and seven Python mini-games (RiceRocks, Blackjack, Memory, Pong, Stopwatch, Guess the Number, Rock-Paper-Scissors-Lizard-Spock) that can be played in the browser on CodeSkulptor">
+<style>
+:root{--ink:#2b2a24;--muted:#5c5848;--line:#d6d0bb;--rail:#1b3d49;--accent:#39798f;--link:#1f6178;--surface:#fffefb;--band:#e9e5d6}
+*{box-sizing:border-box}
+body{margin:0;padding:18px 22px 28px;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+h1{font-size:1.35rem;margin:0 0 6px}
+.lead{margin:0 0 16px;color:var(--muted);max-width:75ch}
+.how{border:1.5px solid var(--accent);background:#eef6f9;border-radius:12px;padding:14px 18px;margin:0 0 20px}
+.how b.t{display:block;margin-bottom:8px}
+.steps{display:flex;gap:12px;flex-wrap:wrap;list-style:none;margin:0 0 8px;padding:0;counter-reset:s}
+.steps li{flex:1 1 200px;display:flex;gap:10px;align-items:flex-start;counter-increment:s}
+.steps li:before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;background:var(--rail);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.how small{color:var(--muted);display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px;background:var(--surface);display:flex;flex-direction:column;gap:8px;position:relative}
+.card:before{content:"";position:absolute;left:16px;top:0;width:34px;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+.card h2{font-size:1.05rem;margin:4px 0 0}
+.card p{margin:0;font-size:.92rem;color:#3d3b32;flex:1}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:.74rem;padding:2px 9px;border-radius:99px;background:var(--band);color:var(--muted);white-space:nowrap}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:9px;font-weight:600;font-size:.86rem;text-decoration:none;border:1.5px solid var(--rail);color:var(--rail);background:#fff}
+.btn.primary{background:var(--rail);color:#fff}
+.btn:hover{filter:brightness(1.12)}
+.btn:focus-visible{outline:2px solid #0b6bcb;outline-offset:2px}
+.foot{margin-top:18px;font-size:.88rem;color:var(--muted)}
+a{color:var(--link)}
+</style>
+<script>if (top.location == self.location) { top.location.href = 'index.html' + '?redirectedFrom=games.html'; }</script>
+</head>
+<body>
+<main>
+<h1>Games</h1>
+<p class="lead">"Hangman" and seven small "Python" games: the "mini-projects" of the "Coursera" on-line class "Introduction to Interactive Programming in Python". They run in the browser on "CodeSkulptor".</p>
+
+<div class="how">
+  <b class="t">How to play the "Python" games</b>
+  <ol class="steps">
+    <li><span>Click <i>play on CodeSkulptor</i>: the game opens in a new tab, already loaded.</span></li>
+    <li><span>Just click on the "run" upper left button on "CodeSkulptor" to start playing.</span></li>
+    <li><span>That's all: you do not need to read or change the code.</span></li>
+  </ol>
+  <small>We highly recommend using "Chrome". Some games need the keyboard (see the labels below).</small>
+</div>
+
+<div class="grid">
+  <article class="card"><h2>Hangman</h2><div class="chips"><span class="chip">in Greek</span></div><p>A "hangman" word guessing game (in Greek).</p><div class="btns"><a class="btn primary" href="hangman.html" target="_self">play</a></div></article>
+
+  <article class="card"><h2>RiceRocks</h2><div class="chips"><span class="chip">keyboard</span></div><p>A 2D space game inspired by the classic arcade game "Asteroids": destroy the asteroids before they strike your ship. Left / right arrows rotate the ship, up arrow thrusts, space fires.</p><div class="btns"><a class="btn primary" href="http://www.codeskulptor.org/#user38_ZS5c5CDjLVDH3kS.py" target="_blank" rel="noopener">play on CodeSkulptor ↗</a><a class="btn" href="interactive_programming_in_python.html#href_RiceRocks" target="_self">how to play &amp; code</a></div></article>
+
+  <article class="card"><h2>Blackjack</h2><div class="chips"><span class="chip">mouse</span></div><p>The card game "Blackjack": you play against the dealer and try to get as close to 21 as you can without going over.</p><div class="btns"><a class="btn primary" href="http://www.codeskulptor.org/#user38_Sre1SIq1cuvP3al.py" target="_blank" rel="noopener">play on CodeSkulptor ↗</a><a class="btn" href="interactive_programming_in_python.html#href_Blackjack" target="_self">how to play &amp; code</a></div></article>
+
+  <article class="card"><h2>Memory</h2><div class="chips"><span class="chip">mouse</span></div><p>The "Memory" card game, with numbers or images: expose all eight pairs.</p><div class="btns"><a class="btn primary" href="http://www.codeskulptor.org/#user41_yoFTVqEW70FhBKE.py" target="_blank" rel="noopener">play on CodeSkulptor ↗</a><a class="btn" href="interactive_programming_in_python.html#href_Memory" target="_self">how to play &amp; code</a></div></article>
+
+  <article class="card"><h2>Pong</h2><div class="chips"><span class="chip">keyboard</span><span class="chip">2 players</span></div><p>The classic arcade game "Pong". Left paddle: "w" / "s" keys, right paddle: "up" / "down" arrows.</p><div class="btns"><a class="btn primary" href="http://www.codeskulptor.org/#user38_vH3nXtvB8jHAOdH.py" target="_blank" rel="noopener">play on CodeSkulptor ↗</a><a class="btn" href="interactive_programming_in_python.html#href_Pong" target="_self">how to play &amp; code</a></div></article>
+
+  <article class="card"><h2>Stopwatch</h2><div class="chips"><span class="chip">mouse</span></div><p>A simple digital "stopwatch": stop it exactly on a whole second.</p><div class="btns"><a class="btn primary" href="http://www.codeskulptor.org/#user38_HNRcSRMHWTveYXi.py" target="_blank" rel="noopener">play on CodeSkulptor ↗</a><a class="btn" href="interactive_programming_in_python.html#href_Stopwatch" target="_self">how to play &amp; code</a></div></article>
+
+  <article class="card"><h2>Guess the Number</h2><div class="chips"><span class="chip">keyboard</span><span class="chip">mouse</span></div><p>Guess the secret number: the computer answers "Higher", "Lower" or "Correct".</p><div class="btns"><a class="btn primary" href="http://www.codeskulptor.org/#user38_qUSUQsJHQTbf1Yf.py" target="_blank" rel="noopener">play on CodeSkulptor ↗</a><a class="btn" href="interactive_programming_in_python.html#href_Guess_the_Number" target="_self">how to play &amp; code</a></div></article>
+
+  <article class="card"><h2>Rock-Paper-Scissors-Lizard-Spock</h2><div class="chips"><span class="chip">no input: simulation</span></div><p>The five-choice variant of "Rock-paper-scissors": the program plays a round for each of the five choices and prints the winners.</p><div class="btns"><a class="btn primary" href="http://www.codeskulptor.org/#user38_aXAzMrLqV44gQUh.py" target="_blank" rel="noopener">run on CodeSkulptor ↗</a><a class="btn" href="interactive_programming_in_python.html#href_Rock_Paper_Scissors_Lizard_Spock" target="_self">how it works &amp; code</a></div></article>
+</div>
+
+<p class="foot">Source code of these scripts, with line by line comments: "<a href="https://github.com/aristotelis-metsinis/ArcadeGames" target="_blank" rel="noopener">ArcadeGames</a>" on "GitHub".</p>
+</main>
+</body>
+</html>
