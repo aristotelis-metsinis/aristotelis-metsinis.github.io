@@ -1,0 +1,292 @@
+/* ==========================================================================
+   shell.css - stylesheet of the site shell (index.html) only.
+   Content pages (loaded inside the iframe) are NOT affected.
+   Layout: a collapsible "slide rail" (left) + work area (right).
+   No framework, no build step. Colours/sizes are tokens in :root.
+   ========================================================================== */
+
+:root {
+	--font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	--bg: #f6f4ec;
+	--surface: #fffefb;
+	--band: #e9e5d6;
+	--line: #d6d0bb;
+	--ink: #2b2a24;
+	--muted: #5c5848;
+	--link: #1f6178;
+	--accent: #39798f;
+	--rail: #1b3d49;
+	--widget-bg: var(--rail);   /* background around the calendar / LinkedIn / GitHub widgets = the rail colour (#1b3d49) */
+	--rail-ink: #e9f1f3;
+	--rail-mute: #a9c3cc;
+	--rail-w: 264px;
+	--rail-w-collapsed: 68px;
+	--bar-h: 56px;
+	--focus: #0b6bcb;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--ink);
+	font: 16px/1.6 var(--font);
+}
+
+a { color: var(--link); text-underline-offset: .18em; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+	outline: 3px solid var(--focus);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+.skip {
+	position: absolute; left: 8px; top: -60px; z-index: 100;
+	background: #fff; color: #000; padding: 10px 14px; border-radius: 6px; font-weight: 600;
+}
+.skip:focus { top: 8px; }
+
+/* ---------- layout ---------- */
+.app {
+	display: grid;
+	grid-template-columns: var(--rail-w) minmax(0, 1fr);
+	min-height: 100vh;
+}
+html.rail-collapsed .app { grid-template-columns: var(--rail-w-collapsed) minmax(0, 1fr); }
+
+.railwrap { position: relative; z-index: 30; }
+
+.rail {
+	position: sticky; top: 0;
+	height: 100vh; height: 100dvh;
+	width: var(--rail-w);
+	display: flex; flex-direction: column;
+	padding: 12px 12px 20px;
+	background: var(--rail); color: var(--rail-ink);
+	overflow-x: hidden; overflow-y: auto;
+	scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.28) transparent;
+}
+html.rail-collapsed .rail { width: var(--rail-w-collapsed); }
+html.rail-collapsed.rail-peek .rail { width: var(--rail-w); box-shadow: 10px 0 40px rgba(0,0,0,.38); }
+
+.rail a, .rail button { color: inherit; }
+
+.rail-head {
+	display: flex; align-items: center; gap: 10px;
+	min-height: 54px; padding: 4px 4px 14px; margin-bottom: 12px;
+	border-bottom: 1px solid rgba(255,255,255,.14);
+}
+.mark { flex: none; width: 8px; height: 30px; border-radius: 4px; background: linear-gradient(#7fc3d9, #e1ddce); }
+.brand-t { flex: 1; font-weight: 650; font-size: .97rem; line-height: 1.25; }
+
+.toggle {
+	flex: none; width: 36px; height: 36px; padding: 0;
+	display: inline-flex; align-items: center; justify-content: center;
+	border: 0; border-radius: 9px; background: transparent; color: var(--rail-mute);
+	cursor: pointer;
+}
+.toggle:hover { background: rgba(255,255,255,.1); color: #fff; }
+.toggle svg { display: block; }
+
+/* ---------- navigation ---------- */
+.nav3 ul { list-style: none; margin: 0; padding: 0; }
+.nav3 .row { display: flex; align-items: center; }
+.nav3 a, .nav3 .linkbtn {
+	flex: 1; min-width: 0;
+	display: flex; align-items: center; gap: 12px;
+	padding: 9px 11px; border-radius: 9px;
+	color: var(--rail-ink); text-decoration: none;
+	font: inherit; font-size: .93rem; line-height: 1.3; text-align: left;
+	background: transparent; border: 0; cursor: pointer;
+}
+.nav3 .i {
+	flex: none; width: 20px; height: 20px;
+	fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+	color: var(--rail-mute);
+}
+.nav3 a:hover, .nav3 .linkbtn:hover { background: rgba(255,255,255,.08); }
+.nav3 a[aria-current="page"] { background: rgba(255,255,255,.15); color: #fff; font-weight: 650; }
+.nav3 a[aria-current="page"] .i { color: #fff; }
+
+.nav3 .tg { flex: none; width: 32px; height: 32px; margin-left: 2px; padding: 0; border: 0; border-radius: 8px; background: transparent; color: var(--rail-mute); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.nav3 .tg:hover { background: rgba(255,255,255,.1); color: #fff; }
+.nav3 .tg svg { transition: transform .15s; }
+.nav3 .tg[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+.nav3 .sub { margin: 2px 0 8px 21px; padding-left: 10px; border-left: 1px solid rgba(255,255,255,.18); }
+.nav3 .sub a { gap: 0; padding: 6px 9px; font-size: .86rem; color: #d4e3e8; }
+.nav3 .sub a:hover { color: #fff; }
+.nav3 .sub a[aria-current="page"] { color: #fff; }
+
+/* with JavaScript only the current section is open; without it everything stays listed */
+html.js .nav3 li.has-sub:not(.open) > .sub { display: none; }
+
+/* ---------- widgets (rail bottom) ---------- */
+.widgets { margin-top: 18px; display: flex; flex-direction: column; gap: 14px; align-items: stretch; }
+.wcard { width: 100%; display: flex; justify-content: center; align-items: center; background: var(--widget-bg); border-radius: 10px; padding: 10px; overflow: hidden; text-align: center; }
+
+/* LinkedIn + GitHub: two buttons, one style, centred; icon tiles when the rail is collapsed */
+.social { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+.sbtn {
+	display: flex; align-items: center; justify-content: center; gap: 10px;
+	padding: 10px 12px; border-radius: 9px;
+	border: 1.5px solid rgba(255,255,255,.55);
+	color: #fff; text-decoration: none; text-align: center;
+	font-size: .9rem; font-weight: 600; line-height: 1.3;
+}
+.sbtn:hover { background: rgba(255,255,255,.1); }
+.sbtn svg { flex: none; width: 20px; height: 20px; }
+
+/* version label: last thing in the rail (text comes from version.txt, filled in by GitHub Pages) */
+.ver { margin-top: auto; padding: 16px 4px 0; font: 500 11px/1.3 ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace; color: var(--rail-mute); text-align: center; }
+.ver[hidden] { display: none; }
+.ver a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(169,195,204,.55); }
+.ver a:hover { color: #fff; }
+
+/* ---------- collapsed rail (icons only) ---------- */
+html.rail-collapsed:not(.rail-peek) .brand-t,
+html.rail-collapsed:not(.rail-peek) .mark,
+html.rail-collapsed:not(.rail-peek) .nav3 .tg,
+html.rail-collapsed:not(.rail-peek) .nav3 .sub,
+html.rail-collapsed:not(.rail-peek) .widgets,
+html.rail-collapsed:not(.rail-peek) .ver { display: none; }
+html.rail-collapsed:not(.rail-peek) .social .lbl,
+.sr-only {
+	position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+html.rail-collapsed:not(.rail-peek) .sbtn { width: 44px; height: 44px; padding: 0; margin: 0 auto; border-radius: 11px; }
+html.rail-collapsed:not(.rail-peek) .nav3 .lbl {   /* still read by screen readers */
+	position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+html.rail-collapsed:not(.rail-peek) .rail-head { justify-content: center; padding: 4px 0 14px; }
+html.rail-collapsed:not(.rail-peek) .nav3 a,
+html.rail-collapsed:not(.rail-peek) .nav3 .linkbtn { justify-content: center; padding: 9px 0; }
+
+/* ---------- work area ---------- */
+.work { min-width: 0; display: flex; flex-direction: column; min-height: 100vh; }
+
+.bar {
+	display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 24px;
+	min-height: var(--bar-h); padding: 12px 28px;
+	background: var(--surface); border-bottom: 1px solid var(--line);
+	font-size: .85rem; color: var(--muted);
+}
+.crumbs { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 .6em; min-width: 0; margin: 0; }
+#breadcrumbs-you-are-here { font-size: .8rem; color: var(--muted); }
+#sitemap { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; font-size: 1.2rem; line-height: 1.3; font-weight: 500; color: var(--muted); }
+#sitemap li + li::before { content: "/"; margin: 0 .45em; font-weight: 400; color: #8b866f; }
+#sitemap a { color: var(--link); text-decoration: none; }
+#sitemap a:hover { text-decoration: underline; text-underline-offset: .18em; }
+#sitemap [aria-current="page"] { color: var(--ink); font-weight: 700; }
+.tools { list-style: none; margin: 0 0 0 auto; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; }
+.tools > li { display: flex; align-items: center; gap: 8px; }
+.tools a.print { display: inline-flex; padding: 4px; color: var(--muted); border-radius: 6px; }
+.tools a.print:hover { color: var(--ink); background: var(--band); }
+
+.content { flex: 1; display: flex; flex-direction: column; padding: 14px 28px 28px; min-height: 0; }
+.frame:focus { outline: none; }
+
+.frame { position: relative; flex: 1 1 0; min-height: 480px; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: 0 1px 2px rgba(60,50,20,.08), 0 4px 14px rgba(60,50,20,.06); }
+.frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
+
+/* ---------- clock + visitor counter (widgets keep working, only restyled) ---------- */
+/* clock: one dark pill in the rail colour (hh : mm : ss); see js/shell.js */
+.clock { display: inline-block; vertical-align: middle; padding: 3px 11px; border-radius: 999px; background: var(--rail); color: #eaf4f7;
+	font: 600 .95rem/1.25 ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace; letter-spacing: .03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.clock i { font-style: normal; opacity: .65; padding: 0 1px; }
+span.hit_counter { display: inline-block; padding: 0 5px; margin-left: 2px; border-radius: 3px; background: var(--band); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); font: 600 .82rem/22px ui-monospace, Menlo, Consolas, monospace; }
+
+/* ---------- calendar (js/mini-calendar.js): dark, on the rail colour ---------- */
+#calendar-container.wcard { display: block; padding: 8px 8px 6px; text-align: left; border: 1.5px solid rgba(255,255,255,.55); border-radius: 9px; }   /* same outline as the profile buttons */
+.cal { --c-ink: var(--rail-ink); --c-muted: var(--rail-mute); --c-we: #f1a9a2; --c-hover: rgba(255,255,255,.12); --c-ring: #a6e0f2; --c-today-bg: #a6e0f2; --c-today-ink: var(--rail);
+	font-size: 13px; line-height: 1.2; color: var(--c-ink); }
+.cal-head { display: flex; align-items: center; gap: 2px; margin-bottom: 6px; }
+.cal select { appearance: none; -webkit-appearance: none; border: 0; background: transparent; color: inherit; font: 650 14px var(--font); padding: 5px 4px; border-radius: 7px; cursor: pointer; }
+.cal select.cal-month { width: 98px; }
+.cal select:hover, .cal-nav:hover, .cal-today:hover, .cal-grid td button:hover { background: var(--c-hover); }
+.cal select option { color: var(--ink); background: #fff; }
+.cal-nav { margin-left: auto; width: 28px; height: 28px; border: 0; border-radius: 8px; background: transparent; color: inherit; font: 400 20px/1 var(--font); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0 0 2px; }
+.cal-nav + .cal-nav { margin-left: 0; }
+.cal-grid { width: 100%; border-collapse: separate; border-spacing: 0 1px; table-layout: fixed; text-align: center; }
+.cal-grid th { font: 500 11px var(--font); color: var(--c-muted); padding: 3px 0; vertical-align: middle; }
+.cal-grid th.we { color: var(--c-we); }
+.cal-grid th.wn { width: 24px; font-size: 10.5px; opacity: .85; }
+.cal-grid td { padding: 0; height: 29px; position: relative; vertical-align: middle; }
+.cal-grid td button, .cal-grid td span { display: inline-flex; align-items: center; justify-content: center; width: 27px; height: 27px; border-radius: 50%; font: 500 12.5px var(--font); font-variant-numeric: tabular-nums; }
+.cal-grid td button { border: 0; background: transparent; color: inherit; cursor: pointer; padding: 0; }
+.cal-grid td.we button { color: var(--c-we); }
+.cal-grid td.out span { opacity: .32; }
+.cal-grid td.sel button { box-shadow: inset 0 0 0 1.5px var(--c-ring); }
+.cal-grid td.today button, .cal-grid td.today.sel button { background: var(--c-today-bg); color: var(--c-today-ink); font-weight: 700; box-shadow: none; }
+.cal button:focus-visible, .cal select:focus-visible { outline: 2px solid var(--c-ring); outline-offset: 1px; }
+.cal-foot { display: flex; justify-content: center; margin-top: 4px; }
+.cal-today { border: 0; background: transparent; color: inherit; font: 600 12px var(--font); padding: 5px 14px; border-radius: 999px; cursor: pointer; }
+
+/* ---------- phone: bar + drawer ---------- */
+.mbar { display: none; }
+.scrim { display: none; }
+
+@media (max-width: 820px) {
+	.app { display: block; }
+	html.rail-collapsed .app { display: block; }
+	.mbar {
+		display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 20;
+		height: var(--bar-h); padding: 0 12px 0 8px; background: var(--rail); color: #fff;
+	}
+	.mbar .toggle { color: #fff; background: rgba(255,255,255,.12); }
+	.mbar .where { flex: 1; min-width: 0; font-weight: 650; font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+	.railwrap { position: static; z-index: auto; }
+	.rail { display: none; }
+	html.drawer-open .rail { display: flex; position: fixed; z-index: 50; top: 0; left: 0; bottom: 0; width: min(86%, 320px); height: auto; box-shadow: 10px 0 40px rgba(0,0,0,.4); }
+	html.drawer-open .scrim { display: block; position: fixed; inset: 0; z-index: 40; background: rgba(0,0,0,.5); }
+	html.drawer-open body { overflow: hidden; }
+	/* the drawer is always the full rail, whatever the desktop state */
+	html.rail-collapsed.drawer-open .brand-t,
+	html.rail-collapsed.drawer-open .mark { display: block; }
+	html.rail-collapsed.drawer-open .nav3 .tg,
+	html.rail-collapsed.drawer-open .widgets { display: flex; }
+	html.rail-collapsed.drawer-open .ver:not([hidden]) { display: block; }
+	html.rail-collapsed.drawer-open .nav3 .sub { display: block; }
+	html.rail-collapsed.drawer-open .nav3 .lbl { position: static; width: auto; height: auto; margin: 0; clip: auto; overflow: visible; white-space: normal; }
+	html.rail-collapsed.drawer-open .social .lbl { position: static; width: auto; height: auto; margin: 0; clip: auto; overflow: visible; white-space: normal; }
+	html.rail-collapsed.drawer-open .sbtn { width: auto; height: auto; padding: 10px 12px; margin: 0; border-radius: 9px; }
+	html.rail-collapsed.drawer-open .nav3 a,
+	html.rail-collapsed.drawer-open .nav3 .linkbtn { justify-content: flex-start; padding: 9px 11px; }
+	html.rail-collapsed.drawer-open .nav3 .sub a { padding: 6px 9px; }
+	html.rail-collapsed.drawer-open .rail-head { justify-content: flex-start; padding: 4px 4px 14px; }
+	html.js .nav3 li.has-sub:not(.open) > .sub { display: none; }
+	html.rail-collapsed.drawer-open .nav3 li.has-sub:not(.open) > .sub { display: none; }
+
+	.work { min-height: 0; }
+	.bar { padding: 10px 16px; }
+	#sitemap { font-size: 1.05rem; }
+	.tools { margin-left: 0; }
+	.content { padding: 10px 12px 24px; }
+	.frame { flex: none; height: calc(100vh - var(--bar-h)); height: calc(100svh - var(--bar-h)); min-height: 420px; }
+}
+
+/* ---------- contact dialog ---------- */
+dialog#contact-dialog {
+	max-width: min(92vw, 460px); padding: 22px 24px 18px;
+	border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--ink);
+	box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+dialog#contact-dialog::backdrop { background: rgba(0,0,0,.45); }
+dialog#contact-dialog p { margin: 0 0 .8em; }
+dialog#contact-dialog .addr { font-weight: 650; user-select: all; overflow-wrap: anywhere; }
+dialog#contact-dialog form { margin: 0; text-align: right; }
+dialog#contact-dialog button { font: inherit; padding: 8px 18px; border-radius: 8px; border: 0; background: var(--rail); color: #fff; cursor: pointer; }
+dialog#contact-dialog button:hover { background: #24505f; }
+
+@media (prefers-reduced-motion: reduce) {
+	* { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+@media print {
+	.rail, .mbar, .scrim, .skip { display: none !important; }
+	.app { display: block; }
+	.frame { border: 0; box-shadow: none; height: auto; }
+}
