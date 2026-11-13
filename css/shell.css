@@ -172,10 +172,10 @@ html.rail-collapsed:not(.rail-peek) .nav3 .linkbtn { justify-content: center; pa
 	display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 24px;
 	min-height: var(--bar-h); padding: 12px 28px;
 	background: var(--surface); border-bottom: 1px solid var(--line);
-	font-size: .85rem; color: var(--muted);
+	font-size: .9rem; color: var(--muted);
 }
 .crumbs { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 .6em; min-width: 0; margin: 0; }
-#breadcrumbs-you-are-here { font-size: .8rem; color: var(--muted); }
+#breadcrumbs-you-are-here { font-size: .9rem; color: var(--muted); }
 #sitemap { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; font-size: 1.2rem; line-height: 1.3; font-weight: 500; color: var(--muted); }
 #sitemap li + li::before { content: "/"; margin: 0 .45em; font-weight: 400; color: #8b866f; }
 #sitemap a { color: var(--link); text-decoration: none; }
@@ -197,7 +197,7 @@ html.rail-collapsed:not(.rail-peek) .nav3 .linkbtn { justify-content: center; pa
 .clock { display: inline-block; vertical-align: middle; padding: 3px 11px; border-radius: 999px; background: var(--rail); color: #eaf4f7;
 	font: 600 .95rem/1.25 ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace; letter-spacing: .03em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .clock i { font-style: normal; opacity: .65; padding: 0 1px; }
-span.hit_counter { display: inline-block; padding: 0 5px; margin-left: 2px; border-radius: 3px; background: var(--band); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); font: 600 .82rem/22px ui-monospace, Menlo, Consolas, monospace; }
+span.hit_counter { display: inline-block; padding: 0 5px; margin-left: 2px; border-radius: 3px; background: var(--band); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); font: 600 .9rem/22px ui-monospace, Menlo, Consolas, monospace; }
 
 /* ---------- calendar (js/mini-calendar.js): dark, on the rail colour ---------- */
 #calendar-container.wcard { display: block; padding: 8px 8px 6px; text-align: left; border: 1.5px solid rgba(255,255,255,.55); border-radius: 9px; }   /* same outline as the profile buttons */
