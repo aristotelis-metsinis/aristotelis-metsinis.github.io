@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Curriculum Vitae of Aristotelis Metsinis</title>
+		<meta name="author" content="Aristotelis Metsinis">
+
+		<link rel="stylesheet" type="text/css" href="css/content.css">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+		<script type="text/javascript">
+			if(top.location == self.location)
+			{
+				top.location.href = 'index.html'+'?redirectedFrom=cv.html';
+			}
+		</script>
+		<script type="text/javascript">
+			// Show the PDF inside the page only where the browser really has a PDF viewer and the main input is a
+			// mouse (desktop). Phones and tablets (no inline viewer, or a first-page-only one) and no-JavaScript
+			// visitors get the buttons alone.
+			try
+			{
+				if (navigator.pdfViewerEnabled !== false && window.matchMedia('(hover: hover) and (pointer: fine)').matches)
+				{
+					document.documentElement.className += ' has-viewer';
+				}
+			}
+			catch (e) {}
+		</script>
+		<style>
+			html, body { height: 100%; }
+			body { display: flex; flex-direction: column; }
+
+			/* toolbar: page title (+ file name) on the left, the three actions on the right */
+			.cvbar { flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 7px 14px; background: var(--surface); border-bottom: 1px solid var(--line); }
+			.title { margin-right: auto; min-width: 0; line-height: 1.25; }
+			.title h1 { margin: 0; font-size: 1.15rem; line-height: 1.25; font-weight: 700; letter-spacing: -.01em; }
+			.file { display: block; color: var(--muted); font-size: .8rem; line-height: 1.3; overflow-wrap: anywhere; }
+			.hint { display: none; margin: 0; color: var(--muted); }
+			.acts { display: flex; flex-wrap: wrap; gap: 8px; }
+			.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 38px; padding: 6px 14px; border: 1.5px solid var(--link); border-radius: 10px; background: transparent; color: var(--link); font: 600 .95rem/1.2 var(--font); text-decoration: none; }
+			.btn:hover { background: var(--tint); text-decoration: none; }
+			.btn.primary { background: var(--link); color: #fff; }
+			.btn.primary:hover { background: #174f62; }
+			.btn svg { flex: none; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+			/* the PDF fills everything under the toolbar */
+			.stage { display: none; flex: 1; min-height: 0; background: #525659; }
+			.stage iframe { display: block; width: 100%; height: 100%; border: 0; }
+			.has-viewer .stage { display: block; }
+
+			/* no inline viewer (phones, tablets, no JavaScript): title, a short note and the three buttons, full width, no boxes */
+			html:not(.has-viewer) .cvbar { flex-direction: column; align-items: stretch; gap: 14px; max-width: 460px; padding: 18px 16px; background: none; border: 0; }
+			html:not(.has-viewer) .file { display: none; }
+			html:not(.has-viewer) .hint { display: block; }
+			html:not(.has-viewer) .acts { flex-direction: column; gap: 10px; }
+			html:not(.has-viewer) .btn { min-height: 52px; font-size: 1.05rem; }
+			@media (max-width: 760px) { .title h1 { font-size: 1.05rem; } }
+
+			/* narrow frames: keep the toolbar to one slim row (the file name is the first thing to go) */
+			@media (max-width: 900px) { .has-viewer .file { display: none; } }
+
+			@media print { .cvbar { display: none; } .stage { background: none; } }
+		</style>
+	</head>
+	<body>
+		<header class="cvbar">
+			<div class="title">
+				<h1>Curriculum vitae</h1>
+				<span class="file">Aristotelis_Metsinis_Resume.pdf</span>
+			</div>
+			<p class="hint">This browser cannot show the PDF inside the page. Open it or save a copy:</p>
+			<nav class="acts" aria-label="Curriculum vitae">
+				<a class="btn primary" data-seed href="Aristotelis_Metsinis_Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8 4H4.5v11.5H16V12 M11 3.5h5.5V9 M16.5 3.5L9 11"/></svg>Open in new tab</a>
+				<a class="btn" data-seed href="Aristotelis_Metsinis_Resume.pdf" download><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9 M6.5 9.5L10 13l3.5-3.5 M4 16.5h12"/></svg>Save PDF</a>
+				<a class="btn" data-seed href="Aristotelis_Metsinis_Resume.docx" download><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9 M6.5 9.5L10 13l3.5-3.5 M4 16.5h12"/></svg>Save Word</a>
+			</nav>
+		</header>
+		<main class="stage" id="stage"></main>
+
+		<script type="text/javascript">
+			(function ()
+			{
+				// Cache-busting seed, as the site menu does on every click: GitHub Pages lets browsers reuse a file
+				// for about 10 minutes, so without it a visitor could get an older copy of the curriculum vitae.
+				var seed = '?seed=' + new Date().getTime();
+				var links = document.querySelectorAll('a[data-seed]');
+				for (var i = 0; i < links.length; i++)
+				{
+					links[i].setAttribute('href', links[i].getAttribute('href') + seed);
+				}
+
+				if (document.documentElement.className.indexOf('has-viewer') < 0) { return; }
+
+				var pdf = document.createElement('iframe');
+				pdf.src = 'Aristotelis_Metsinis_Resume.pdf' + seed;
+				pdf.title = 'Curriculum vitae (PDF)';
+				document.getElementById('stage').appendChild(pdf);
+
+				// The print icon of the site calls print() on this page: print the PDF itself instead of the toolbar.
+				var pagePrint = window.print;
+				window.print = function ()
+				{
+					try { pdf.contentWindow.focus(); pdf.contentWindow.print(); }
+					catch (e) { pagePrint.call(window); }
+				};
+			})();
+		</script>
+	</body>
+</html>

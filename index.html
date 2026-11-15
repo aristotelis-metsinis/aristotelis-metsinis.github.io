@@ -64,7 +64,7 @@
 							<div class="row"><a href="main_page.html" target="page_iframe" title="Main Page" aria-current="page"><svg class="i" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 9.5 10 3.5l7 6V17H12.2v-4.6H7.8V17H3z"/></svg><span class="lbl">main page</span></a></div>
 						</li>
 						<li>
-							<div class="row"><a href="Aristotelis_Metsinis_Resume.pdf" target="page_iframe" title="Curriculum Vitae of Aristotelis Metsinis (pdf version)"><svg class="i" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5h7l3 3V17.5H5z M12 2.5v3h3 M7.5 9.5h5 M7.5 12.5h5 M7.5 15h3"/></svg><span class="lbl">curriculum vitae</span></a></div>
+							<div class="row"><a href="cv.html" target="page_iframe" title="Curriculum Vitae of Aristotelis Metsinis (pdf version)"><svg class="i" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5h7l3 3V17.5H5z M12 2.5v3h3 M7.5 9.5h5 M7.5 12.5h5 M7.5 15h3"/></svg><span class="lbl">curriculum vitae</span></a></div>
 						</li>
 						<li class="has-sub">
 							<div class="row">
@@ -184,6 +184,7 @@
 			var m = /[?&]redirectedFrom=([^&#]*)/.exec(location.search);
 			if (!m) { return; }
 			var want = decodeURIComponent(m[1]).replace(/[?#].*$/, '');
+			if (want === 'Aristotelis_Metsinis_Resume.pdf' || want === 'Aristotelis_Metsinis.pdf') { want = 'cv.html'; }   // addresses of the curriculum vitae file (current and former)
 			var links = document.querySelectorAll('.nav3 a[target="page_iframe"]');
 			for (var i = 0; i < links.length; i++) {
 				if (links[i].getAttribute('href') === want) {
