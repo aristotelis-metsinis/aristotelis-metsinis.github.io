@@ -3,6 +3,7 @@
    frame (index.html). Tokens are the same as css/shell.css :root.
    Type scale (shell: breadcrumb 1.2rem = page title, rail labels .93rem):
    lead 1.2rem > card title 1.15rem (1.05rem on phone) > body 1rem > tile .95rem.
+   Page header (.phead) h1 = 1.2rem like the breadcrumb; .stack = one full-width card per group (projects page).
    Reading text stays >= 16px; the rail is navigation chrome and may be smaller.
    Used by modernized pages only; legacy pages keep ccs_1/ccs_2.css until
    they are done. No framework, no build step.
@@ -90,6 +91,22 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-r
 .contact .ico { width: 36px; height: 36px; border-radius: 10px; }
 .contact p { margin: 0; min-width: 0; overflow-wrap: anywhere; }
 
+/* ---------- page header: h1 (same size as the breadcrumb) + one intro line ---------- */
+.phead { margin: 0 0 24px; padding: 2px 0 2px 18px; border-left: 4px solid var(--accent); }
+.phead h1 { margin: 0; font-size: 1.2rem; line-height: 1.4; font-weight: 700; letter-spacing: -.01em; }
+.phead p { margin: 2px 0 0; color: var(--muted); }
+
+/* ---------- stack: one full-width card per group (title row like the main page cards, then text and link list) ----------
+   One template for every card, so a new project is one more <article class="card"> (or one more <li>).
+   Cards are independent: any text length works and nothing needs balancing. */
+.stack { display: grid; gap: 18px; }
+.stack .links { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 10px; }
+.stack .links li { position: relative; padding-left: 20px; font-size: .95rem; line-height: 1.55; }
+.stack .links li::before { content: ""; position: absolute; left: 4px; top: .6em; width: 7px; height: 7px; background: var(--accent); border-radius: 1px; }
+.stack .links li a:first-child { font-weight: 600; }
+.stack .card > p a, .stack .links a { overflow-wrap: anywhere; }   /* long course URLs must wrap on a phone */
+.stack .muted { color: var(--muted); }
+
 /* ---------- narrow frames / phone ---------- */
 @media (max-width: 760px) {
 	.page { padding: 20px 16px 16px; }
@@ -99,6 +116,9 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-r
 	.card { padding: 16px 16px 18px; }
 	.card.strip { padding: 14px 16px; }
 	.ico-row { flex-wrap: wrap; }
+	.phead { margin-bottom: 18px; }
+	.phead h1 { font-size: 1.1rem; }
+	.stack { gap: 14px; }
 }
 
 @media print {
